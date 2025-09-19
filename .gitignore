@@ -11,3 +11,5 @@
 
 quiz_files
 *.log
+
+_freeze

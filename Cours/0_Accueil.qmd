@@ -6,19 +6,6 @@ title: "0 - Accueil des stagiaires"
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
-### Faire connaissance
-Un tour de table pour faire connaissance :
-
-Prénom, Nom  
-Service ou établissement d'origine  
-Fonction occupée   
-Expérience sur les CVS-CJO (méthodes, outils utilisés)  
-
-Pourquoi suivez-vous cette formation ?\
-Qu'attendez vous de cette formation ?\
-À quelles questions souhaitez-vous obtenir une réponse ?
-
-
 ### Objectifs de la formation
 
 Ensemble des documents disponibles sous : https://aqlt.github.io/{{< var repo-github >}}
@@ -39,3 +26,4 @@ Ensemble des documents disponibles sous : https://aqlt.github.io/{{< var repo-gi
 . . .
 
 À approfondir : modèles espace-état, désaisonnalisation haute fréquence, benchmarking et désagrégation temporelle
+

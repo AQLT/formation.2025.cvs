@@ -1,0 +1,263 @@
+---
+title: "1 - R et JDemetra+"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, collapse = FALSE, warning = FALSE,
+					  message = FALSE)
+options(enable_print_style = FALSE)
+library(rjwsacruncher)
+library(kableExtra)
+library(knitr)
+```
+
+> L'objectif de ce TP est d'apprendre à manipuler JDemetra+ sous R à travers le package RJDemetra V3.
+
+Pour manipuler JDemetra+ sous R il y a actuellement deux façons :
+
+1.  Utiliser le [JWSACruncher](https://github.com/jdemetra/jwsacruncher) qui permet, à partir de la console, de mettre à jour un workspace JDemetra+ et d'exporter les résultats sans devoir ouvrir le logiciel.
+Pour faciliter son utilisation depuis R, le package `rjwsacruncher` peut être utilisé (voir [TP5 - JDemetra+ en production](R_5_JD_in_production.qmd)).
+
+2.  Utiliser les packages R associés à JDemetra+ qui permettent d'effectuer des désaisonnalisations avec les mêmes algorithmes et paramètres que JDemetra+ et de manipuler des workspaces.
+
+Dans ce TP on utilisera les données du package `RJDemetra` mais n'hésitez pas à utiliser vos propres séries !
+
+
+Pour faire de la désaisonnalisation sous R il existe plusieurs packages :
+
+-   `seasonal` et `x12` qui permettent de faire du X-13ARIMA-SEATS en utilisant les programmes du US Census Bureau
+
+-   `RJDemetra` qui est une interface R à JDemetra+ 2.x.y.
+
+- Un ensemble de packages associés à JDemetra+ 3.x.y disponibles à l'addresse <https://github.com/rjdverse>.
+C'est ce que l'on utilisera dans ce TP.
+Ces packages nécessite d'avoir avoir Java 17 ou plus.
+En cas de problème d'installation voir le [manuel d'installation](/manuel_installation.qmd) .
+
+Dans cette formation, nous utiliserons les packages suivants `RJDemetra`, `rjd3toolkit`, `rjd3tramoseats`, `rjd3providers`, `rjd3workspace` :
+
+```{r}
+#| eval: false
+#| label: install
+packages_to_install <- c("RJDemetra", "rjd3toolkit", "rjd3x13", "rjd3tramoseats", "rjd3providers", "rjd3workspace")
+
+packages <- packages_to_install[! packages_to_install %in% installed.packages()[,"Package"]]
+if (length(packages) > 0) {
+  install.packages(
+    packages, 
+    repos = c("https://aqlt.r-universe.dev", "https://cloud.r-project.org")
+  )
+}
+```
+
+
+# Créer une specification {#sec-spec-jd3}
+
+Les modèles autour de la méthode X-13ARIMA peuvent être estimés avec `rjd3x13::x13()`, `rjd3x13::regarima()`) et `rjd3x13::x11()`.
+
+Les spécifications peuvent être crées avec les fonctions `rjd3x13::spec_regarima`, `rjd3x13::spec_x11()` ou `rjd3x13::spec_x13()` et peuvent être modifiées par :
+
+- Pour le préajustement : `rjd3toolkit::set_arima()`, `rjd3toolkit::set_automodel()`, `rjd3toolkit::set_basic()`, `rjd3toolkit::set_easter()`, `rjd3toolkit::set_estimate()`, `rjd3toolkit::set_outlier()`, `rjd3toolkit::set_tradingdays()`, `rjd3toolkit::set_transform()`, `rjd3toolkit::add_outlier()`, `rjd3toolkit::remove_outlier()`, `rjd3toolkit::add_ramp()`, `rjd3toolkit::remove_ramp()`, `rjd3toolkit::add_usrdefvar()` ;
+
+- Pour la décomposition : `rjd3x13::set_x11()` ;
+
+- Pour le benchmarking : `rjd3toolkit::set_benchmarking()`.
+
+```{r}
+#| include: false
+# requireNamespace("rjd3x13") # pour éviter que tout plante
+# requireNamespace("rjd3tramoseats") # pour éviter que tout plante
+requireNamespace("rjd3workspace") # pour éviter que tout plante
+```
+
+
+::: callout-note
+## Exercice
+Faire la désaisonnalisation d'une série avec X-13 avec la spécification suivante :
+
+- détection automatique du schéma de décomposition, des outliers et du modèle ARIMA ;
+- une correction des jours ouvrables "working days" et un effet graduel de Pâques.
+
+Faire ensuite un graphique avec la série brute et la série désaisonnalisée.
+:::
+
+::: {.callout-caution collapse="true"}
+## Indice
+Utiliser la spécification `RSA4c` pour la désaisonnalisation.
+
+Si le modèle créé s'appelle `sa_jd3`, regarder les valeurs de `sa_jd3$result$final` et `rjd3toolkit::sa_decomposition(sa_jd3)`.
+:::
+
+::: {.callout-tip collapse="true"}
+## Solution
+```{r}
+sa_jd3 <- rjd3x13::x13(RJDemetra::ipi_c_eu[, "FR"], "rsa4")
+sa_jd3
+y <- sa_jd3$result$preadjust$a1
+sa <- sa_jd3$result$final$d11final
+# ou :
+decomp <- rjd3toolkit::sa_decomposition(sa_jd3)
+y <- decomp$series
+sa <- decomp$sa
+# ou on peut directement utiliser les fonctions de rjd3x13 :
+plot(sa_jd3, first_date = 2000 #Pour n'afficher le graphique qu'à partir de 200
+)
+```
+Pour des graphiques `ggplot2`, on peut également utiliser le package [`ggdemetra3`](https://github.com/AQLT/ggdemetra3).
+:::
+
+::: callout-note
+## Exercice
+Modifier le modèle précédent pour enlever l'effet graduel de Pâques.
+:::
+
+::: {.callout-tip collapse="true"}
+## Solution
+```{r}
+spec_sans_easter_v3 <- 
+	sa_jd3$estimation_spec |> 
+	rjd3toolkit::set_easter(enabled = FALSE)
+sa2_jd3 <- rjd3x13::x13(RJDemetra::ipi_c_eu[, "FR"], spec_sans_easter_v3)
+sa2_jd3$result$preprocessing
+```
+:::
+
+::: callout-note
+## Exercice
+Calculer les p-valeurs associées au modèle Reg-ARIMA de la précédente spécification.
+:::
+
+::: {.callout-caution collapse="true"}
+## Indice
+Récupérer le modèle Reg-ARIMA et utiliser la fonction `summary()`.
+:::
+
+::: {.callout-tip collapse="true"}
+## Solution
+```{r}
+summary(sa2_jd3$result$preprocessing)
+```
+:::
+
+# Créer un workspace
+
+Dans cette partie nous allons créer un workspace depuis R.
+Pour cela les fonctions qui peuvent être utilisées sont `rjd3workspace::jws_new()`, `rjd3workspace::read_workspace()`, `rjd3workspace::jws_sap_new()`, `rjd3workspace::add_sa_item()`, `rjd3workspace::save_workspace()`.
+
+::: callout-note
+## Exercice
+Créer un workspace qui va contenir une série désaisonnalisée selon 3 spécifications différentes.
+:::
+
+
+::: {.callout-tip collapse="true"}
+## Solution
+
+```{r}
+jws <- rjd3workspace::jws_new()
+jsap <- rjd3workspace::jws_sap_new(jws, "MP-1")
+rjd3workspace::add_sa_item(jsap, "X13 avec Pâques", sa_jd3)
+rjd3workspace::add_sa_item(jsap, "X13 sans Pâques", sa2_jd3)
+rjd3workspace::add_sa_item(jsap, "TRAMO-SEATS", y, rjd3tramoseats::spec_tramoseats())
+rjd3workspace::save_workspace(jws, "ws_v3.xml")
+```
+:::
+
+::: callout-note
+## Exercice
+Importer le workspace précédent et récupérer :  
+
+- Le nom du premier multi-processing
+- Le nombre de modèles dans ce premier multi-processing
+- L'ensemble des séries brutes
+- Le 2ème modèle
+:::
+
+::: {.callout-tip collapse="true"}
+## Solution
+```{r}
+# charge tous les modèles du workspace :
+jws <- rjd3workspace::.jws_open("ws_v3.xml")
+ws <- rjd3workspace::read_workspace(jws)
+names(ws$processing)[1]
+length(ws$processing[[1]]) # Nombre de multiprocessing
+```
+Autre façon de faire similaire à `RJDemetra` : 
+```{r}
+# charge tous les modèles du workspace :
+jws <- rjd3workspace::.jws_open("ws_v3.xml")
+rjd3workspace::jws_compute(jws)
+rjd3workspace::ws_sap_count(jws) # Nombre de multiprocessing
+jsap1 <- rjd3workspace::jws_sap(jws, 1) # Le premier multiprocessing
+rjd3workspace::sap_name(jsap1)
+rjd3workspace::sap_sai_count(jsap1)
+model2 <- rjd3workspace::jsap_sai(jsap1, 2) # On récupère l'objet associé au 2ème modèle
+rjd3workspace::read_sai(model2)
+# Pour extraire toutes les séries brutes il faut faire une boucle :
+all_y <- lapply(
+	lapply(
+		seq_len(rjd3workspace::sap_sai_count(jsap1)),
+		rjd3workspace::.jsap_sai, jsap = jsap1
+	),
+	rjd3workspace::get_raw_data
+)
+```
+:::
+
+# Manipuler les objets Java
+
+La manipulation des objets Java se fait de la même façon qu'avec `RJDemetra` : `.jx13()` pour estimer les modèles (nom de la fonction légèrement différente), `rjd3toolkit::dictionary()` pour connaitre l'ensemble des objets exportables et `rjd3toolkit::result()` et `rjd3toolkit::user_defined()` pour exporter des objets.
+
+::: callout-note
+## Exercice
+Créer un modèle à partir de la fonction `.jx13()` et la spécification sans effet graduel de pâques calculée dans la section [-@sec-spec-jd3].
+:::
+
+::: {.callout-tip collapse="true"}
+## Solution
+```{r}
+myjsa <- rjd3x13::.jx13(RJDemetra::ipi_c_eu[, "FR"], spec_sans_easter_v3)
+rjd3toolkit::result(myjsa, "sa")
+```
+:::
+
+Pour les révisions, la fonction `rjd3x13::x13_revisions()` facilite grandement la tâche.
+L'historique des révisions peut s'exporter à partir de trois paramètres :
+
+- `data_ids` qui permet d'exporter des statistiques ;
+
+- `ts_ids` qui permet d'exporter des estimations d'une composante à une certaine date ;
+
+- `cmp_ids` qui permet l'ensemble des estimations d'une composante à une ensemble de dates.
+
+```{r}
+data_ids <- list(
+	# Export du coefficient du premier régresseur jours ouvrables
+	list(start = "2005-01-01", id = "regression.td(1)"))
+ts_ids <- list(
+	# Export de l'historique des estimations de la séries SA de janv 2010 à partir de janvier 2010
+	list(period = "2010-01-01", start = "2010-01-01", id = "sa"))
+cmp_ids <- list(
+	# Export de l'ensemble des tendances estimées entre janv 2010 et dec 2014
+	list(start = "2010-01-01", end = "2014-12-01", id = "t"))
+rh <- rjd3x13::x13_revisions(
+	sa2_jd3$result$preadjust$a1,
+	spec = sa2_jd3$result_spec, 
+	data_ids, ts_ids, cmp_ids)
+plot(rh$data$`regression.td(1)`,
+	 ylab = "Coef", main = "Coef td")
+plot(rh$series$sa,
+	 ylab = NULL, main = "SA de janv 2010")
+ncol(rh$components$t) # nombre de séries exportées
+```
+
+
+
+```{r}
+#| include: false
+#| label: clean-ws
+file.remove("ws_v3.xml")
+unlink("ws_v3", recursive = TRUE)
+```
+
+
