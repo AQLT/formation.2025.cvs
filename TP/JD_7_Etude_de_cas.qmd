@@ -10,11 +10,11 @@ library(RJDemetra)
 options(enable_print_style = FALSE)
 dir = "."
 if (!file.exists("Etude_de_cas.xml")) {
-	dir <- tempdir()
-download.file("https://aqlt.github.io/formation.2025.cvs/data/Etude_de_cas.zip",
-              file.path(dir, "Etude_de_cas.zip"))
-unzip(file.path(dir, "Etude_de_cas.zip"),
-      exdir = dir)
+# 	dir <- tempdir()
+# download.file("https://aqlt.github.io/formation.2025.cvs/data/Etude_de_cas.zip",
+#               file.path(dir, "Etude_de_cas.zip"))
+# unzip(file.path(dir, "Etude_de_cas.zip"),
+#       exdir = dir)
 }
 ```
 

@@ -35,26 +35,8 @@ Vous pouvez retrouver [ici](manuel_installation.qmd) le manuel d'installation de
 # {{< fa computer >}} Travaux pratiques
 
 
-## TP {{< fa brands r-project >}}
 
-0.  [(Complément) Traitement des séries temporelles sous {{< fa brands r-project >}}](TP/R_0_Manipulation_series_temporelles.qmd)
-
-1.  [R et JDemetra+](TP/R_1_R_et_JD.qmd)
-
-2.  [Correction des jours ouvrables](TP/R_2_CJO.qmd) et programme [export_cjo.R](ex-cjo/export_cjo.R)
-
-3.  [(Complément) Preajustement](TP/R_3_Preadjustment.qmd)
-
-4.  [(Complément) Décomposition (X11)](TP/R_4_X11.qmd)
-
-5.  [JDemetra+ en production](TP/R_5_JD_in_production.qmd) et programmes [1-cruncher.R](R-macronia/1-cruncher.R) et [2-tableau de bord.R](R-macronia/2-tableau de bord.R)
-
-6. Autres programmes : [3-imae-calage.R](R-macronia/3-imae-calage.R) et [4-cvs-indirecte.R](R-macronia/4-cvs-indirecte.R)
-
-
-
-
-## TP JDemetra+ (Complément) 
+## TP JDemetra+
 
 1.  [Première manipulation de JDemetra+](TP/JD_1_Premiere_manipulation_JD.qmd)
 
@@ -67,6 +49,26 @@ Vous pouvez retrouver [ici](manuel_installation.qmd) le manuel d'installation de
 5.  [Pré-ajustement](TP/JD_5_Preajustment.qmd)
 
 6.  [Décomposition (X11)](TP/JD_6_X11.qmd)
+
+7.  [Étude de cas](TP/JD_7_Etude_de_cas.qmd)
+
+
+## TP {{< fa brands r-project >}}
+
+0.  [(Complément) Traitement des séries temporelles sous {{< fa brands r-project >}}](TP/R_0_Manipulation_series_temporelles.qmd)
+
+1.  **R et JDemetra+** : [V2](TP/R_1_R_et_JD_v2.qmd) ou [V3](TP/R_1_R_et_JD_v3.qmd)
+
+2. **Correction des jours ouvrables** : [V2](TP/R_2_CJO_v2.qmd) ou [V3](TP/R_2_CJO_v3.qmd) et programme [export_cjo.R](ex-cjo/export_cjo.R)
+
+3. **(Complément) Preajustement** : [V2](TP/R_3_Preadjustment_v2.qmd) ou [V3](TP/R_3_Preadjustment_v3.qmd)
+
+4. **(Complément) Décomposition (X11)** : [V2](TP/R_4_X11_v2.qmd) ou [V3](TP/R_4_X11_v3.qmd)
+
+5. **JDemetra+ en production** : [V2](TP/R_5_JD_in_production_v2.qmd) ou [V3](TP/R_5_JD_in_production_v3.qmd) et programmes [1-cruncher.R](R-macronia/1-cruncher.R) et [2-tableau de bord.R](R-macronia/2-tableau_de_bord.R)
+
+6. Autres programmes : [3-imae-calage.R](R-macronia/3-imae-calage.R) et [4-cvs-indirecte.R](R-macronia/4-cvs-indirecte.R)
+
 
 # {{< fa file-zipper >}} Fichiers externes
 
@@ -85,7 +87,7 @@ cat(sprintf("- [%s](PDF/%s)", all_f_pdf, all_f_pdf),
 ```
 
 - Workspace et données associées à la Macronia\ : [macronia.zip](data/macronia.zip)
-- Jeu de régresseur JO (pour la V2, voir [TP2 - Correction des jours ouvrables](TP/R_2_CJO.qmd))\ :  [regcjo.xlsx](data/regcjo.xlsx)
+- Données associés au [TP7 Étude de cas](TP/JD_7_Etude_de_cas.qmd) : [Etude_de_cas.zip](data/Etude_de_cas.zip)
 - Description des M-statistiques\ : [Description_statsM.pdf](PDF/Description_statsM.pdf)
 - Description des objets exportables depuis JDemetra+ (V2) : [output_jd.pdf](PDF/output_jd.pdf)
 - Spécifications pré-définies\ : [Predefined_specifications.pdf](PDF/Predefined_specifications.pdf)

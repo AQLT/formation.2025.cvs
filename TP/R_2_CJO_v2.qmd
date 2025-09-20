@@ -42,22 +42,6 @@ Voir par exemple la documentation de JDemetra+ [ici](https://jdemetradocumentati
 Dans ce TP, nous nous intéresserons uniquement à la seconde option. 
 En effet, le package R est plus flexible et permet de créer des régresseurs moins classiques que les *working days* et *trading days*. 
 
-Pour installer tous les packages utiles de ce TP, lancer le programme :
-
-```{r}
-#| eval: false
-#| label: install
-packages_to_install <- c("RJDemetra", "rjd3toolkit")
-
-packages <- packages_to_install[! packages_to_install %in% installed.packages()[,"Package"]]
-if (length(packages) > 0) {
-	install.packages(
-	  packages, 
-	  repos = c("https://aqlt.r-universe.dev", "https://cloud.r-project.org")
-	  )
-}
-```
-
 
 # Création de régresseurs JO avec `rjd3toolkit`
 

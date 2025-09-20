@@ -42,7 +42,7 @@ Ce travail peut être très fastidieux...
 Heureusement depuis R il existe une solution plus automatique !
 
 Il existe deux façons de faire, en fonction de si l'on utilise une version 2.x.y ou 3.x.y de JDemetra+.
-Repartons déjà des régresseurs jours ouvrables (pour leur création, voir le [TP R associé](R_2_CJO.qmd)) :
+Repartons déjà des régresseurs jours ouvrables (pour leur création, voir le TP R associé en  [V2](TP/R_2_CJO_v2.qmd) ou [V3](TP/R_2_CJO_v3.qmd)) :
 
 ```{r}
 if (! "rjd3workspace" %in% installed.packages()[,"Package"]) {
