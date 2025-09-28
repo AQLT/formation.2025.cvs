@@ -1,0 +1,1920 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr" xml:lang="fr"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.5.6">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Alain Quartier-la-Tente">
+
+<title>Formation CVS 2025 – 2 - Correction des jours ouvrables</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../img/favicon.ico" rel="icon">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "Pas de résultats",
+    "search-matching-documents-text": "documents trouvés",
+    "search-copy-link-title": "Copier le lien vers la recherche",
+    "search-hide-matches-text": "Cacher les correspondances additionnelles",
+    "search-more-match-text": "correspondance de plus dans ce document",
+    "search-more-matches-text": "correspondances de plus dans ce document",
+    "search-clear-button-title": "Effacer",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Annuler",
+    "search-submit-button-title": "Envoyer",
+    "search-label": "Recherche"
+  }
+}</script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-X652XRGDPL"></script>
+
+<script type="text/javascript">
+
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+ 
+  gtag('consent', 'default', {
+    'ad_storage': 'denied',
+    'analytics_storage': 'denied'
+  });
+gtag('config', 'G-X652XRGDPL', { 'anonymize_ip': true});
+</script>
+<script src="../site_libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="../site_libs/lightable-0.0.1/lightable.css" rel="stylesheet">
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">Formation CVS 2025</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Recherche"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Basculer la navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../index.html"> <i class="bi bi-house" role="img">
+</i> 
+<span class="menu-text">Désaisonnaliser une série temporelle</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="https://aqlt.github.io/teaching/"> 
+<span class="menu-text">Ensemble formations</span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="http://github.com/AQLT/formation.cvs.2025"> <i class="bi bi-github" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+          <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Sur cette page</h2>
+   
+  <ul>
+  <li><a href="#création-de-régresseurs-jo-avec-rjd3toolkit" id="toc-création-de-régresseurs-jo-avec-rjd3toolkit" class="nav-link active" data-scroll-target="#création-de-régresseurs-jo-avec-rjd3toolkit"><span class="header-section-number">1</span> Création de régresseurs JO avec <code>rjd3toolkit</code></a>
+  <ul class="collapse">
+  <li><a href="#création-dun-calendrier" id="toc-création-dun-calendrier" class="nav-link" data-scroll-target="#création-dun-calendrier"><span class="header-section-number">1.1</span> Création d’un calendrier</a></li>
+  <li><a href="#création-de-régresseurs-jo" id="toc-création-de-régresseurs-jo" class="nav-link" data-scroll-target="#création-de-régresseurs-jo"><span class="header-section-number">1.2</span> Création de régresseurs JO</a></li>
+  <li><a href="#régresseur-leap-year" id="toc-régresseur-leap-year" class="nav-link" data-scroll-target="#régresseur-leap-year"><span class="header-section-number">1.3</span> Régresseur <em>leap year</em></a></li>
+  <li><a href="#exercice-bilan" id="toc-exercice-bilan" class="nav-link" data-scroll-target="#exercice-bilan"><span class="header-section-number">1.4</span> Exercice bilan</a></li>
+  <li><a href="#effet-graduel-de-pâques" id="toc-effet-graduel-de-pâques" class="nav-link" data-scroll-target="#effet-graduel-de-pâques"><span class="header-section-number">1.5</span> Effet graduel de Pâques</a></li>
+  </ul></li>
+  <li><a href="#sec-rjd" id="toc-sec-rjd" class="nav-link" data-scroll-target="#sec-rjd"><span class="header-section-number">2</span> Utilisation des régresseurs dans <code>RJDemetra</code></a></li>
+  <li><a href="#test-de-la-présence-de-jours-ouvrables-résiduels" id="toc-test-de-la-présence-de-jours-ouvrables-résiduels" class="nav-link" data-scroll-target="#test-de-la-présence-de-jours-ouvrables-résiduels"><span class="header-section-number">3</span> Test de la présence de jours ouvrables résiduels</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">2 - Correction des jours ouvrables</h1>
+<p class="subtitle lead">Désaisonnaliser une série temporelle</p>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Auteur</div>
+    <div class="quarto-title-meta-contents">
+             <p>Alain Quartier-la-Tente </p>
+          </div>
+  </div>
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<blockquote class="blockquote">
+<p>L’objectif de ce TP est d’apprendre à créer des régresseurs jours ouvrables personnalisés, à les utiliser dans RJDemetra/JDemetra+ et à vérifier la qualité de la correction.</p>
+</blockquote>
+<p>Pour installer tous les packages utiles de ce TP, lancer le programme :</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>packages_to_install <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"RJDemetra"</span>, <span class="st">"rjd3toolkit"</span>, <span class="st">"rjd3x13"</span>, <span class="st">"rjd3tramoseats"</span>, <span class="st">"rjd3providers"</span>, <span class="st">"rjd3workspace"</span>)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>packages <span class="ot">&lt;-</span> packages_to_install[<span class="sc">!</span> packages_to_install <span class="sc">%in%</span> <span class="fu">installed.packages</span>()[,<span class="st">"Package"</span>]]</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="fu">length</span>(packages) <span class="sc">&gt;</span> <span class="dv">0</span>) {</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">install.packages</span>(</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>      packages, </span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>      <span class="at">repos =</span> <span class="fu">c</span>(<span class="st">"https://aqlt.r-universe.dev"</span>, <span class="st">"https://cloud.r-project.org"</span>)</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>      )</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Pour créer des régresseurs jours ouvrables personnalisés, deux solutions :</p>
+<ol type="1">
+<li><p>Le faire depuis JDemetra+, en créant un calendrier personnalisé puis en exportant les régresseurs. Voir par exemple la documentation de JDemetra+ <a href="https://jdemetradocumentation.github.io/JDemetra-documentation/pages/case-studies/calendars-main.html">ici</a> et <a href="https://jdemetradocumentation.github.io/JDemetra-documentation/pages/case-studies/calendars-national.html">là</a>.</p></li>
+<li><p>Créer le calendrier depuis R à l’aide du package <a href="https://github.com/rjdverse/rjd3toolkit"><code>rjd3toolkit</code></a>.</p></li>
+</ol>
+<p>Dans ce TP, nous nous intéresserons uniquement à la seconde option. En effet, le package R est plus flexible et permet de créer des régresseurs moins classiques que les <em>working days</em> et <em>trading days</em>.</p>
+<section id="création-de-régresseurs-jo-avec-rjd3toolkit" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> Création de régresseurs JO avec <code>rjd3toolkit</code></h1>
+<section id="création-dun-calendrier" class="level2" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="création-dun-calendrier"><span class="header-section-number">1.1</span> Création d’un calendrier</h2>
+<p>Par défaut, les régresseurs jours ouvrables de JDemetra+ ne prennent pas en compte les spécificité calendaires des pays : on ne prend pas en compte les jours fériés. Pour les prendre en compte, il faut créer son propre calendrier où l’on supposera qu’un jour férié de plus dans le mois a le même effet qu’un dimanche.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(rjd3toolkit)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Trois fonctions peuvent être utilisées pour ajouter des jours fériés :</p>
+<ol type="1">
+<li><code>fixed_day()</code> pour ajouter un jour férié qui tombe à date fixe. Par exemple, pour ajouter le 8 mai :</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">fixed_day</span>(<span class="at">month =</span>  <span class="dv">5</span>, <span class="at">day =</span> <span class="dv">8</span>)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ol start="2" type="1">
+<li><code>easter_day()</code> pour ajouter un jour férié dont le jour dépend de Pâques : le paramètre <code>offset</code> permet de spécifier le nombre de jours avant (si négatif) ou après Pâques (si positif). Par exemple, pour ajouter la Pentecôte qui a lieu 60 jours après Pâques :</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">easter_day</span>(<span class="at">offset =</span> <span class="dv">60</span>)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ol start="3" type="1">
+<li><code>single_day()</code> pour ajouter un jour ferié qui n’a eu lieu qu’une seule fois.</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"1993-01-15"</span>)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ol start="4" type="1">
+<li><code>fixed_week_day()</code> qui permet d’ajouter des jours fériés qui apparaissent certaines semaines de certains mois (par exemple le premier lundi du mois de septembre aux USA)</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">fixed_week_day</span>(<span class="dv">9</span>, <span class="dv">1</span>, <span class="dv">1</span>) <span class="co"># first Monday(1) of September.</span></span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ol start="5" type="1">
+<li><code>special_day()</code> qui permet d’ajouter des jours fériés par rapport à des dates déjà connues dans JDemetra+ (voir tableau ci-dessous). Comme pour la fonction <code>easter_day()</code>, le paramètre <code>offset</code> permet de spécifier la position du jour voulu par rapport rapport à la fête pré-spécifié (par défaut <code>offset = 0</code>, le jour férié coïncide avec le jour pré-spécifié). Par exemple, pour ajouter le nouvel an :</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">special_day</span>(<span class="st">"NEWYEAR"</span>)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<table class="lightable-paper lightable-hover table table-sm table-striped small" data-quarto-postprocess="true">
+<caption>Jours pré-spécifiés</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th">Event</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Définition</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">NEWYEAR</td>
+<td style="text-align: left;">Fête fixe, 1er janvier.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">SHROVEMONDAY</td>
+<td style="text-align: left;">Fête mobile, lundi avant le mecredi des cendres (48 jours avant pâques).</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">SHROVETUESDAY</td>
+<td style="text-align: left;">Fête mobile, mardi avant le mecredi des cendres (47 jours avant pâques).</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">ASHWEDNESDAY</td>
+<td style="text-align: left;">Fête mobile, 46 jours avant Pâques.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">EASTER</td>
+<td style="text-align: left;">Fête mobile, Pâques, varie entre le 22 mars et le 25 avril.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">MAUNDYTHURSDAY</td>
+<td style="text-align: left;">Fête mobile, le jeudi avant Pâques.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">GOODFRIDAY</td>
+<td style="text-align: left;">Fête mobile, le vendredi avant Pâques.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">EASTERMONDAY</td>
+<td style="text-align: left;">Fête mobile, le lendemain de Pâques.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">ASCENSION</td>
+<td style="text-align: left;">Fête mobile, célébrée un jeudi, 40 jours après Pâques.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">PENTECOST</td>
+<td style="text-align: left;">Fête mobile, 50 jours après Pâques.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">CORPUSCHRISTI</td>
+<td style="text-align: left;">Fête mobile, 60 jours après Pâques.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">WHITMONDAY</td>
+<td style="text-align: left;">Fête mobile, le jour après la Pentecôte.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">MAYDAY</td>
+<td style="text-align: left;">Fête fixe, 1er mai.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">ASSUMPTION</td>
+<td style="text-align: left;">Fête fixe, 15 août.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">HALLOWEEN</td>
+<td style="text-align: left;">Fête fixe, 31 octobre.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">ALLSAINTSDAY</td>
+<td style="text-align: left;">Fête fixe, 1er novembre.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">ARMISTICE</td>
+<td style="text-align: left;">Fête fixe, 11 novembre.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">CHRISTMAS</td>
+<td style="text-align: left;">Fête fixe, 25 décembre.</td>
+</tr>
+</tbody>
+</table>
+
+
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Exercice
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Créer un calendrier qui contient tous les jours fériés de votre pays.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Deux exemples :</p>
+<ol type="1">
+<li>Calendrier associé à la France :</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>FR <span class="ot">&lt;-</span> <span class="fu">list</span>(</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">special_day</span>(<span class="st">"NEWYEAR"</span>),</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">special_day</span>(<span class="st">"EASTERMONDAY"</span>), <span class="co"># Lundi de Pâques</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">special_day</span>(<span class="st">"MAYDAY"</span>), <span class="co"># 1er mai</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">special_day</span>(<span class="st">"ASCENSION"</span>), <span class="co"># Jour de l'Ascension</span></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">fixed_day</span>(<span class="dv">5</span>, <span class="dv">8</span>),</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">special_day</span>(<span class="st">"WHITMONDAY"</span>), <span class="co"># Lundi de Pentecôte</span></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">fixed_day</span>(<span class="dv">7</span>, <span class="dv">14</span>),</span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">special_day</span>(<span class="st">"ASSUMPTION"</span>), <span class="co"># Assomption</span></span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>    <span class="fu">special_day</span>(<span class="st">"ALLSAINTSDAY"</span>), <span class="co"># Toussaint</span></span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>    <span class="fu">special_day</span>(<span class="st">"ARMISTICE"</span>)</span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a>CAL <span class="ot">&lt;-</span> <span class="fu">national_calendar</span>(FR)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ol start="2" type="1">
+<li>Calendrier associé à la Macronia, la difficulté étant qu’il faut ajouter à la main des jours associés aux fêtes musulmanes</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>jours_macronia <span class="ot">&lt;-</span> <span class="fu">list</span>(</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">special_day</span>(<span class="st">"NEWYEAR"</span>),</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">special_day</span>(<span class="st">"EASTERMONDAY"</span>), <span class="co"># Lundi de Pâques</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fixed_day</span>(<span class="dv">4</span>, <span class="dv">4</span>), <span class="co"># Jour de l'indépendance de la Macronia</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">special_day</span>(<span class="st">"MAYDAY"</span>), <span class="co"># 1er mai</span></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">special_day</span>(<span class="st">"ASCENSION"</span>), <span class="co"># Jour de l'Ascension</span></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">special_day</span>(<span class="st">"WHITMONDAY"</span>), <span class="co"># Lundi de Pentecôte</span></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">special_day</span>(<span class="st">"ASSUMPTION"</span>), <span class="co"># Assomption de Marie</span></span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">special_day</span>(<span class="st">"ALLSAINTSDAY"</span>), <span class="co"># Toussaint</span></span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">special_day</span>(<span class="st">"CHRISTMAS"</span>) <span class="co"># Noël</span></span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a><span class="co"># # Manque Début ramadan, Korité (Aïd al-Fitr), Tabaski (Aïd el-Kébir), Tamkharite, Magal de Touba (non officiel), Maouloud et jours décrétés</span></span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a><span class="co"># # On récupère ces jours construisant un fichier Excel</span></span>
+<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a><span class="co"># jours_mobiles &lt;- readxl::read_excel("ex-cjo/DateFetesMusulmanes_Macronia.xlsx") |&gt;</span></span>
+<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a><span class="co">#   as.data.frame()</span></span>
+<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a><span class="co"># jours_mobiles &lt;- jours_mobiles[,-1] #on enlève l'année</span></span>
+<span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a><span class="co"># jours_mobiles &lt;- lapply(jours_mobiles, function(x){</span></span>
+<span id="cb9-18"><a href="#cb9-18" aria-hidden="true" tabindex="-1"></a><span class="co">#   na.omit(as.character(format(x, "%Y-%m-%d")))</span></span>
+<span id="cb9-19"><a href="#cb9-19" aria-hidden="true" tabindex="-1"></a><span class="co">#   })</span></span>
+<span id="cb9-20"><a href="#cb9-20" aria-hidden="true" tabindex="-1"></a><span class="co"># cat(unlist(lapply(names(jours_mobiles), function(day){</span></span>
+<span id="cb9-21"><a href="#cb9-21" aria-hidden="true" tabindex="-1"></a><span class="co">#   c(</span></span>
+<span id="cb9-22"><a href="#cb9-22" aria-hidden="true" tabindex="-1"></a><span class="co">#     sprintf("# %s", day),</span></span>
+<span id="cb9-23"><a href="#cb9-23" aria-hidden="true" tabindex="-1"></a><span class="co">#     sprintf('single_day("%s")', jours_mobiles[[day]])</span></span>
+<span id="cb9-24"><a href="#cb9-24" aria-hidden="true" tabindex="-1"></a><span class="co">#   )</span></span>
+<span id="cb9-25"><a href="#cb9-25" aria-hidden="true" tabindex="-1"></a><span class="co"># })),</span></span>
+<span id="cb9-26"><a href="#cb9-26" aria-hidden="true" tabindex="-1"></a><span class="co">#   sep= ",\n")</span></span>
+<span id="cb9-27"><a href="#cb9-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-28"><a href="#cb9-28" aria-hidden="true" tabindex="-1"></a>jours_macronia <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
+<span id="cb9-29"><a href="#cb9-29" aria-hidden="true" tabindex="-1"></a>  jours_macronia,</span>
+<span id="cb9-30"><a href="#cb9-30" aria-hidden="true" tabindex="-1"></a>  <span class="fu">list</span>(</span>
+<span id="cb9-31"><a href="#cb9-31" aria-hidden="true" tabindex="-1"></a>    <span class="co"># DEBUT_RAMADAN,</span></span>
+<span id="cb9-32"><a href="#cb9-32" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"1990-03-28"</span>),</span>
+<span id="cb9-33"><a href="#cb9-33" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"1991-03-18"</span>),</span>
+<span id="cb9-34"><a href="#cb9-34" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"1992-03-06"</span>),</span>
+<span id="cb9-35"><a href="#cb9-35" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"1993-02-23"</span>),</span>
+<span id="cb9-36"><a href="#cb9-36" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"1994-02-12"</span>),</span>
+<span id="cb9-37"><a href="#cb9-37" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"1995-02-14"</span>),</span>
+<span id="cb9-38"><a href="#cb9-38" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"1996-01-22"</span>),</span>
+<span id="cb9-39"><a href="#cb9-39" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"1997-01-11"</span>),</span>
+<span id="cb9-40"><a href="#cb9-40" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"1997-12-31"</span>),</span>
+<span id="cb9-41"><a href="#cb9-41" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"1998-12-20"</span>),</span>
+<span id="cb9-42"><a href="#cb9-42" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"1999-12-10"</span>),</span>
+<span id="cb9-43"><a href="#cb9-43" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2000-11-28"</span>),</span>
+<span id="cb9-44"><a href="#cb9-44" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2001-11-17"</span>),</span>
+<span id="cb9-45"><a href="#cb9-45" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2002-11-07"</span>),</span>
+<span id="cb9-46"><a href="#cb9-46" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2003-10-27"</span>),</span>
+<span id="cb9-47"><a href="#cb9-47" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2004-10-15"</span>),</span>
+<span id="cb9-48"><a href="#cb9-48" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2005-10-05"</span>),</span>
+<span id="cb9-49"><a href="#cb9-49" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2006-09-24"</span>),</span>
+<span id="cb9-50"><a href="#cb9-50" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2007-09-14"</span>),</span>
+<span id="cb9-51"><a href="#cb9-51" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2008-09-02"</span>),</span>
+<span id="cb9-52"><a href="#cb9-52" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2009-08-22"</span>),</span>
+<span id="cb9-53"><a href="#cb9-53" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2010-08-12"</span>),</span>
+<span id="cb9-54"><a href="#cb9-54" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2011-08-01"</span>),</span>
+<span id="cb9-55"><a href="#cb9-55" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2012-07-20"</span>),</span>
+<span id="cb9-56"><a href="#cb9-56" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2013-07-10"</span>),</span>
+<span id="cb9-57"><a href="#cb9-57" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2014-06-29"</span>),</span>
+<span id="cb9-58"><a href="#cb9-58" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2015-07-18"</span>),</span>
+<span id="cb9-59"><a href="#cb9-59" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2016-06-07"</span>),</span>
+<span id="cb9-60"><a href="#cb9-60" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2017-05-27"</span>),</span>
+<span id="cb9-61"><a href="#cb9-61" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2018-05-17"</span>),</span>
+<span id="cb9-62"><a href="#cb9-62" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2019-05-06"</span>),</span>
+<span id="cb9-63"><a href="#cb9-63" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2020-04-24"</span>),</span>
+<span id="cb9-64"><a href="#cb9-64" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2021-04-14"</span>),</span>
+<span id="cb9-65"><a href="#cb9-65" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2022-04-03"</span>),</span>
+<span id="cb9-66"><a href="#cb9-66" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2023-03-23"</span>),</span>
+<span id="cb9-67"><a href="#cb9-67" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2024-03-12"</span>),</span>
+<span id="cb9-68"><a href="#cb9-68" aria-hidden="true" tabindex="-1"></a><span class="co"># KORITE,</span></span>
+<span id="cb9-69"><a href="#cb9-69" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"1990-04-27"</span>),</span>
+<span id="cb9-70"><a href="#cb9-70" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"1991-04-16"</span>),</span>
+<span id="cb9-71"><a href="#cb9-71" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"1992-04-04"</span>),</span>
+<span id="cb9-72"><a href="#cb9-72" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"1993-03-25"</span>),</span>
+<span id="cb9-73"><a href="#cb9-73" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"1994-03-14"</span>),</span>
+<span id="cb9-74"><a href="#cb9-74" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"1995-03-03"</span>),</span>
+<span id="cb9-75"><a href="#cb9-75" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"1996-02-09"</span>),</span>
+<span id="cb9-76"><a href="#cb9-76" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"1997-02-09"</span>),</span>
+<span id="cb9-77"><a href="#cb9-77" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"1998-01-29"</span>),</span>
+<span id="cb9-78"><a href="#cb9-78" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"1999-01-18"</span>),</span>
+<span id="cb9-79"><a href="#cb9-79" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2000-01-08"</span>),</span>
+<span id="cb9-80"><a href="#cb9-80" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2000-12-27"</span>),</span>
+<span id="cb9-81"><a href="#cb9-81" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2001-12-16"</span>),</span>
+<span id="cb9-82"><a href="#cb9-82" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2002-12-06"</span>),</span>
+<span id="cb9-83"><a href="#cb9-83" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2003-11-25"</span>),</span>
+<span id="cb9-84"><a href="#cb9-84" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2004-11-13"</span>),</span>
+<span id="cb9-85"><a href="#cb9-85" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2005-11-03"</span>),</span>
+<span id="cb9-86"><a href="#cb9-86" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2006-10-23"</span>),</span>
+<span id="cb9-87"><a href="#cb9-87" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2007-10-13"</span>),</span>
+<span id="cb9-88"><a href="#cb9-88" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2008-10-01"</span>),</span>
+<span id="cb9-89"><a href="#cb9-89" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2009-09-20"</span>),</span>
+<span id="cb9-90"><a href="#cb9-90" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2010-09-09"</span>),</span>
+<span id="cb9-91"><a href="#cb9-91" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2011-08-29"</span>),</span>
+<span id="cb9-92"><a href="#cb9-92" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2012-08-17"</span>),</span>
+<span id="cb9-93"><a href="#cb9-93" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2013-08-07"</span>),</span>
+<span id="cb9-94"><a href="#cb9-94" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2014-07-27"</span>),</span>
+<span id="cb9-95"><a href="#cb9-95" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2015-07-16"</span>),</span>
+<span id="cb9-96"><a href="#cb9-96" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2016-07-05"</span>),</span>
+<span id="cb9-97"><a href="#cb9-97" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2017-06-24"</span>),</span>
+<span id="cb9-98"><a href="#cb9-98" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2018-06-14"</span>),</span>
+<span id="cb9-99"><a href="#cb9-99" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2019-06-03"</span>),</span>
+<span id="cb9-100"><a href="#cb9-100" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2020-05-22"</span>),</span>
+<span id="cb9-101"><a href="#cb9-101" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2021-05-12"</span>),</span>
+<span id="cb9-102"><a href="#cb9-102" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2022-05-01"</span>),</span>
+<span id="cb9-103"><a href="#cb9-103" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2023-04-20"</span>),</span>
+<span id="cb9-104"><a href="#cb9-104" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2024-04-10"</span>),</span>
+<span id="cb9-105"><a href="#cb9-105" aria-hidden="true" tabindex="-1"></a><span class="co"># TABASKI,</span></span>
+<span id="cb9-106"><a href="#cb9-106" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"1990-06-24"</span>),</span>
+<span id="cb9-107"><a href="#cb9-107" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"1991-06-23"</span>),</span>
+<span id="cb9-108"><a href="#cb9-108" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"1992-06-11"</span>),</span>
+<span id="cb9-109"><a href="#cb9-109" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"1993-06-01"</span>),</span>
+<span id="cb9-110"><a href="#cb9-110" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"1994-05-21"</span>),</span>
+<span id="cb9-111"><a href="#cb9-111" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"1995-05-10"</span>),</span>
+<span id="cb9-112"><a href="#cb9-112" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"1996-04-29"</span>),</span>
+<span id="cb9-113"><a href="#cb9-113" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"1997-04-19"</span>),</span>
+<span id="cb9-114"><a href="#cb9-114" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"1998-04-08"</span>),</span>
+<span id="cb9-115"><a href="#cb9-115" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"1999-03-28"</span>),</span>
+<span id="cb9-116"><a href="#cb9-116" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2000-03-17"</span>),</span>
+<span id="cb9-117"><a href="#cb9-117" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2001-03-06"</span>),</span>
+<span id="cb9-118"><a href="#cb9-118" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2002-02-23"</span>),</span>
+<span id="cb9-119"><a href="#cb9-119" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2003-02-13"</span>),</span>
+<span id="cb9-120"><a href="#cb9-120" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2004-02-02"</span>),</span>
+<span id="cb9-121"><a href="#cb9-121" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2005-01-21"</span>),</span>
+<span id="cb9-122"><a href="#cb9-122" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2006-01-11"</span>),</span>
+<span id="cb9-123"><a href="#cb9-123" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2006-12-31"</span>),</span>
+<span id="cb9-124"><a href="#cb9-124" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2007-12-21"</span>),</span>
+<span id="cb9-125"><a href="#cb9-125" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2008-12-09"</span>),</span>
+<span id="cb9-126"><a href="#cb9-126" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2009-11-11"</span>),</span>
+<span id="cb9-127"><a href="#cb9-127" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2010-11-18"</span>),</span>
+<span id="cb9-128"><a href="#cb9-128" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2011-11-07"</span>),</span>
+<span id="cb9-129"><a href="#cb9-129" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2012-10-26"</span>),</span>
+<span id="cb9-130"><a href="#cb9-130" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2013-10-16"</span>),</span>
+<span id="cb9-131"><a href="#cb9-131" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2014-10-05"</span>),</span>
+<span id="cb9-132"><a href="#cb9-132" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2015-09-25"</span>),</span>
+<span id="cb9-133"><a href="#cb9-133" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2016-09-13"</span>),</span>
+<span id="cb9-134"><a href="#cb9-134" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2017-09-02"</span>),</span>
+<span id="cb9-135"><a href="#cb9-135" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2018-08-23"</span>),</span>
+<span id="cb9-136"><a href="#cb9-136" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2019-08-12"</span>),</span>
+<span id="cb9-137"><a href="#cb9-137" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2020-07-31"</span>),</span>
+<span id="cb9-138"><a href="#cb9-138" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2021-07-21"</span>),</span>
+<span id="cb9-139"><a href="#cb9-139" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2022-06-10"</span>),</span>
+<span id="cb9-140"><a href="#cb9-140" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2023-06-29"</span>),</span>
+<span id="cb9-141"><a href="#cb9-141" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2024-06-18"</span>),</span>
+<span id="cb9-142"><a href="#cb9-142" aria-hidden="true" tabindex="-1"></a><span class="co"># TAMKHARITE,</span></span>
+<span id="cb9-143"><a href="#cb9-143" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"1990-07-04"</span>),</span>
+<span id="cb9-144"><a href="#cb9-144" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"1991-07-22"</span>),</span>
+<span id="cb9-145"><a href="#cb9-145" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"1992-07-11"</span>),</span>
+<span id="cb9-146"><a href="#cb9-146" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"1993-06-30"</span>),</span>
+<span id="cb9-147"><a href="#cb9-147" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"1994-06-19"</span>),</span>
+<span id="cb9-148"><a href="#cb9-148" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"1995-06-09"</span>),</span>
+<span id="cb9-149"><a href="#cb9-149" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"1996-05-28"</span>),</span>
+<span id="cb9-150"><a href="#cb9-150" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"1997-05-18"</span>),</span>
+<span id="cb9-151"><a href="#cb9-151" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"1998-05-07"</span>),</span>
+<span id="cb9-152"><a href="#cb9-152" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"1999-04-26"</span>),</span>
+<span id="cb9-153"><a href="#cb9-153" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2000-04-15"</span>),</span>
+<span id="cb9-154"><a href="#cb9-154" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2001-04-04"</span>),</span>
+<span id="cb9-155"><a href="#cb9-155" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2002-03-24"</span>),</span>
+<span id="cb9-156"><a href="#cb9-156" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2003-03-14"</span>),</span>
+<span id="cb9-157"><a href="#cb9-157" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2004-03-02"</span>),</span>
+<span id="cb9-158"><a href="#cb9-158" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2005-02-19"</span>),</span>
+<span id="cb9-159"><a href="#cb9-159" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2006-02-09"</span>),</span>
+<span id="cb9-160"><a href="#cb9-160" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2007-01-29"</span>),</span>
+<span id="cb9-161"><a href="#cb9-161" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2008-01-19"</span>),</span>
+<span id="cb9-162"><a href="#cb9-162" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2009-01-07"</span>),</span>
+<span id="cb9-163"><a href="#cb9-163" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2009-12-27"</span>),</span>
+<span id="cb9-164"><a href="#cb9-164" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2010-12-17"</span>),</span>
+<span id="cb9-165"><a href="#cb9-165" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2011-12-06"</span>),</span>
+<span id="cb9-166"><a href="#cb9-166" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2012-11-24"</span>),</span>
+<span id="cb9-167"><a href="#cb9-167" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2013-11-14"</span>),</span>
+<span id="cb9-168"><a href="#cb9-168" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2014-11-03"</span>),</span>
+<span id="cb9-169"><a href="#cb9-169" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2015-11-30"</span>),</span>
+<span id="cb9-170"><a href="#cb9-170" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2016-10-12"</span>),</span>
+<span id="cb9-171"><a href="#cb9-171" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2017-10-01"</span>),</span>
+<span id="cb9-172"><a href="#cb9-172" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2018-09-21"</span>),</span>
+<span id="cb9-173"><a href="#cb9-173" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2019-09-10"</span>),</span>
+<span id="cb9-174"><a href="#cb9-174" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2020-08-29"</span>),</span>
+<span id="cb9-175"><a href="#cb9-175" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2021-08-19"</span>),</span>
+<span id="cb9-176"><a href="#cb9-176" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2022-08-08"</span>),</span>
+<span id="cb9-177"><a href="#cb9-177" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2023-07-28"</span>),</span>
+<span id="cb9-178"><a href="#cb9-178" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2024-07-17"</span>),</span>
+<span id="cb9-179"><a href="#cb9-179" aria-hidden="true" tabindex="-1"></a><span class="co"># MAOULOUD,</span></span>
+<span id="cb9-180"><a href="#cb9-180" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"1990-10-02"</span>),</span>
+<span id="cb9-181"><a href="#cb9-181" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"1991-09-21"</span>),</span>
+<span id="cb9-182"><a href="#cb9-182" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"1992-09-10"</span>),</span>
+<span id="cb9-183"><a href="#cb9-183" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"1993-08-30"</span>),</span>
+<span id="cb9-184"><a href="#cb9-184" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"1994-08-19"</span>),</span>
+<span id="cb9-185"><a href="#cb9-185" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"1995-08-09"</span>),</span>
+<span id="cb9-186"><a href="#cb9-186" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"1996-07-28"</span>),</span>
+<span id="cb9-187"><a href="#cb9-187" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"1997-07-18"</span>),</span>
+<span id="cb9-188"><a href="#cb9-188" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"1998-07-07"</span>),</span>
+<span id="cb9-189"><a href="#cb9-189" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"1999-06-26"</span>),</span>
+<span id="cb9-190"><a href="#cb9-190" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2000-06-15"</span>),</span>
+<span id="cb9-191"><a href="#cb9-191" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2001-06-04"</span>),</span>
+<span id="cb9-192"><a href="#cb9-192" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2002-05-24"</span>),</span>
+<span id="cb9-193"><a href="#cb9-193" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2003-05-14"</span>),</span>
+<span id="cb9-194"><a href="#cb9-194" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2004-05-02"</span>),</span>
+<span id="cb9-195"><a href="#cb9-195" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2005-04-21"</span>),</span>
+<span id="cb9-196"><a href="#cb9-196" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2006-04-11"</span>),</span>
+<span id="cb9-197"><a href="#cb9-197" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2007-03-31"</span>),</span>
+<span id="cb9-198"><a href="#cb9-198" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2008-03-20"</span>),</span>
+<span id="cb9-199"><a href="#cb9-199" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2009-03-09"</span>),</span>
+<span id="cb9-200"><a href="#cb9-200" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2010-02-26"</span>),</span>
+<span id="cb9-201"><a href="#cb9-201" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2011-02-16"</span>),</span>
+<span id="cb9-202"><a href="#cb9-202" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2012-02-05"</span>),</span>
+<span id="cb9-203"><a href="#cb9-203" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2013-01-24"</span>),</span>
+<span id="cb9-204"><a href="#cb9-204" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2014-01-14"</span>),</span>
+<span id="cb9-205"><a href="#cb9-205" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2015-01-03"</span>),</span>
+<span id="cb9-206"><a href="#cb9-206" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2015-11-23"</span>),</span>
+<span id="cb9-207"><a href="#cb9-207" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2016-12-12"</span>),</span>
+<span id="cb9-208"><a href="#cb9-208" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2018-12-01"</span>),</span>
+<span id="cb9-209"><a href="#cb9-209" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2018-11-21"</span>),</span>
+<span id="cb9-210"><a href="#cb9-210" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2019-11-18"</span>),</span>
+<span id="cb9-211"><a href="#cb9-211" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2020-10-29"</span>),</span>
+<span id="cb9-212"><a href="#cb9-212" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2021-10-19"</span>),</span>
+<span id="cb9-213"><a href="#cb9-213" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2022-10-08"</span>),</span>
+<span id="cb9-214"><a href="#cb9-214" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2023-09-27"</span>),</span>
+<span id="cb9-215"><a href="#cb9-215" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2024-09-15"</span>),</span>
+<span id="cb9-216"><a href="#cb9-216" aria-hidden="true" tabindex="-1"></a><span class="co"># MAGAL,</span></span>
+<span id="cb9-217"><a href="#cb9-217" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"1990-09-09"</span>),</span>
+<span id="cb9-218"><a href="#cb9-218" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"1991-08-29"</span>),</span>
+<span id="cb9-219"><a href="#cb9-219" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"1992-09-18"</span>),</span>
+<span id="cb9-220"><a href="#cb9-220" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"1993-10-07"</span>),</span>
+<span id="cb9-221"><a href="#cb9-221" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"1994-07-27"</span>),</span>
+<span id="cb9-222"><a href="#cb9-222" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"1995-07-17"</span>),</span>
+<span id="cb9-223"><a href="#cb9-223" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"1996-07-05"</span>),</span>
+<span id="cb9-224"><a href="#cb9-224" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"1997-06-25"</span>),</span>
+<span id="cb9-225"><a href="#cb9-225" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"1998-06-14"</span>),</span>
+<span id="cb9-226"><a href="#cb9-226" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"1999-06-03"</span>),</span>
+<span id="cb9-227"><a href="#cb9-227" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2000-05-23"</span>),</span>
+<span id="cb9-228"><a href="#cb9-228" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2001-05-12"</span>),</span>
+<span id="cb9-229"><a href="#cb9-229" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2002-05-01"</span>),</span>
+<span id="cb9-230"><a href="#cb9-230" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2003-04-21"</span>),</span>
+<span id="cb9-231"><a href="#cb9-231" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2004-04-09"</span>),</span>
+<span id="cb9-232"><a href="#cb9-232" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2005-03-29"</span>),</span>
+<span id="cb9-233"><a href="#cb9-233" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2006-03-19"</span>),</span>
+<span id="cb9-234"><a href="#cb9-234" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2007-03-08"</span>),</span>
+<span id="cb9-235"><a href="#cb9-235" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2008-02-26"</span>),</span>
+<span id="cb9-236"><a href="#cb9-236" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2009-02-14"</span>),</span>
+<span id="cb9-237"><a href="#cb9-237" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2010-02-03"</span>),</span>
+<span id="cb9-238"><a href="#cb9-238" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2011-01-03"</span>),</span>
+<span id="cb9-239"><a href="#cb9-239" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2012-01-13"</span>),</span>
+<span id="cb9-240"><a href="#cb9-240" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2013-01-01"</span>),</span>
+<span id="cb9-241"><a href="#cb9-241" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2013-12-22"</span>),</span>
+<span id="cb9-242"><a href="#cb9-242" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2014-12-11"</span>),</span>
+<span id="cb9-243"><a href="#cb9-243" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2015-12-01"</span>),</span>
+<span id="cb9-244"><a href="#cb9-244" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2016-11-19"</span>),</span>
+<span id="cb9-245"><a href="#cb9-245" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2017-11-08"</span>),</span>
+<span id="cb9-246"><a href="#cb9-246" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2018-10-29"</span>),</span>
+<span id="cb9-247"><a href="#cb9-247" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2019-10-18"</span>),</span>
+<span id="cb9-248"><a href="#cb9-248" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2020-10-06"</span>),</span>
+<span id="cb9-249"><a href="#cb9-249" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2021-09-26"</span>),</span>
+<span id="cb9-250"><a href="#cb9-250" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2022-09-15"</span>),</span>
+<span id="cb9-251"><a href="#cb9-251" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2023-09-04"</span>),</span>
+<span id="cb9-252"><a href="#cb9-252" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2024-08-23"</span>)</span>
+<span id="cb9-253"><a href="#cb9-253" aria-hidden="true" tabindex="-1"></a>  ))</span>
+<span id="cb9-254"><a href="#cb9-254" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-255"><a href="#cb9-255" aria-hidden="true" tabindex="-1"></a>CAL <span class="ot">&lt;-</span> <span class="fu">national_calendar</span>(jours_macronia)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="création-de-régresseurs-jo" class="level2" data-number="1.2">
+<h2 data-number="1.2" class="anchored" data-anchor-id="création-de-régresseurs-jo"><span class="header-section-number">1.2</span> Création de régresseurs JO</h2>
+<p>Le modèle général de correction de jours ouvrables peut s’écrire de la façon suivante : <span class="math display">\[
+X_t = \sum_{i=1}^{7} \alpha_i N_{it} + \varepsilon_t
+\]</span> Avec :</p>
+<ul>
+<li><p><span class="math inline">\(N_{it}\)</span> le nombre de jours de lundis (<span class="math inline">\(i=1\)</span>), …, dimanches et jours fériés (<span class="math inline">\(i=7\)</span>)</p></li>
+<li><p><span class="math inline">\(\alpha_i\)</span> l’effet d’un jour de type <span class="math inline">\(i\)</span></p></li>
+</ul>
+<p>Pour éviter les problèmes de multi-colinéarité, on réécrit le modèle en utilisant une modalité de référence (ici dimanche). On désaisonnalise également les régresseurs en enlevant la moyenne de long-terme : <span class="math display">\[X_t =  \sum_{i=1}^{6} \beta_i (N_{it} - N_{7t}) +
+\bar{\alpha} \underbrace{(N_t - \bar{N}_t)}_{LY_t} +  \varepsilon_t\]</span> Ce modèle peut être simplifié si en faisant des hypothèses sur les effets des jours ouvrés :</p>
+<ul>
+<li><p>L’hypothèse <em>working days</em> correspond au cas où l’on suppose que tous les jours de la semaine (lundi à vendredi) ont le même effet (<span class="math inline">\(\alpha_1=\dots=\alpha_5\)</span>), les samedis et les dimanches (et jours fériés) ont le même effet (<span class="math inline">\(\alpha_6=\alpha_7\)</span>) et sont utilisés en tant que variable de contraste.</p></li>
+<li><p>L’hypothèse <em>trading days</em> correspond au cas où l’on suppose que tous les jours ont un effet différent et les dimanches (et jours fériés) sont utilisés en tant que variable de constrate.</p></li>
+</ul>
+<p>Sous JDemetra+ on ne peut utiliser que ces deux hypothèses mais <code>rjd3toolkit</code> permet de construire d’autres types de JO.</p>
+<p>De manière plus générale, lorsque l’on utilise une variable de contraste, les régresseurs <span class="math inline">\(CJO_{t,i}\)</span> associé au groupe <span class="math inline">\(i\)</span> est calculé de la façon suivante : <span class="math display">\[
+CJO_{t,i} = \underbrace{\sum_{j\in\text{groupe }i}N_{jt}}_{
+\text{nb de jours du groupe }i
+} -
+\frac{\sum_{j\in\text{groupe }i}1}{\sum_{j\in\text{groupe }0}1}
+\times
+\underbrace{\sum_{j\in\text{groupe }0}N_{jt}}_{
+\text{nb de jours du groupe contraste}
+}
+\]</span> Dans le cas <em>working days</em>, il y a 2 jours dans le groupe contraste (samedi et dimanche, <span class="math inline">\(\sum_{j\in\text{groupe }0}1=2\)</span>) et 5 jours dans le groupe 1 (lundi à vendredi, <span class="math inline">\(\sum_{j\in\text{groupe }1}1=5\)</span>). Au mois <span class="math inline">\(t\)</span>, le régresseurs JO type de jours est donc égal au nombre de jours de la semaine dans le mois, mois <span class="math inline">\(5/2\times\)</span> nombre de jours de week-end.</p>
+<p>Les régresseurs JO peuvent être créés à partir de 2 fonctions : <code>htd()</code> qui permet de les créer à partir d’un calendrier spécifique et <code>td()</code>. Dans ces fonctions, le paramètre le plus important est <code>groups</code> pour permet de faire des hypothèses sur les jours. C’est un vecteur de longueur 7 (le nombre de jours de la semaine) dont chaque élément indique à quel groupe le jour de la semaine associé correspond. La variable de contraste est associé au groupe 0.<br>
+Par exemple, <code>groups = c(1,2,3,4,5,6,0)</code> correspond au <em>trading days</em> et <code>groups = c(1,1,1,1,1,0,0)</code> correspond au <em>working days</em>.</p>
+<p>Par exemple :</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>groups <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>, <span class="dv">0</span>)</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>frequency <span class="ot">&lt;-</span> <span class="dv">12</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>start <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2000</span>,<span class="dv">1</span>)</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>wkd <span class="ot">&lt;-</span> <span class="fu">calendar_td</span>(CAL, <span class="at">frequency =</span> frequency, <span class="at">start =</span> start, <span class="at">length =</span> <span class="dv">12</span><span class="sc">*</span><span class="dv">35</span>,</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>                   <span class="at">groups =</span> groups)</span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>wkd <span class="ot">&lt;-</span> <span class="fu">ts</span>(wkd, <span class="at">start =</span> start, <span class="at">frequency =</span> frequency)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Exercice
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Comparer le régresseurs JO <em>working days</em> créé avec personnalisé et celui sans hypothèse sur les jours fériés (fonction <code>td()</code>).</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Les régresseurs sont bien différents :</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>groups <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">0</span>)</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>frequency <span class="ot">&lt;-</span> <span class="dv">12</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>start <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2000</span>,<span class="dv">1</span>)</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>wkd <span class="ot">&lt;-</span> <span class="fu">calendar_td</span>(CAL, <span class="at">frequency =</span> frequency, <span class="at">start =</span> start, <span class="at">length =</span> <span class="dv">12</span><span class="sc">*</span><span class="dv">35</span>,</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>                   <span class="at">groups =</span> groups)</span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>wkd_def <span class="ot">&lt;-</span> <span class="fu">td</span>(<span class="at">frequency =</span> frequency, <span class="at">start =</span> start, <span class="at">length =</span> <span class="dv">12</span><span class="sc">*</span><span class="dv">35</span>,</span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>              <span class="at">groups =</span> groups)</span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(wkd <span class="sc">-</span> wkd_def,<span class="dv">1</span>)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>      Jan  Feb  Mar  Apr  May  Jun  Jul  Aug  Sep  Oct  Nov  Dec
+2000  2.5  0.0 -2.8 -1.7  1.0 -9.0  0.0 -1.0  0.0  0.0 -4.5 -4.5
+2001 -1.0  0.0 -2.8 -1.7  1.0 -2.0  0.0 -1.0  0.0  0.0 -1.0 -1.0
+2002 -1.0  0.0  0.7 -1.7 -6.0  1.5  0.0 -1.0  0.0  0.0 -4.5 -4.5
+2003 -1.0 -3.5 -2.8 -1.7 -2.5 -2.0  0.0 -1.0  0.0 -3.5 -1.0 -1.0
+2004 -1.0 -3.5 -2.8 -1.7  1.0  1.5  0.0  2.5  0.0 -3.5 -1.0  2.5
+2005 -1.0  0.0 -6.3 -1.7  1.0  1.5  0.0 -1.0  0.0 -3.5 -4.5  2.5
+2006 -1.0 -3.5  0.7 -5.2  1.0 -2.0  0.0 -1.0  0.0 -3.5 -1.0 -1.0
+2007 -4.5  0.0 -2.8 -1.7 -2.5  1.5  0.0 -1.0 -3.5  0.0 -1.0 -4.5
+2008 -1.0 -3.5 -6.3  1.8  1.0  1.5  0.0 -1.0 -3.5 -3.5  2.5 -4.5
+2009 -4.5  0.0 -2.8  1.8  1.0 -2.0  0.0  2.5  0.0  0.0 -1.0 -1.0
+2010 -1.0 -7.0  0.7  1.8  1.0  1.5  0.0 -1.0 -3.5  0.0 -4.5 -1.0
+2011 -1.0 -3.5  0.7 -1.7  8.0 -5.5  0.0 -8.0  0.0  0.0 -4.5 -1.0
+2012 -1.0  0.0  0.7 -1.7 -2.5  1.5 -3.5 -4.5  0.0 -3.5 -1.0 -1.0
+2013 -4.5  0.0  0.7 -1.7 -2.5  1.5 -3.5 -4.5  0.0 -3.5 -4.5 -1.0
+2014 -4.5  0.0  0.7 -1.7  1.0 -2.0  0.0 -1.0  0.0  0.0 -1.0 -4.5
+2015 -1.0  0.0  0.7  1.8 -2.5  1.5 -3.5  2.5 -3.5  0.0 -4.5 -4.5
+2016 -1.0  0.0 -2.8  1.8  1.0 -2.0 -3.5 -1.0 -3.5 -3.5 -1.0 -1.0
+2017  2.5  0.0  0.7 -1.7  1.0 -2.0  0.0 -1.0  0.0  0.0 -4.5 -1.0
+2018 -1.0  0.0  0.7 -1.7 -6.0 -2.0  0.0 -4.5 -3.5 -3.5 -4.5 -1.0
+2019 -1.0  0.0  0.7 -1.7 -2.5 -5.5  0.0 -4.5 -3.5 -3.5 -4.5 -1.0
+2020 -1.0  0.0  0.7 -1.7 -2.5 -2.0 -3.5  2.5  0.0 -7.0  2.5 -1.0
+2021 -1.0  0.0  0.7 -1.7 -2.5  1.5 -3.5 -1.0  0.0 -3.5 -1.0  2.5
+2022  2.5  0.0  0.7 -1.7  4.5 -5.5  0.0 -4.5 -3.5  0.0 -1.0  2.5
+2023  2.5  0.0 -2.8 -5.2 -2.5 -2.0 -3.5 -1.0 -7.0  0.0 -1.0 -1.0
+2024 -1.0  0.0 -2.8 -5.2 -2.5 -2.0 -3.5 -4.5  0.0  0.0 -1.0 -1.0
+2025 -1.0  0.0  0.7 -1.7  1.0 -2.0  0.0 -1.0  0.0  0.0  2.5 -1.0
+2026 -1.0  0.0  0.7  1.8 -2.5  1.5  0.0  2.5  0.0  0.0  2.5 -1.0
+2027 -1.0  0.0 -2.8  5.3  1.0  1.5  0.0  2.5  0.0  0.0 -1.0  2.5
+2028  2.5  0.0  0.7 -1.7  1.0 -2.0  0.0 -1.0  0.0  0.0 -1.0 -1.0
+2029 -1.0  0.0  0.7 -1.7 -2.5  1.5  0.0 -1.0  0.0  0.0 -1.0 -1.0
+2030 -1.0  0.0  0.7 -1.7  1.0 -2.0  0.0 -1.0  0.0  0.0 -1.0 -1.0
+2031 -1.0  0.0  0.7 -1.7  1.0 -2.0  0.0 -1.0  0.0  0.0  2.5 -1.0
+2032 -1.0  0.0 -2.8  5.3  1.0  1.5  0.0  2.5  0.0  0.0 -1.0  2.5
+2033  2.5  0.0  0.7 -1.7  4.5 -2.0  0.0 -1.0  0.0  0.0 -1.0  2.5
+2034  2.5  0.0  0.7 -1.7 -2.5  1.5  0.0 -1.0  0.0  0.0 -1.0 -1.0</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="régresseur-leap-year" class="level2" data-number="1.3">
+<h2 data-number="1.3" class="anchored" data-anchor-id="régresseur-leap-year"><span class="header-section-number">1.3</span> Régresseur <em>leap year</em></h2>
+<p>Le régresseur année bissextile (<em>leap year</em>), <span class="math inline">\(LY_t\)</span> doit être créé à la main. Il est égal à la différence entre le nombre de jours dans le mois <span class="math inline">\(t\)</span> et le nombre de jours moyens dans le mois <span class="math inline">\(t\)</span>, <span class="math inline">\(\bar N_t\)</span>. Tous les mois ont le même nombre de jours, sauf le mois de février qui est de 29 jours tous les 4 ans. <span class="math inline">\(\bar N_t\)</span> est donc égal à 30 ou 31 si le mois considéré n’est pas un mois de février (et donc <span class="math inline">\(N_t - \bar N_t=0\)</span>) à 28,25 en février<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>. <span class="math display">\[
+LY_{t} =
+\begin{cases}
+0,75 &amp; \mbox{si } t \mbox{ est un mois de février bissextil } \\
+-0,25 &amp; \mbox{si } t \mbox{ est un mois de février non bissextil } \\
+0 &amp; \mbox{sinon}
+\end{cases}
+\]</span></p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Exercice
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Créer une fonction <code>leap_year</code> qui permet de générer le régresseur <em>leap year</em>.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>leap_year <span class="ot">&lt;-</span> <span class="cf">function</span>(<span class="at">start =</span> <span class="dv">1990</span>, <span class="at">end =</span> <span class="dv">2030</span>, <span class="at">frequency =</span> <span class="dv">12</span>){</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>    ly <span class="ot">&lt;-</span> <span class="fu">ts</span>(<span class="dv">0</span>, <span class="at">start =</span> start, <span class="at">end =</span> end, <span class="at">frequency =</span> <span class="dv">12</span>)</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>    mois_feb <span class="ot">&lt;-</span> <span class="fu">cycle</span>(ly) <span class="sc">==</span> <span class="dv">2</span></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>    annees <span class="ot">&lt;-</span> <span class="fu">trunc</span>(<span class="fu">round</span>(<span class="fu">time</span>(ly), <span class="dv">3</span>)) <span class="co"># arrondi car parfois des pbs avec fonction time</span></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>    <span class="co"># On utilise la définition exacte</span></span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>    is_ly <span class="ot">&lt;-</span> (annees <span class="sc">%%</span> <span class="dv">400</span> <span class="sc">==</span> <span class="dv">0</span>) <span class="sc">|</span></span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>        ((annees <span class="sc">%%</span> <span class="dv">4</span> <span class="sc">==</span> <span class="dv">0</span>) <span class="sc">&amp;</span> (annees <span class="sc">%%</span> <span class="dv">100</span> <span class="sc">!=</span> <span class="dv">0</span>))</span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>    ly[mois_feb] <span class="ot">&lt;-</span> <span class="dv">28</span> <span class="sc">-</span> <span class="fl">28.2425</span></span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>    ly[mois_feb <span class="sc">&amp;</span> is_ly] <span class="ot">&lt;-</span> <span class="dv">29</span> <span class="sc">-</span> <span class="fl">28.2425</span></span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a>    <span class="co"># on change si besoin la fréquence</span></span>
+<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a>    stats<span class="sc">::</span><span class="fu">aggregate</span>(ly, <span class="at">nfrequency =</span> frequency) </span>
+<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a><span class="fu">leap_year</span>(<span class="at">frequency =</span> <span class="dv">12</span>)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>         Jan     Feb     Mar     Apr     May     Jun     Jul     Aug     Sep
+1990  0.0000 -0.2425  0.0000  0.0000  0.0000  0.0000  0.0000  0.0000  0.0000
+1991  0.0000 -0.2425  0.0000  0.0000  0.0000  0.0000  0.0000  0.0000  0.0000
+1992  0.0000  0.7575  0.0000  0.0000  0.0000  0.0000  0.0000  0.0000  0.0000
+1993  0.0000 -0.2425  0.0000  0.0000  0.0000  0.0000  0.0000  0.0000  0.0000
+1994  0.0000 -0.2425  0.0000  0.0000  0.0000  0.0000  0.0000  0.0000  0.0000
+1995  0.0000 -0.2425  0.0000  0.0000  0.0000  0.0000  0.0000  0.0000  0.0000
+1996  0.0000  0.7575  0.0000  0.0000  0.0000  0.0000  0.0000  0.0000  0.0000
+1997  0.0000 -0.2425  0.0000  0.0000  0.0000  0.0000  0.0000  0.0000  0.0000
+1998  0.0000 -0.2425  0.0000  0.0000  0.0000  0.0000  0.0000  0.0000  0.0000
+1999  0.0000 -0.2425  0.0000  0.0000  0.0000  0.0000  0.0000  0.0000  0.0000
+2000  0.0000  0.7575  0.0000  0.0000  0.0000  0.0000  0.0000  0.0000  0.0000
+2001  0.0000 -0.2425  0.0000  0.0000  0.0000  0.0000  0.0000  0.0000  0.0000
+2002  0.0000 -0.2425  0.0000  0.0000  0.0000  0.0000  0.0000  0.0000  0.0000
+2003  0.0000 -0.2425  0.0000  0.0000  0.0000  0.0000  0.0000  0.0000  0.0000
+2004  0.0000  0.7575  0.0000  0.0000  0.0000  0.0000  0.0000  0.0000  0.0000
+2005  0.0000 -0.2425  0.0000  0.0000  0.0000  0.0000  0.0000  0.0000  0.0000
+2006  0.0000 -0.2425  0.0000  0.0000  0.0000  0.0000  0.0000  0.0000  0.0000
+2007  0.0000 -0.2425  0.0000  0.0000  0.0000  0.0000  0.0000  0.0000  0.0000
+2008  0.0000  0.7575  0.0000  0.0000  0.0000  0.0000  0.0000  0.0000  0.0000
+2009  0.0000 -0.2425  0.0000  0.0000  0.0000  0.0000  0.0000  0.0000  0.0000
+2010  0.0000 -0.2425  0.0000  0.0000  0.0000  0.0000  0.0000  0.0000  0.0000
+2011  0.0000 -0.2425  0.0000  0.0000  0.0000  0.0000  0.0000  0.0000  0.0000
+2012  0.0000  0.7575  0.0000  0.0000  0.0000  0.0000  0.0000  0.0000  0.0000
+2013  0.0000 -0.2425  0.0000  0.0000  0.0000  0.0000  0.0000  0.0000  0.0000
+2014  0.0000 -0.2425  0.0000  0.0000  0.0000  0.0000  0.0000  0.0000  0.0000
+2015  0.0000 -0.2425  0.0000  0.0000  0.0000  0.0000  0.0000  0.0000  0.0000
+2016  0.0000  0.7575  0.0000  0.0000  0.0000  0.0000  0.0000  0.0000  0.0000
+2017  0.0000 -0.2425  0.0000  0.0000  0.0000  0.0000  0.0000  0.0000  0.0000
+2018  0.0000 -0.2425  0.0000  0.0000  0.0000  0.0000  0.0000  0.0000  0.0000
+2019  0.0000 -0.2425  0.0000  0.0000  0.0000  0.0000  0.0000  0.0000  0.0000
+2020  0.0000  0.7575  0.0000  0.0000  0.0000  0.0000  0.0000  0.0000  0.0000
+2021  0.0000 -0.2425  0.0000  0.0000  0.0000  0.0000  0.0000  0.0000  0.0000
+2022  0.0000 -0.2425  0.0000  0.0000  0.0000  0.0000  0.0000  0.0000  0.0000
+2023  0.0000 -0.2425  0.0000  0.0000  0.0000  0.0000  0.0000  0.0000  0.0000
+2024  0.0000  0.7575  0.0000  0.0000  0.0000  0.0000  0.0000  0.0000  0.0000
+2025  0.0000 -0.2425  0.0000  0.0000  0.0000  0.0000  0.0000  0.0000  0.0000
+2026  0.0000 -0.2425  0.0000  0.0000  0.0000  0.0000  0.0000  0.0000  0.0000
+2027  0.0000 -0.2425  0.0000  0.0000  0.0000  0.0000  0.0000  0.0000  0.0000
+2028  0.0000  0.7575  0.0000  0.0000  0.0000  0.0000  0.0000  0.0000  0.0000
+2029  0.0000 -0.2425  0.0000  0.0000  0.0000  0.0000  0.0000  0.0000  0.0000
+2030  0.0000                                                                
+         Oct     Nov     Dec
+1990  0.0000  0.0000  0.0000
+1991  0.0000  0.0000  0.0000
+1992  0.0000  0.0000  0.0000
+1993  0.0000  0.0000  0.0000
+1994  0.0000  0.0000  0.0000
+1995  0.0000  0.0000  0.0000
+1996  0.0000  0.0000  0.0000
+1997  0.0000  0.0000  0.0000
+1998  0.0000  0.0000  0.0000
+1999  0.0000  0.0000  0.0000
+2000  0.0000  0.0000  0.0000
+2001  0.0000  0.0000  0.0000
+2002  0.0000  0.0000  0.0000
+2003  0.0000  0.0000  0.0000
+2004  0.0000  0.0000  0.0000
+2005  0.0000  0.0000  0.0000
+2006  0.0000  0.0000  0.0000
+2007  0.0000  0.0000  0.0000
+2008  0.0000  0.0000  0.0000
+2009  0.0000  0.0000  0.0000
+2010  0.0000  0.0000  0.0000
+2011  0.0000  0.0000  0.0000
+2012  0.0000  0.0000  0.0000
+2013  0.0000  0.0000  0.0000
+2014  0.0000  0.0000  0.0000
+2015  0.0000  0.0000  0.0000
+2016  0.0000  0.0000  0.0000
+2017  0.0000  0.0000  0.0000
+2018  0.0000  0.0000  0.0000
+2019  0.0000  0.0000  0.0000
+2020  0.0000  0.0000  0.0000
+2021  0.0000  0.0000  0.0000
+2022  0.0000  0.0000  0.0000
+2023  0.0000  0.0000  0.0000
+2024  0.0000  0.0000  0.0000
+2025  0.0000  0.0000  0.0000
+2026  0.0000  0.0000  0.0000
+2027  0.0000  0.0000  0.0000
+2028  0.0000  0.0000  0.0000
+2029  0.0000  0.0000  0.0000
+2030                        </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ou rjd3toolkit::lp_variable()</span></span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>On peut également uiliser la fonction <code>rjd3toolkit::ts_adjust()</code> pour préajuster de l’effet année bissextile.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="exercice-bilan" class="level2" data-number="1.4">
+<h2 data-number="1.4" class="anchored" data-anchor-id="exercice-bilan"><span class="header-section-number">1.4</span> Exercice bilan</h2>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Exercice
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Créer un objet <code>regresseurs_JO</code> qui contiendra tous les jeux de régresseurs plausibles. Par exemple :</p>
+<ul>
+<li><p>le régresseur <em>leap year</em></p></li>
+<li><p>le jeu de régresseur <em>trading days</em> (<code>TD7</code>, lundi à samedi, dimanche = contraste)</p></li>
+<li><p>le jeu de régresseur <em>working days</em> (<code>TD2</code>, lundi =… = vendredi, samedi=dimanche=contraste)</p></li>
+<li><p>le jeu <code>TD3</code> : lundi = … = vendredi, samedi et dimanche = contraste</p></li>
+</ul>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-8" class="callout-8-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>frequency <span class="ot">&lt;-</span> <span class="dv">12</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>gen_calendrier <span class="ot">&lt;-</span> <span class="cf">function</span>(cal, frequency, <span class="at">start =</span> <span class="fu">c</span>(<span class="dv">1990</span>, <span class="dv">1</span>), <span class="at">end =</span> <span class="fu">c</span>(<span class="dv">2030</span>, <span class="dv">1</span>)) {</span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>    length <span class="ot">=</span> (end[<span class="dv">1</span>] <span class="sc">-</span> start[<span class="dv">1</span>]) <span class="sc">*</span> frequency <span class="sc">+</span> end[<span class="dv">2</span>] <span class="sc">-</span> start[<span class="dv">2</span>]</span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>    ly <span class="ot">&lt;-</span> rjd3toolkit<span class="sc">::</span><span class="fu">lp_variable</span>(<span class="at">frequency =</span> frequency, <span class="at">start =</span> start,</span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>                                   <span class="at">length =</span> length)</span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>    <span class="co"># N'hésitez pas à ajouter les votres !</span></span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>    TD7 <span class="ot">&lt;-</span> <span class="fu">calendar_td</span>(cal, <span class="at">frequency =</span> frequency, <span class="at">start =</span> start, <span class="at">length =</span> length,</span>
+<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a>                       <span class="at">groups =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>, <span class="dv">0</span>))</span>
+<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a>    TD4 <span class="ot">&lt;-</span> <span class="fu">calendar_td</span>(cal, <span class="at">frequency =</span> frequency, <span class="at">start =</span> start, <span class="at">length =</span> length,</span>
+<span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a>                       <span class="at">groups =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">0</span>))</span>
+<span id="cb16-12"><a href="#cb16-12" aria-hidden="true" tabindex="-1"></a>    TD3 <span class="ot">&lt;-</span> <span class="fu">calendar_td</span>(cal, <span class="at">frequency =</span> frequency, <span class="at">start =</span> start, <span class="at">length =</span> length,</span>
+<span id="cb16-13"><a href="#cb16-13" aria-hidden="true" tabindex="-1"></a>                       <span class="at">groups =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">0</span>))</span>
+<span id="cb16-14"><a href="#cb16-14" aria-hidden="true" tabindex="-1"></a>    TD3c <span class="ot">&lt;-</span> <span class="fu">calendar_td</span>(cal, <span class="at">frequency =</span> frequency, <span class="at">start =</span> start, <span class="at">length =</span> length,</span>
+<span id="cb16-15"><a href="#cb16-15" aria-hidden="true" tabindex="-1"></a>                        <span class="at">groups =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">0</span>))</span>
+<span id="cb16-16"><a href="#cb16-16" aria-hidden="true" tabindex="-1"></a>    TD2 <span class="ot">&lt;-</span> <span class="fu">calendar_td</span>(cal, <span class="at">frequency =</span> frequency, <span class="at">start =</span> start, <span class="at">length =</span> length,</span>
+<span id="cb16-17"><a href="#cb16-17" aria-hidden="true" tabindex="-1"></a>                       <span class="at">groups =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">0</span>))</span>
+<span id="cb16-18"><a href="#cb16-18" aria-hidden="true" tabindex="-1"></a>    TD2c <span class="ot">&lt;-</span> <span class="fu">calendar_td</span>(cal, <span class="at">frequency =</span> frequency, <span class="at">start =</span> start, <span class="at">length =</span> length,</span>
+<span id="cb16-19"><a href="#cb16-19" aria-hidden="true" tabindex="-1"></a>                        <span class="at">groups =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">0</span>))</span>
+<span id="cb16-20"><a href="#cb16-20" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb16-21"><a href="#cb16-21" aria-hidden="true" tabindex="-1"></a>    reg_jo <span class="ot">&lt;-</span> <span class="fu">ts</span>(<span class="fu">cbind</span>(TD2, TD2c, TD3, TD3c, TD4, TD7),</span>
+<span id="cb16-22"><a href="#cb16-22" aria-hidden="true" tabindex="-1"></a>                 <span class="at">start =</span> start, <span class="at">frequency =</span> frequency)</span>
+<span id="cb16-23"><a href="#cb16-23" aria-hidden="true" tabindex="-1"></a>    reg_jo <span class="ot">&lt;-</span> <span class="fu">ts.intersect</span>(reg_jo,</span>
+<span id="cb16-24"><a href="#cb16-24" aria-hidden="true" tabindex="-1"></a>                           ly)</span>
+<span id="cb16-25"><a href="#cb16-25" aria-hidden="true" tabindex="-1"></a>    <span class="fu">colnames</span>(reg_jo) <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
+<span id="cb16-26"><a href="#cb16-26" aria-hidden="true" tabindex="-1"></a>        <span class="st">"TD2_semaine"</span>,</span>
+<span id="cb16-27"><a href="#cb16-27" aria-hidden="true" tabindex="-1"></a>        <span class="st">"TD2c_lundi_samedi"</span>,</span>
+<span id="cb16-28"><a href="#cb16-28" aria-hidden="true" tabindex="-1"></a>        <span class="fu">sprintf</span>(<span class="st">"TD3_%s"</span>, <span class="fu">c</span>(<span class="st">"semaine"</span>, <span class="st">"samedi"</span>)),</span>
+<span id="cb16-29"><a href="#cb16-29" aria-hidden="true" tabindex="-1"></a>        <span class="fu">sprintf</span>(<span class="st">"TD3c_%s"</span>, <span class="fu">c</span>(<span class="st">"lundi_jeudi"</span>, <span class="st">"vendredi_samedi"</span>)),</span>
+<span id="cb16-30"><a href="#cb16-30" aria-hidden="true" tabindex="-1"></a>        <span class="fu">sprintf</span>(<span class="st">"TD4_%s"</span>, <span class="fu">c</span>(<span class="st">"lundi_jeudi"</span>, <span class="st">"vendredi"</span>, <span class="st">"samedi"</span>)),</span>
+<span id="cb16-31"><a href="#cb16-31" aria-hidden="true" tabindex="-1"></a>        <span class="fu">sprintf</span>(<span class="st">"TD7_%s"</span>, <span class="fu">c</span>(<span class="st">"lundi"</span>, <span class="st">"mardi"</span>, <span class="st">"mercredi"</span>, <span class="st">"jeudi"</span>, <span class="st">"vendredi"</span>, <span class="st">"samedi"</span>)),</span>
+<span id="cb16-32"><a href="#cb16-32" aria-hidden="true" tabindex="-1"></a>        <span class="st">"leap_year"</span>)</span>
+<span id="cb16-33"><a href="#cb16-33" aria-hidden="true" tabindex="-1"></a>    reg_jo</span>
+<span id="cb16-34"><a href="#cb16-34" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb16-35"><a href="#cb16-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-36"><a href="#cb16-36" aria-hidden="true" tabindex="-1"></a>regresseurs_JO_mens <span class="ot">&lt;-</span> <span class="fu">gen_calendrier</span>(CAL, <span class="at">frequency =</span> <span class="dv">12</span>)</span>
+<span id="cb16-37"><a href="#cb16-37" aria-hidden="true" tabindex="-1"></a>regresseurs_JO_trim <span class="ot">&lt;-</span> <span class="fu">gen_calendrier</span>(CAL, <span class="at">frequency =</span> <span class="dv">4</span>)</span>
+<span id="cb16-38"><a href="#cb16-38" aria-hidden="true" tabindex="-1"></a><span class="co"># Si l'on utilise des séries mensuelles :</span></span>
+<span id="cb16-39"><a href="#cb16-39" aria-hidden="true" tabindex="-1"></a>regresseurs_JO <span class="ot">&lt;-</span> regresseurs_JO_mens</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Si l’on veut jongler entre R et JDemetra+, il faut ajouter les nouvelles variables dans le dictionnaire de variables de JDemetra+, voir le <a href="../TP/JD_4_CVS_CJO.html">TP associé</a>. Une solution est de créer un workspace vide depuis R et de l’utiliser pour charger vos données. Ci-dessous un code qui vous permet d’exporter ce workspace :</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># On va créer un nouveau workspace où l'on va ajouter les nouvelles variables</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(RJDemetra)</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(rJava)</span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>complete_variables <span class="ot">&lt;-</span> <span class="cf">function</span>(liste_var, workspace){</span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span>(<span class="sc">!</span><span class="fu">is.mts</span>(liste_var))</span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>        <span class="fu">stop</span>(<span class="st">"liste_var doit être de type mts"</span>)</span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a>    context_dictionary <span class="ot">&lt;-</span> <span class="fu">.jcall</span>(workspace,<span class="st">"Lec/tstoolkit/algorithm/ProcessingContext;"</span>, <span class="st">"getContext"</span>)</span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a>    ts_variable_managers <span class="ot">&lt;-</span> context_dictionary<span class="sc">$</span><span class="fu">getTsVariableManagers</span>()</span>
+<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a>    ts_variables <span class="ot">&lt;-</span> <span class="fu">.jnew</span>(<span class="st">"ec/tstoolkit/timeseries/regression/TsVariables"</span>)</span>
+<span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a>    jd_r_variables <span class="ot">&lt;-</span> ts_variable_managers<span class="sc">$</span><span class="fu">get</span>(<span class="st">"r"</span>)</span>
+<span id="cb17-11"><a href="#cb17-11" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (<span class="fu">is.null</span>(jd_r_variables)) {</span>
+<span id="cb17-12"><a href="#cb17-12" aria-hidden="true" tabindex="-1"></a>        ts_variable_managers<span class="sc">$</span><span class="fu">set</span>(<span class="st">"r"</span>,</span>
+<span id="cb17-13"><a href="#cb17-13" aria-hidden="true" tabindex="-1"></a>                                 <span class="fu">.jnew</span>(<span class="st">"ec/tstoolkit/timeseries/regression/TsVariables"</span>))</span>
+<span id="cb17-14"><a href="#cb17-14" aria-hidden="true" tabindex="-1"></a>        jd_r_variables <span class="ot">&lt;-</span> ts_variable_managers<span class="sc">$</span><span class="fu">get</span>(<span class="st">"r"</span>)</span>
+<span id="cb17-15"><a href="#cb17-15" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb17-16"><a href="#cb17-16" aria-hidden="true" tabindex="-1"></a>    jd_var_names <span class="ot">&lt;-</span> jd_r_variables<span class="sc">$</span><span class="fu">getNames</span>()</span>
+<span id="cb17-17"><a href="#cb17-17" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb17-18"><a href="#cb17-18" aria-hidden="true" tabindex="-1"></a>    model_var_names <span class="ot">&lt;-</span> <span class="fu">colnames</span>(liste_var)</span>
+<span id="cb17-19"><a href="#cb17-19" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb17-20"><a href="#cb17-20" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> (i <span class="cf">in</span> <span class="fu">seq_along</span>(model_var_names)) {</span>
+<span id="cb17-21"><a href="#cb17-21" aria-hidden="true" tabindex="-1"></a>        name <span class="ot">&lt;-</span> model_var_names[i]</span>
+<span id="cb17-22"><a href="#cb17-22" aria-hidden="true" tabindex="-1"></a>        dictionary_var <span class="ot">&lt;-</span> jd_r_variables<span class="sc">$</span><span class="fu">get</span>(name)</span>
+<span id="cb17-23"><a href="#cb17-23" aria-hidden="true" tabindex="-1"></a>        tsvar <span class="ot">&lt;-</span> <span class="fu">.jnew</span>(<span class="st">"ec/tstoolkit/timeseries/regression/TsVariable"</span>,</span>
+<span id="cb17-24"><a href="#cb17-24" aria-hidden="true" tabindex="-1"></a>                       name, RJDemetra<span class="sc">:::</span><span class="fu">ts_r2jd</span>(liste_var[, i]))</span>
+<span id="cb17-25"><a href="#cb17-25" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> (<span class="fu">is.null</span>(dictionary_var)) {</span>
+<span id="cb17-26"><a href="#cb17-26" aria-hidden="true" tabindex="-1"></a>            jd_r_variables<span class="sc">$</span><span class="fu">set</span>(name, tsvar)</span>
+<span id="cb17-27"><a href="#cb17-27" aria-hidden="true" tabindex="-1"></a>        } <span class="cf">else</span> {</span>
+<span id="cb17-28"><a href="#cb17-28" aria-hidden="true" tabindex="-1"></a>            <span class="fu">warning</span>(<span class="fu">sprintf</span>(<span class="st">"La variable %s existe déjà"</span>, name))</span>
+<span id="cb17-29"><a href="#cb17-29" aria-hidden="true" tabindex="-1"></a>        }</span>
+<span id="cb17-30"><a href="#cb17-30" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb17-31"><a href="#cb17-31" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb17-32"><a href="#cb17-32" aria-hidden="true" tabindex="-1"></a><span class="co"># On renmme les variables pour éviter des conflits sur les noms</span></span>
+<span id="cb17-33"><a href="#cb17-33" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(regresseurs_JO_trim) <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="fu">colnames</span>(regresseurs_JO_trim), <span class="st">"_trim"</span>)</span>
+<span id="cb17-34"><a href="#cb17-34" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(regresseurs_JO_mens) <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="fu">colnames</span>(regresseurs_JO_mens), <span class="st">"_mens"</span>)</span>
+<span id="cb17-35"><a href="#cb17-35" aria-hidden="true" tabindex="-1"></a><span class="co"># Création d'un nouveaux</span></span>
+<span id="cb17-36"><a href="#cb17-36" aria-hidden="true" tabindex="-1"></a>jws <span class="ot">&lt;-</span> <span class="fu">new_workspace</span>()</span>
+<span id="cb17-37"><a href="#cb17-37" aria-hidden="true" tabindex="-1"></a><span class="co"># regresseurs_JO est l'objet mts qui contient tous vos régresseurs</span></span>
+<span id="cb17-38"><a href="#cb17-38" aria-hidden="true" tabindex="-1"></a><span class="co"># Il doit donc déjà être créé (voir code ci-dessus) !</span></span>
+<span id="cb17-39"><a href="#cb17-39" aria-hidden="true" tabindex="-1"></a><span class="fu">complete_variables</span>(regresseurs_JO_mens, jws)</span>
+<span id="cb17-40"><a href="#cb17-40" aria-hidden="true" tabindex="-1"></a><span class="fu">complete_variables</span>(regresseurs_JO_trim, jws)</span>
+<span id="cb17-41"><a href="#cb17-41" aria-hidden="true" tabindex="-1"></a><span class="fu">save_workspace</span>(jws,<span class="st">"wk_CJO.xml"</span>)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="effet-graduel-de-pâques" class="level2" data-number="1.5">
+<h2 data-number="1.5" class="anchored" data-anchor-id="effet-graduel-de-pâques"><span class="header-section-number">1.5</span> Effet graduel de Pâques</h2>
+<p>Prenons l’exemple de la vente de chocolats. Il est assez commun d’offrir des chocolats à Pâques&nbsp;: il y a donc une hausse des ventes autour du lundi de Pâques. Toutefois, ces ventes ne se font pas le jour de Pâques mais plusieurs jours avant, et plus on se rapproche du jour J, plus ces ventes sont importantes. C’est ce que l’on appel l’<strong>effet graduel de Pâques</strong>. Sous JDemetra+ on peut définir le nombre de jours avant Pâques pour lequel on considère qu’il y a un effet (<code>easter_day.duration</code>, entre 1 et 20) ou laisser ce choix à JDemetra+.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Exercice
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Serait-il pertinent de considérer un effet graduel de Noël dans le modèle Reg-ARIMA ?</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-10" class="callout-10-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Non car l’effet graduel de Noël est en fait saisonnier car c’est un jour fixe ! Pour Pâques, comme c’est une fête mobile, les jours précédents peuvent être dans des mois différents en fonction de l’année considérée. Je ne suis pas entré dans les détails mais le régresseur utilisé pour la correction de l’effet graduel de Pâques est désaisonnalisé pour ne prendre en compte que l’effet voulu</p>
+</div>
+</div>
+</div>
+<p>Le régresseur associé à l’effet graduel de Pâques peut être généré en utilisant la fonction <code>rjd3toolkit::easter_variable()</code>.</p>
+</section>
+</section>
+<section id="sec-rjd" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> Utilisation des régresseurs dans <code>RJDemetra</code></h1>
+<p>Dans <code>RJDemetra</code>, pour utiliser nos régresseurs jours ouvrables personnalisés, il faut créer sa propre spécification (fonctions <code>x13_spec()</code> ou <code>regarima_spec_x13()</code>) en utilisant l’option <code>usrdef.varEnabled = TRUE</code>, en spécifiant les régresseurs dans <code>usrdef.var</code> et indiquant que les régresseurs sont des régresseurs calendaires avec l’option <code>usrdef.varType = "Calendar"</code>. Par exemple :</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(RJDemetra)</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>ipi_fr <span class="ot">&lt;-</span> ipi_c_eu[, <span class="st">"FR"</span>]</span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a><span class="co"># On arrête la série en décembre 2019 pour éviter les changements de résultats</span></span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a><span class="co"># liés aux futures actualisation des données de RJDemetra</span></span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>ipi_fr <span class="ot">&lt;-</span> <span class="fu">window</span>(ipi_fr, <span class="at">end =</span> <span class="fu">c</span>(<span class="dv">2019</span>, <span class="dv">12</span>))</span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a><span class="co"># on garde le jeu reg6</span></span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a>wkd <span class="ot">&lt;-</span> regresseurs_JO[,<span class="fu">c</span>(<span class="fu">grep</span>(<span class="st">"TD7"</span>, <span class="fu">colnames</span>(regresseurs_JO), <span class="at">value =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a>                         <span class="st">"leap_year"</span>)]</span>
+<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Pour simplifier l'output, on enlève le "TD7_"</span></span>
+<span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a><span class="co"># mais ce n'est pas obligatoire</span></span>
+<span id="cb18-11"><a href="#cb18-11" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(wkd) <span class="ot">&lt;-</span> <span class="fu">gsub</span>(<span class="st">"TD7_"</span>, <span class="st">""</span>, <span class="fu">colnames</span>(wkd))</span>
+<span id="cb18-12"><a href="#cb18-12" aria-hidden="true" tabindex="-1"></a>myspec1 <span class="ot">&lt;-</span> <span class="fu">regarima_spec_x13</span>(<span class="at">spec =</span> <span class="st">"RG5c"</span>,</span>
+<span id="cb18-13"><a href="#cb18-13" aria-hidden="true" tabindex="-1"></a>                             <span class="at">usrdef.varEnabled =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb18-14"><a href="#cb18-14" aria-hidden="true" tabindex="-1"></a>                             <span class="at">usrdef.var =</span> wkd,</span>
+<span id="cb18-15"><a href="#cb18-15" aria-hidden="true" tabindex="-1"></a>                             <span class="at">usrdef.varType =</span> <span class="st">"Calendar"</span>,</span>
+<span id="cb18-16"><a href="#cb18-16" aria-hidden="true" tabindex="-1"></a>                             <span class="at">easter.enabled =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb18-17"><a href="#cb18-17" aria-hidden="true" tabindex="-1"></a>myreg1 <span class="ot">&lt;-</span> <span class="fu">regarima</span>(ipi_fr, myspec1)</span>
+<span id="cb18-18"><a href="#cb18-18" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(myreg1)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>y = regression model + arima (2, 1, 0, 0, 1, 1)
+
+Model: RegARIMA - X13
+Estimation span: from 1-1990 to 12-2019
+Log-transformation: yes
+Regression model: no mean, trading days effect(7), no leap year effect, no Easter effect, outliers(2)
+
+Coefficients:
+ARIMA: 
+          Estimate Std. Error T-stat Pr(&gt;|t|)    
+Phi(1)     0.60670    0.04953  12.25   &lt;2e-16 ***
+Phi(2)     0.45313    0.04899   9.25   &lt;2e-16 ***
+BTheta(1) -0.64655    0.04336 -14.91   &lt;2e-16 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Regression model: 
+              Estimate Std. Error  T-stat Pr(&gt;|t|)    
+lundi         0.004172   0.001443   2.891  0.00408 ** 
+mardi         0.007923   0.001641   4.828 2.07e-06 ***
+mercredi      0.009767   0.001651   5.916 7.91e-09 ***
+jeudi         0.003675   0.001573   2.336  0.02005 *  
+vendredi      0.004746   0.001634   2.905  0.00391 ** 
+samedi       -0.016705   0.001580 -10.576  &lt; 2e-16 ***
+leap_year     0.019788   0.006864   2.883  0.00418 ** 
+LS (11-2008) -0.113562   0.016059  -7.072 8.49e-12 ***
+TC (2-2009)  -0.076609   0.017046  -4.494 9.52e-06 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+
+Residual standard error: 0.02176 on 334 degrees of freedom
+Log likelihood = 832.2, aic =  1567, aicc =  1568, bic(corrected for length) = -7.453</code></pre>
+</div>
+</div>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Pour information
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Pour ne pas repartir de zéro et avoir des modèles, il y a sous JDemetra+ 13 spécifications pré-définies décrites <a href="../PDF/Predefined_specifications.pdf">ici</a> ou dans l’aide des fonction RJDemetra associés (<code>?regarima</code>, <code>?x13</code> ou <code>?tramoseats</code>).</p>
+</div>
+</div>
+<p>Pour faire des tests multiples sur les régresseurs jours ouvrables, on peut utiliser la fonction <code>car::linearHypothesis()</code>. Dans le modèle précédent, il parait clair que les régresseurs jours ouvrables sont significatifs. Toutefois, on peut se demander, si par parcimonie on peut simplifier le modèle en regroupant les jours de la semaine :</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(car)</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="fu">linearHypothesis</span>(myreg1,</span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>                 <span class="fu">c</span>(<span class="st">"lundi"</span>, <span class="st">"mardi"</span>, <span class="st">"mercredi"</span>, <span class="st">"jeudi"</span>, <span class="st">"vendredi"</span>, <span class="st">"samedi"</span>),</span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>                 <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>), <span class="at">test =</span> <span class="st">"F"</span>)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Linear hypothesis test:
+lundi = 0
+mardi = 0
+mercredi = 0
+jeudi = 0
+vendredi = 0
+samedi = 0
+
+Model 1: restricted model
+Model 2: myreg1
+
+  Res.Df Df      F    Pr(&gt;F)    
+1    340                        
+2    334  6 69.457 &lt; 2.2e-16 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">linearHypothesis</span>(myreg1,</span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>                 <span class="fu">c</span>(<span class="st">"lundi = mardi"</span>,<span class="st">"mardi = mercredi"</span>,<span class="st">"mercredi = jeudi"</span>,<span class="st">"jeudi = vendredi"</span>), <span class="at">test =</span> <span class="st">"F"</span>)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Linear hypothesis test:
+lundi - mardi = 0
+mardi - mercredi = 0
+mercredi - jeudi = 0
+jeudi - vendredi = 0
+
+Model 1: restricted model
+Model 2: myreg1
+
+  Res.Df Df      F  Pr(&gt;F)  
+1    338                    
+2    334  4 2.7377 0.02882 *
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Exercice
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Essayez maintenant sur vos propres séries. Tester de laisser ou non l’effet graduel de Pâques (<code>easter.enabled = TRUE</code>).</p>
+</div>
+</div>
+</section>
+<section id="test-de-la-présence-de-jours-ouvrables-résiduels" class="level1" data-number="3">
+<h1 data-number="3"><span class="header-section-number">3</span> Test de la présence de jours ouvrables résiduels</h1>
+<p>Un point important lorsque le fait de la correction de jours ouvrables est de tester s’il reste un effet jour ouvrable après la correction. La fonction <code>rjd3toolkit::td_f()</code> peut aider à le faire.</p>
+<p>Généralement ce test est effectué après la décomposition, sur la composante désaisonnalisée ou sur l’irrégulier. Plutôt que la fonction <code>regarima</code> on va utiliser la fonction <code>x13</code> qui effectue la décomposition sur la série linéarisée. Ces tests sont disponibles dans le sous-objet <code>.$diagnostics</code> (<code>"f-test on sa (td)"</code> et <code>"f-test on i (td)"</code>) :</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>myspec1_sa <span class="ot">&lt;-</span> <span class="fu">x13_spec</span>(<span class="at">spec =</span> <span class="st">"RSA5c"</span>,</span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>                       <span class="at">usrdef.varEnabled =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>                       <span class="at">usrdef.var =</span> wkd,</span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>                       <span class="at">usrdef.varType =</span> <span class="st">"Calendar"</span>,</span>
+<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a>                       <span class="at">easter.enabled =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a>mysa <span class="ot">&lt;-</span> <span class="fu">x13</span>(ipi_fr, myspec1_sa)</span>
+<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a><span class="co"># On retrouve d'ailleurs la partie regarima</span></span>
+<span id="cb24-8"><a href="#cb24-8" aria-hidden="true" tabindex="-1"></a><span class="co"># summary(mysa$regarima)</span></span>
+<span id="cb24-9"><a href="#cb24-9" aria-hidden="true" tabindex="-1"></a>mysa<span class="sc">$</span>diagnostics</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Relative contribution of the components to the stationary
+portion of the variance in the original series,
+after the removal of the long term trend
+ Trend computed by Hodrick-Prescott filter (cycle length = 8.0 years)
+           Component
+ Cycle         2.267
+ Seasonal     72.810
+ Irregular     1.291
+ TD &amp; Hol.     2.698
+ Others       21.525
+ Total       100.591
+
+Combined test in the entire series
+ Non parametric tests for stable seasonality
+                                                          P.value
+   Kruskall-Wallis test                                      0.000
+   Test for the presence of seasonality assuming stability   0.000
+   Evolutive seasonality test                                0.382
+ 
+ Identifiable seasonality present
+
+Residual seasonality tests
+                                      P.value
+ qs test on sa                          0.998
+ qs test on i                           1.000
+ f-test on sa (seasonal dummies)        0.983
+ f-test on i (seasonal dummies)         0.973
+ Residual seasonality (entire series)   0.974
+ Residual seasonality (last 3 years)    0.883
+ f-test on sa (td)                      0.000
+ f-test on i (td)                       0.000</code></pre>
+</div>
+</div>
+<p>Sous JDemetra+, les tests affichés portent sur les 8 dernières années et dans RJDemetra sur la série entière ! Pour reproduire les résultats de JDemetra+, utiliser la fonction <code>rjd3toolkit::td_f()</code>. Pour le test, six spécifications différentes sont possibles :</p>
+<ol type="1">
+<li><p>Par défaut sous JDemetra+ 2.x.y et <code>model = "R100"</code> sous <code>rjd3toolkit</code> <span class="math display">\[
+y_t=c + \alpha y_{t-1} + \sum_{i=1}^{6} \beta_i (N_{it} - N_{7t}) +  \varepsilon_t
+\]</span></p></li>
+<li><p><code>model = "D1"</code> <span class="math display">\[
+\Delta y_t - \overline{\Delta y}  =\sum_{i=1}^{6} \beta_i \Delta(N_{it} - N_{7t}) +  \varepsilon_t
+\]</span></p></li>
+<li><p><code>model = "DY"</code> <span class="math display">\[
+\Delta_s y_t - \overline{\Delta_s y}  =\sum_{i=1}^{6} \beta_i \Delta_s(N_{it} - N_{7t}) +  \varepsilon_t
+\]</span></p></li>
+<li><p><code>model = "D1DY"</code> <span class="math display">\[
+\Delta_s \Delta y_t - \overline{\Delta_s \Delta y}  =\sum_{i=1}^{6} \beta_i \Delta_s\Delta(N_{it} - N_{7t}) +  \varepsilon_t
+\]</span></p></li>
+<li><p><code>model = "AIRLINE"</code> <span class="math display">\[
+y_t =\sum_{i=1}^{6} \beta_i (N_{it} - N_{7t}) +  \varepsilon_t\text{ avec }\varepsilon_t\sim ARIMA(0,1,1)(0,1,1)
+\]</span></p></li>
+<li><p><code>model = "R011"</code> (par défaut sous JDemetra+ 3.x.y) <span class="math display">\[
+y_t =\sum_{i=1}^{6} \beta_i (N_{it} - N_{7t}) +  \varepsilon_t\text{ avec }\varepsilon_t\sim ARIMA(0,1,1)
+\]</span></p></li>
+<li><p><code>model = "WN"</code> <span class="math display">\[
+y_t - \bar y =\sum_{i=1}^{6} \beta_i (N_{it} - N_{7t}) +  \varepsilon_t
+\]</span></p></li>
+</ol>
+<p>avec <span class="math inline">\(y_t\)</span> pris en logarithme si le schéma est multiplicatif. Dans tous les cas <span class="math inline">\((H_0):\beta_1=\dots = \beta_6=0\)</span> et les régresseurs utilisés ne prennent pas en compte le calendrier personnalisé que l’on a créé !</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(rjd3toolkit)</span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>sa <span class="ot">&lt;-</span> mysa<span class="sc">$</span>final<span class="sc">$</span>series[,<span class="st">"sa"</span>]</span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>i <span class="ot">&lt;-</span> mysa<span class="sc">$</span>final<span class="sc">$</span>series[,<span class="st">"i"</span>]</span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (mysa<span class="sc">$</span>regarima<span class="sc">$</span>model<span class="sc">$</span>spec_rslt[,<span class="st">"Log transformation"</span>]) {</span>
+<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a>    sa <span class="ot">&lt;-</span> <span class="fu">log</span>(sa)</span>
+<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a>    i <span class="ot">&lt;-</span> <span class="fu">log</span>(i)</span>
+<span id="cb26-7"><a href="#cb26-7" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb26-8"><a href="#cb26-8" aria-hidden="true" tabindex="-1"></a>rjd3toolkit<span class="sc">::</span><span class="fu">td_f</span>(sa, <span class="at">nyears =</span> <span class="dv">8</span>, <span class="at">model =</span> <span class="st">"R100"</span>)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Value: 8.220707 
+P-Value: 0.0000 </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>rjd3toolkit<span class="sc">::</span><span class="fu">td_f</span>(i, <span class="at">nyears =</span> <span class="dv">8</span>, <span class="at">model =</span> <span class="st">"R100"</span>)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Value: 5.440446 
+P-Value: 0.0001 </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Résultats différents sur l'ensemble de la série</span></span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>rjd3toolkit<span class="sc">::</span><span class="fu">td_f</span>(sa, <span class="at">nyears =</span> <span class="dv">0</span>, <span class="at">model =</span> <span class="st">"R100"</span>)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Value: 10.24736 
+P-Value: 0.0000 </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>rjd3toolkit<span class="sc">::</span><span class="fu">td_f</span>(i, <span class="at">nyears =</span> <span class="dv">0</span>, <span class="at">model =</span> <span class="st">"R100"</span>)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Value: 5.356625 
+P-Value: 0.0000 </code></pre>
+</div>
+</div>
+<p>En réalité les tests affichés dans JDemetra+ et RJDemetra ne sont pas effectuées sur les composantes “finales” de l’irrégulier et la série désaisonnalisée, mais sur les composantes issues de X-11 avant ajout des points atypiques du préajustement. Pour X-13-ARIMA ces séries ne sont pas exportées par défaut (et ne sont pas exportables depuis JDemetra+). Pour les extraires, nous allons réestimer le modèle<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> :</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>jmodel <span class="ot">&lt;-</span> <span class="fu">suppressWarnings</span>(<span class="fu">jx13</span>(<span class="fu">get_ts</span>(mysa), <span class="fu">x13_spec</span>(mysa)))</span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a>sa <span class="ot">&lt;-</span> <span class="fu">get_indicators</span>(jmodel, <span class="st">"decomposition.sa_cmp"</span>)[[<span class="dv">1</span>]]</span>
+<span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a>i <span class="ot">&lt;-</span> <span class="fu">get_indicators</span>(jmodel, <span class="st">"decomposition.i_cmp"</span>)[[<span class="dv">1</span>]]</span>
+<span id="cb34-5"><a href="#cb34-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Pour mettre tous les résultats sous forme de matrice :</span></span>
+<span id="cb34-6"><a href="#cb34-6" aria-hidden="true" tabindex="-1"></a><span class="fu">t</span>(<span class="fu">simplify2array</span>(</span>
+<span id="cb34-7"><a href="#cb34-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">list</span>(</span>
+<span id="cb34-8"><a href="#cb34-8" aria-hidden="true" tabindex="-1"></a>        rjd3toolkit<span class="sc">::</span><span class="fu">td_f</span>(sa, <span class="at">nyears =</span> <span class="dv">0</span>, <span class="at">model =</span> <span class="st">"R100"</span>),</span>
+<span id="cb34-9"><a href="#cb34-9" aria-hidden="true" tabindex="-1"></a>        rjd3toolkit<span class="sc">::</span><span class="fu">td_f</span>(sa, <span class="at">nyears =</span> <span class="dv">8</span>, <span class="at">model =</span> <span class="st">"R100"</span>),</span>
+<span id="cb34-10"><a href="#cb34-10" aria-hidden="true" tabindex="-1"></a>        rjd3toolkit<span class="sc">::</span><span class="fu">td_f</span>(i, <span class="at">nyears =</span> <span class="dv">0</span>, <span class="at">model =</span> <span class="st">"R100"</span>),</span>
+<span id="cb34-11"><a href="#cb34-11" aria-hidden="true" tabindex="-1"></a>        rjd3toolkit<span class="sc">::</span><span class="fu">td_f</span>(i, <span class="at">nyears =</span> <span class="dv">8</span>, <span class="at">model =</span> <span class="st">"R100"</span>))</span>
+<span id="cb34-12"><a href="#cb34-12" aria-hidden="true" tabindex="-1"></a>))</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>     value    pvalue      
+[1,] 9.759979 5.922774e-10
+[2,] 8.189835 4.787726e-07
+[3,] 4.803432 9.995053e-05
+[4,] 5.441369 7.976051e-05</code></pre>
+</div>
+</div>
+<p>En utilisant la fonction <code>rjd3toolkit::sarima_estimate()</code> et le package <code>car</code>, vous pouvez aussi construire vous-même le test<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> :</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>car<span class="sc">::</span><span class="fu">linearHypothesis</span>(</span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>    rjd3toolkit<span class="sc">::</span><span class="fu">sarima_estimate</span>(</span>
+<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a>        sa,</span>
+<span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a>        <span class="at">order =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">1</span>),</span>
+<span id="cb36-5"><a href="#cb36-5" aria-hidden="true" tabindex="-1"></a>        <span class="at">seasonal =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>),</span>
+<span id="cb36-6"><a href="#cb36-6" aria-hidden="true" tabindex="-1"></a>        <span class="at">mean =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb36-7"><a href="#cb36-7" aria-hidden="true" tabindex="-1"></a>        <span class="at">xreg =</span> rjd3toolkit<span class="sc">::</span><span class="fu">td</span>(<span class="at">s =</span> sa)</span>
+<span id="cb36-8"><a href="#cb36-8" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb36-9"><a href="#cb36-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">c</span>(<span class="st">"group_1 = 0"</span>, <span class="st">"group_2 = 0"</span>, <span class="st">"group_3 = 0"</span>, </span>
+<span id="cb36-10"><a href="#cb36-10" aria-hidden="true" tabindex="-1"></a>      <span class="st">"group_4 = 0"</span>, <span class="st">"group_5 = 0"</span>, <span class="st">"group_6 = 0"</span>),</span>
+<span id="cb36-11"><a href="#cb36-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">test =</span> <span class="st">"F"</span></span>
+<span id="cb36-12"><a href="#cb36-12" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Linear hypothesis test:
+group_1 = 0
+group_2 = 0
+group_3 = 0
+group_4 = 0
+group_5 = 0
+group_6 = 0
+
+Model 1: restricted model
+Model 2: rjd3toolkit::sarima_estimate(sa, order = c(0, 1, 1), seasonal = c(0, 
+    0, 0), mean = FALSE, xreg = rjd3toolkit::td(s = sa))
+
+  Res.Df Df      F    Pr(&gt;F)    
+1    357                        
+2    351  6 5.4096 2.303e-05 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
+</div>
+</div>
+<p>Une autre solution est de passer par les objets <code>jSA</code> et d’exporter les indicateurs <code>"diagnostics.td-i-last"</code> et <code>"diagnostics.td-sa-last"</code>, ou bien de rajouter ces indicateurs dans le paramètre <code>userdefined</code> de <code>x13()</code> :</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>jsa <span class="ot">&lt;-</span> <span class="fu">jx13</span>(<span class="fu">get_ts</span>(mysa), <span class="fu">x13_spec</span>(mysa))</span>
+<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a><span class="fu">get_indicators</span>(jsa,<span class="st">"diagnostics.td-sa-last"</span>)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>$`diagnostics.td-sa-last`
+[1] 5.956079e+00 2.957319e-05
+attr(,"description")
+[1] "F with 6 degrees of freedom in the nominator and 88 degrees of freedom in the denominator"</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="fu">get_indicators</span>(jsa,<span class="st">"diagnostics.td-i-last"</span>)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>$`diagnostics.td-i-last`
+[1] 4.2797902641 0.0007868723
+attr(,"description")
+[1] "F with 6 degrees of freedom in the nominator and 88 degrees of freedom in the denominator"</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a>mysa <span class="ot">&lt;-</span> <span class="fu">x13</span>(ipi_fr, myspec1_sa, <span class="at">userdefined =</span> <span class="fu">c</span>(<span class="st">"diagnostics.td-sa-last"</span>, <span class="st">"diagnostics.td-i-last"</span>))</span>
+<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a>mysa<span class="sc">$</span>user_defined<span class="sc">$</span><span class="st">`</span><span class="at">diagnostics.td-sa-last</span><span class="st">`</span></span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 5.956079e+00 2.957319e-05
+attr(,"description")
+[1] "F with 6 degrees of freedom in the nominator and 88 degrees of freedom in the denominator"</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a>mysa<span class="sc">$</span>user_defined<span class="sc">$</span><span class="st">`</span><span class="at">diagnostics.td-i-last</span><span class="st">`</span></span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 4.2797902641 0.0007868723
+attr(,"description")
+[1] "F with 6 degrees of freedom in the nominator and 88 degrees of freedom in the denominator"</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="co"># # ou :</span></span>
+<span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a><span class="co"># t(simplify2array(</span></span>
+<span id="cb46-3"><a href="#cb46-3" aria-hidden="true" tabindex="-1"></a><span class="co">#   mysa$user_defined</span></span>
+<span id="cb46-4"><a href="#cb46-4" aria-hidden="true" tabindex="-1"></a><span class="co"># ))</span></span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Privilégier plutôt ces deux dernières solutions, cela évite se regarder le schéma de décomposition (mais on ne peut pas personnaliser le test).</p>
+<!-- ::: callout-note -->
+<!-- ## Exercice -->
+<!-- Essayez de corriger l'effet JO résiduel sur cette série. -->
+<!-- ::: -->
+<!-- ::: {.callout-caution collapse="true"} -->
+<!-- ## Indice -->
+<!-- La spécification parait bonne, les régresseurs sont tous significatifs mais le modèle ARIMA est estimé sur 30 ans, ce qui peut paraître beaucoup.  -->
+<!-- ::: -->
+<!-- ::: {.callout-tip collapse="true"} -->
+<!-- ## Solution -->
+<!-- ```{r} -->
+<!-- # Une option serait de couper les régresseurs JO en deux -->
+<!-- td_reg_post_2005 <- td_reg_pre_2005  <-  -->
+<!--    regresseurs_JO[,grep("TD7", colnames(regresseurs_JO))] -->
+<!-- window(td_reg_pre_2005, end = c(2004, 12)) <- 0 -->
+<!-- window(td_reg_post_2005, start = c(2005, 1)) <- 0 -->
+<!-- wkd2 <- ts.union(td_reg_pre_2005, td_reg_post_2005, -->
+<!--                 leap_year(frequency = 12)) -->
+<!-- colnames(wkd2) <- c(paste0(c("lundi","mardi","mercredi","jeudi","vendredi", -->
+<!--                             "samedi"),"_av2005"), -->
+<!--                    paste0(c("lundi","mardi","mercredi","jeudi","vendredi", -->
+<!--                             "samedi"),"_ap2005"),"leap_year") -->
+<!-- myspec2_sa <- x13_spec(spec = "RSA5c", -->
+<!--                       usrdef.varEnabled = TRUE, -->
+<!--                       usrdef.var = wkd2, -->
+<!--                       usrdef.varType = "Calendar", -->
+<!--                       easter.enabled = FALSE) -->
+<!-- mysa2 <- x13(ipi_fr, myspec2_sa, -->
+<!--             userdefined = c("diagnostics.td-sa-last", "diagnostics.td-i-last")) -->
+<!-- summary(mysa2$regarima) -->
+<!-- t(simplify2array( -->
+<!--    mysa2$user_defined -->
+<!-- )) -->
+<!-- ``` -->
+<!-- ::: -->
+
+
+</section>
+
+
+<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Notes de bas de page</h2>
+
+<ol>
+<li id="fn1"><p> En réalité, la vraie valeur est 28,2425. En effet, une année bissextile est une année divisible par 4 mais pas par 100, sauf si elle est divisible par 400 : 1900 n’était pas une année bissextile mais 2000 l’était !<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p> Vous remarquerez que le résultat est différent de celui affiché dans JDemetra+ : cela vient de la méthode d’estimation du test utilisée !<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p> Vous pouvez également utiliser le code vu dans la section <a href="#sec-rjd" class="quarto-xref">2</a> pour estimer un modèle automatique.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section></div></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copié");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copié");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<script src="https://giscus.app/client.js" data-repo="AQLT/formations" data-repo-id="R_kgDOIepagw" data-category="Announcements" data-category-id="DIC_kwDOIepag84CSt5_" data-mapping="pathname" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="bottom" data-theme="light" data-lang="fr" crossorigin="anonymous" data-loading="lazy" async="">
+</script>
+<input type="hidden" id="giscus-base-theme" value="light">
+<input type="hidden" id="giscus-alt-theme" value="light">
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>Copyright 2025, Alain Quartier-la-Tente</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item compact">
+    <a class="nav-link" href="http://github.com/AQLT">
+      <i class="bi bi-github" role="img">
+</i> 
+    </a>
+  </li>  
+    <li class="nav-item compact">
+    <a class="nav-link" href="https://aqlt.github.io/">
+      <i class="bi bi-globe" role="img">
+</i> 
+    </a>
+  </li>  
+    <li class="nav-item compact">
+    <a class="nav-link" href="https://www.linkedin.com/in/alainqlt/">
+      <i class="bi bi-linkedin" role="img">
+</i> 
+    </a>
+  </li>  
+</ul>
+    </div>
+  </div>
+</footer>
+
+
+
+
+</body></html>
