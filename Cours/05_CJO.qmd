@@ -747,7 +747,7 @@ Dans les diagnostics («\ Pre-processing\ »), JDemetra+ fournit un test de la s
 
 Tests les plus importants ! Effectués sur la série désaisonnalisée (`sa`) et sur l'irrégulier (`i`).
 
-{{< fa exclamation-triangle >}} Test effectué sur les 8 dernières années sous JDemetra+ et ensemble série sous RJDemetra !
+{{< fa exclamation-triangle >}} Test effectué sur les 8 dernières années sous JDemetra+ 2.x.y, et ensemble série sous RJDemetra, JDemetra+ 3.x.y !
 
 {{< fa info-circle >}} Sous JDemetra+, pour changer les paramètres : Tools > option > Statistics > Diagnostics > residual trading days diagnostics 
 
