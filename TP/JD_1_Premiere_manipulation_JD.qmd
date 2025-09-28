@@ -16,23 +16,30 @@ Le "workspace" est l'objet de travail sous JDemetra+ : il contient les données,
 
 Il est composé :
 
-1.  D'un fichier `.xml` (par exemple `monworkspace.xml`)
+1.  D'un fichier `.xml` (par exemple `monworkspace.xml`).
 
-2.  D'un dossier du même nom (par exemple `monworkspace`)
+2.  D'un dossier du même nom (par exemple `monworkspace`).
 
 Instructions :
 
--   Ouvrir le logiciel JDemetra+
+-   Ouvrir le logiciel JDemetra+.
 
--   Sauvegarder le Workspace
+-   Sauvegarder le Workspace.
 
--   Cliquer sur `File > Save Workspace As…`
+-   Cliquer sur `File > Save Workspace As…`.
 
--   Entrer un nom pour le workspace et choisir l'emplacement où sera sauvegardé le workspace
+-   Entrer un nom pour le workspace et choisir l'emplacement où sera sauvegardé le workspace.
 
--   Fermer le logiciel JDemetra+ et ouvrir l'emplacement où a été sauvegardé le workspace
+-   Fermer le logiciel JDemetra+ et ouvrir l'emplacement où a été sauvegardé le workspace :
 
     -   Que voit-on ?
+    
+::: {.callout-tip collapse="true"}
+## Solution
+On voit la création d'un fichier `.xml` et d'un dossier du même nom.
+Attention, c'est deux objets sont indissociables et le workspace n'est complet que si c'est deux objets sont présents ! 
+Ainsi, si vous déplacez le fichier `.xml` sans déplacer le dossier, alors il vous sera impossible de lire le workspace !
+:::
 
 # Importer les séries (brutes) dans JDemetra+
 
@@ -45,55 +52,56 @@ Si vous n'avez pas de fichier, vous pouvez utiliser celui disponible le fichier 
 
 On se place ici dans le cas où les données brutes figurent dans un fichier Excel qui respecte les règles suivantes :
 
--   la première colonne correspond à la date au format JJ/MM/AAAA
+-   la première colonne correspond à la date au format JJ/MM/AAAA ;
 
--   la première ligne contient le nom des séries
+-   la première ligne contient le nom des séries.
 
 ::: {.callout-warning}
 ## Pour information
 Pour créer un tel fichier Excel depuis R, voir le [TP 0 - Traitement des séries temporelles sous R](R_0_Manipulation_series_temporelles.qmd).
 :::
 
--   Retourner sous JDemetra+
+-   Retourner sous JDemetra+.
 
--   Cliquer sur l'onglet `Providers`
+-   Cliquer sur l'onglet `Providers`.
 
--   Clic-droit sur `Spreadsheets`
+-   Clic-droit sur `Spreadsheets`.
 
--   Cliquer sur `Open`
+-   Cliquer sur `Open`.
 
--   Cliquer sur le bouton `…`
+-   Cliquer sur le bouton `…`.
 
--   Sélectionner un fichier Excel contenant les séries à désaisonnaliser
+-   Sélectionner un fichier Excel contenant les séries à désaisonnaliser.
 
--   Cliquer sur OK
+-   Cliquer sur OK :
 
     -   Que voit-on sous `Spreadsheets` ?
 
 ## Mettre un fichier en « favori »
 
--   Sauvegarder le workspace puis l'ouvrir de nouveau
+-   Sauvegarder le workspace puis l'ouvrir de nouveau.
 
--   Cliquer sur l'onglet `Providers`
+-   Cliquer sur l'onglet `Providers`.
 
 -   Que voit-on ?
 
 ::: {.callout-tip collapse="true"}
 ## Solution
 Les données ont disparues !
+La partie `Providers` est en effet indépendante du `Workspace`.
 :::
 
--   Importer de nouveau votre fichier Excel
+-   Importer de nouveau votre fichier Excel.
 
--   Clic-droit sur le nom du fichier Excel qui est apparu sous `Spreadsheets`
+-   Clic-droit sur le nom du fichier Excel qui est apparu sous `Spreadsheets`.
 
--   Cliquer sur `Add star`
+-   Cliquer sur `Add star`.
 
 -   Que se passe-t-il ?
 
--   Sauvegarder le workspace, fermer le logiciel puis l'ouvrir de nouveau
+-   Sauvegarder le workspace, fermer le logiciel puis l'ouvrir de nouveau.
 
--   Cliquer sur l'onglet `Providers`
+-   Cliquer sur l'onglet `Providers` :
 
     -   Que voit-on ?
 
@@ -111,21 +119,26 @@ JDemetra+ stocke l'emplacement du fichier Excel, si vous le changez de répertoi
 
 ## Création d'un nouveau « multi-document »
 
--   Cliquer sur l'onglet `Workspace`
+-   Cliquer sur l'onglet `Workspace`.
 
--   Double-clic sur `Seasonal adjustment`
+-   Double-clic sur `Seasonal adjustment`.
 
--   Clic-droit sur `multi-documents`
+-   Clic-droit sur `multi-documents`.
 
--   Cliquer sur `New`
+-   Cliquer sur `New`.
 
--   Double-clic sur `multi-documents`
+-   Double-clic sur `multi-documents` :
 
     -   Que voit-on ?
 
 -   Double-clic sur le « multi-document » créé, nommé `SAProcessing-1` par défaut
 
     -   Que se passe-t-il ?
+    
+::: {.callout-warning}
+## Pour information
+De façon équivalente vous pouvez cliquer sur le Menu `Statistical methods > Seasonal Adjustment > Multi Processing > New`.
+:::
 
 ## Choisir une spécfication pré-définie
 
@@ -139,23 +152,23 @@ JDemetra+ stocke l'emplacement du fichier Excel, si vous le changez de répertoi
 
 ## Lancer une désaisonnalisation
 
--   Cliquer sur `Providers`
+-   Cliquer sur `Providers`.
 
--   Faire glisser l'ensemble des séries de votre fichier dans l'onglet `SAProcessing-1`
+-   Faire glisser l'ensemble des séries de votre fichier dans l'onglet `SAProcessing-1` :
 
     -   Que voit-on ?
 
--   Cliquer sur la flèche verte figurant dans l'onglet `SAProcessing-1`
+-   Cliquer sur la flèche verte figurant dans l'onglet `SAProcessing-1`.
 
 ![](img/tp1_jd_1.png)
 
 -   Que se passe-t-il ?
 
--   Cliquer sur une série
+-   Cliquer sur une série :
 
     -   Que voit-on ?
 
--   Sauvegarder le workspace
+-   Sauvegarder le workspace.
 
 ::: {.callout-warning}
 ## Pour information

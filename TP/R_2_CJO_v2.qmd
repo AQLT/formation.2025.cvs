@@ -540,7 +540,6 @@ Créer un objet `regresseurs_JO` qui contiendra tous les jeux de régresseurs pl
 ::: {.callout-tip collapse="true"}
 ## Solution
 
-La solution montre comment créer tous les régresseurs de JDemetra+ 3.0.0
 ```{r}
 frequency <- 12
 
@@ -579,8 +578,8 @@ gen_calendrier <- function(cal, frequency, start = c(1990, 1), end = c(2030, 1))
 
 regresseurs_JO_mens <- gen_calendrier(CAL, frequency = 12)
 regresseurs_JO_trim <- gen_calendrier(CAL, frequency = 4)
-colnames(regresseurs_JO_trim) <- paste0(colnames(regresseurs_JO_trim), "_trim")
-colnames(regresseurs_JO_mens) <- paste0(colnames(regresseurs_JO_mens), "_mens")
+# Si l'on utilise des séries mensuelles :
+regresseurs_JO <- regresseurs_JO_mens
 ```
 
 Si l'on veut jongler entre R et JDemetra+, il faut ajouter les nouvelles variables dans le dictionnaire de variables de JDemetra+, voir le [TP associé](JD_4_CVS_CJO.qmd).
@@ -620,7 +619,9 @@ complete_variables <- function(liste_var, workspace){
 		}
 	}
 }
-
+# On renmme les variables pour éviter des conflits sur les noms
+colnames(regresseurs_JO_trim) <- paste0(colnames(regresseurs_JO_trim), "_trim")
+colnames(regresseurs_JO_mens) <- paste0(colnames(regresseurs_JO_mens), "_mens")
 # Création d'un nouveaux
 jws <- new_workspace()
 # regresseurs_JO est l'objet mts qui contient tous vos régresseurs
@@ -732,7 +733,7 @@ mysa$diagnostics
 Sous JDemetra+, les tests affichés portent sur les 8 dernières années et dans RJDemetra sur la série entière ! Pour reproduire les résultats de JDemetra+, utiliser la fonction `rjd3toolkit::td_f()`. 
 Pour le test, six spécifications différentes sont possibles :
 
-1. Par défaut sous JDemetra+ et `model = "R100"` sous `rjd3toolkit`
+1. Par défaut sous JDemetra+ 2.x.y et `model = "R100"` sous `rjd3toolkit`
 $$
 y_t=c + \alpha y_{t-1} + \sum_{i=1}^{6} \beta_i (N_{it} - N_{7t}) +  \varepsilon_t
 $$
@@ -756,7 +757,7 @@ $$
 y_t =\sum_{i=1}^{6} \beta_i (N_{it} - N_{7t}) +  \varepsilon_t\text{ avec }\varepsilon_t\sim ARIMA(0,1,1)(0,1,1)
 $$
 
-6. `model = "R011"`
+6. `model = "R011"` (par défaut sous JDemetra+ 3.x.y)
 $$
 y_t =\sum_{i=1}^{6} \beta_i (N_{it} - N_{7t}) +  \varepsilon_t\text{ avec }\varepsilon_t\sim ARIMA(0,1,1)
 $$
@@ -805,24 +806,9 @@ t(simplify2array(
 ))
 ```
 
-Avec la V3 ces composantes sont directement exportables :
-
-```{r}
-x13_jd3 <- rjd3x13::x13(
-	ipi_fr, 
-	rjd3x13::x13_spec("rsa5c") |> 
-		rjd3toolkit::set_tradingdays(
-			calendar.name = "FR"
-		), 
-	ctxt)
-sa <- x13_jd3$result$decomposition$d11
-i <- x13_jd3$result$decomposition$d13
-sa <- window(sa, start = start(ipi_fr), end = end(ipi_fr))
-i <- window(i, start = start(ipi_fr), end = end(ipi_fr))
-```
 
 En utilisant la fonction `rjd3toolkit::sarima_estimate()` et le package `car`, vous pouvez aussi construire vous-même le test^[
-Vous pouvez également utiliser le code vu dans les sections [-@sec-rjd] et [-@sec-rjd2] pour estimer un modèle automatique.
+Vous pouvez également utiliser le code vu dans la section [-@sec-rjd] pour estimer un modèle automatique.
 ] :
 ```{r}
 car::linearHypothesis(
@@ -858,44 +844,44 @@ Privilégier plutôt ces deux dernières solutions, cela évite se regarder le s
 
 
 
-::: callout-note
-## Exercice
-Essayez de corriger l'effet JO résiduel sur cette série.
-:::
+<!-- ::: callout-note -->
+<!-- ## Exercice -->
+<!-- Essayez de corriger l'effet JO résiduel sur cette série. -->
+<!-- ::: -->
 
-::: {.callout-caution collapse="true"}
-## Indice
-La spécification parait bonne, les régresseurs sont tous significatifs mais le modèle ARIMA est estimé sur 30 ans, ce qui peut paraître beaucoup. 
-:::
+<!-- ::: {.callout-caution collapse="true"} -->
+<!-- ## Indice -->
+<!-- La spécification parait bonne, les régresseurs sont tous significatifs mais le modèle ARIMA est estimé sur 30 ans, ce qui peut paraître beaucoup.  -->
+<!-- ::: -->
 
 
-::: {.callout-tip collapse="true"}
-## Solution
-```{r}
-# Une option serait de couper les régresseurs JO en deux
-td_reg_post_2005 <- td_reg_pre_2005  <- 
-	regresseurs_JO[,grep("TD7", colnames(regresseurs_JO))]
-window(td_reg_pre_2005, end = c(2005, 12)) <- 0
-window(td_reg_post_2005, start = c(2005, 1)) <- 0
-wkd2 <- ts.union(td_reg_pre_2005, td_reg_post_2005,
-				 leap_year(frequency = 12))
-colnames(wkd2) <- c(paste0(c("lundi","mardi","mercredi","jeudi","vendredi",
-							 "samedi"),"_av2005"),
-					paste0(c("lundi","mardi","mercredi","jeudi","vendredi",
-							 "samedi"),"_ap2005"),"leap_year")
+<!-- ::: {.callout-tip collapse="true"} -->
+<!-- ## Solution -->
+<!-- ```{r} -->
+<!-- # Une option serait de couper les régresseurs JO en deux -->
+<!-- td_reg_post_2005 <- td_reg_pre_2005  <-  -->
+<!-- 	regresseurs_JO[,grep("TD7", colnames(regresseurs_JO))] -->
+<!-- window(td_reg_pre_2005, end = c(2004, 12)) <- 0 -->
+<!-- window(td_reg_post_2005, start = c(2005, 1)) <- 0 -->
+<!-- wkd2 <- ts.union(td_reg_pre_2005, td_reg_post_2005, -->
+<!-- 				 leap_year(frequency = 12)) -->
+<!-- colnames(wkd2) <- c(paste0(c("lundi","mardi","mercredi","jeudi","vendredi", -->
+<!-- 							 "samedi"),"_av2005"), -->
+<!-- 					paste0(c("lundi","mardi","mercredi","jeudi","vendredi", -->
+<!-- 							 "samedi"),"_ap2005"),"leap_year") -->
 
-myspec2_sa <- x13_spec(spec = "RSA5c",
-					   usrdef.varEnabled = TRUE,
-					   usrdef.var = wkd2,
-					   usrdef.varType = "Calendar",
-					   easter.enabled = FALSE)
-mysa2 <- x13(ipi_fr, myspec2_sa,
-			 userdefined = c("diagnostics.td-sa-last", "diagnostics.td-i-last"))
-summary(mysa2$regarima)
-t(simplify2array(
-	mysa2$user_defined
-))
-```
-:::
+<!-- myspec2_sa <- x13_spec(spec = "RSA5c", -->
+<!-- 					   usrdef.varEnabled = TRUE, -->
+<!-- 					   usrdef.var = wkd2, -->
+<!-- 					   usrdef.varType = "Calendar", -->
+<!-- 					   easter.enabled = FALSE) -->
+<!-- mysa2 <- x13(ipi_fr, myspec2_sa, -->
+<!-- 			 userdefined = c("diagnostics.td-sa-last", "diagnostics.td-i-last")) -->
+<!-- summary(mysa2$regarima) -->
+<!-- t(simplify2array( -->
+<!-- 	mysa2$user_defined -->
+<!-- )) -->
+<!-- ``` -->
+<!-- ::: -->
 
 

@@ -317,7 +317,7 @@ Avec les packages de la version 3 vous pouvez également directement rafraîchir
 Par exemple, pour X-13ARIMA il faut utiliser la fonction `rjd3x13::x13_refresh()` :
 
 ```{r}
-y <- ipi_c_eu[,"FR"]
+y <- RJDemetra::ipi_c_eu[,"FR"]
 y_est <- window(y, end = 2019)
 mod <- rjd3x13::x13(y_est)
 mod$result$preprocessing
@@ -724,7 +724,7 @@ Si vous avez d'autres idées n'hésitez pas à contribuer au package ou à faire
 #|   - Tableau de bord de Statistique Canada avec `simple_dashboard2()`.
 #|   - Tableau de bord de simplifié avec `simple_dashboard2()`.
 library(rjd3report)
-mod <- rjd3tramoseats::tramoseats(window(ipi_c_eu[,"FR"], end = 2019))
+mod <- rjd3tramoseats::tramoseats(window(RJDemetra::ipi_c_eu[,"FR"], end = 2019))
 plot(simple_dashboard2(mod))
 ```
 

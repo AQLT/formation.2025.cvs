@@ -16,7 +16,7 @@ library(knitr)
 Pour manipuler JDemetra+ sous R il y a actuellement deux façons :
 
 1.  Utiliser le [JWSACruncher](https://github.com/jdemetra/jwsacruncher) qui permet, à partir de la console, de mettre à jour un workspace JDemetra+ et d'exporter les résultats sans devoir ouvrir le logiciel.
-Pour faciliter son utilisation depuis R, le package `rjwsacruncher` peut être utilisé (voir [TP5 - JDemetra+ en production](R_5_JD_in_production.qmd)).
+Pour faciliter son utilisation depuis R, le package `rjwsacruncher` peut être utilisé (voir [TP5 - JDemetra+ en production](R_5_JD_in_production_v3.qmd)).
 
 2.  Utiliser les packages R associés à JDemetra+ qui permettent d'effectuer des désaisonnalisations avec les mêmes algorithmes et paramètres que JDemetra+ et de manipuler des workspaces.
 

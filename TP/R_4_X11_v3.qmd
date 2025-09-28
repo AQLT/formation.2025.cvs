@@ -19,7 +19,7 @@ Pour installer tous les packages utiles de ce TP, lancer le programme :
 #| eval: false
 #| label: install
 packages_to_install <- c(
-  "rjd3toolkit", "rjd3x13", "rjd3tramoseats", "rjd3providers", "rjd3workspace"
+  "rjd3toolkit", "rjd3x13", "RJDemetra"
   )
 
 packages <- packages_to_install[! packages_to_install %in% installed.packages()[,"Package"]]
@@ -47,6 +47,7 @@ kable(data_statm, booktabs = TRUE,
 Prenons une spécification par défaut :
 
 ```{r, include=FALSE}
+ipi_fr <- RJDemetra::ipi_c_eu[, "FR"]
 sa_jd3 <- rjd3x13::x13(ipi_fr, "rsa4")
 ```
 

@@ -22,17 +22,17 @@ library(knitr)
 
         -   Est-ce que la série présente une tendance ?
 
-        -   Est-ce que la série semble saisonnière?
+        -   Est-ce que la série semble saisonnière ?
 
 -   Est-ce que la série présente des pics ?
 
     -   Si oui, ces pics ont-ils ont toujours la même amplitude ?
 
--   Cliquer sur la courbe
+-   Cliquer sur la courbe.
 
--   Clic-droit sur la courbe
+-   Clic-droit sur la courbe.
 
--   Cliquer sur `Split into yearly components`
+-   Cliquer sur `Split into yearly components` :
 
     -   Que se passe-t-il ?
 
@@ -40,7 +40,7 @@ library(knitr)
 
 # Tracer les taux de croissance d'une série dans JDemetra+
 
--   Cliquer sur la commande `Tools>Container>GrowthChart` de la barre de menus en haut de l'écran
+-   Cliquer sur la commande `Tools>Container>GrowthChart` de la barre de menus en haut de l'écran :
 
     -   Que se passe-t-il ?
 
@@ -50,7 +50,7 @@ library(knitr)
 
     -   Représenter le taux de croissance en glissement annuel par un clic droit sur le graphique et en sélectionnant ensuite dans le menu qui s'affiche l'item `Kind` puis `Previous Year`.
 
-    -   Placer le curseur de la souris sur une des « barres » du graphique : que se passe-t-il?
+    -   Placer le curseur de la souris sur une des « barres » du graphique : que se passe-t-il ?
 
 -   Quelles informations peut-on tirer de ces graphiques ?
 

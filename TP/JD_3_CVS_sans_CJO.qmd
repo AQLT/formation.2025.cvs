@@ -12,47 +12,47 @@ library(knitr)
 
 # Réaliser une désaisonnalisation automatique sans correction des effets de calendrier
 
--   Créer un nouveau workspace
+-   Créer un nouveau workspace.
 
--   Sauvegarder le workspace
+-   Sauvegarder le workspace.
 
--   Importer les séries (si nécessaire)
+-   Importer les séries (si nécessaire).
 
--   Réaliser une désaisonnalisation automatique de ces séries en choisissant la spécification pré-définie `X13 > RSA3`
+-   Réaliser une désaisonnalisation automatique de ces séries en choisissant la spécification pré-définie `X13 > RSA3`.
 
 -   Renommer le "SAProcessing-1" ("X13" par exemple) en faisant un clic droit sur son nom sous l'onglet `multi-documents`, puis `Rename...`
 
 # Analyser des paramètres automatiques choisis par JDemetra+
 
-Pour chaque série,
+Pour chaque série :
 
-## 9.1. Schéma de décomposition
+## Schéma de décomposition
 
--   Dans la fenêtre `Main results`
+-   Dans la fenêtre `Main results` :
 
     -   Quel est le schéma de décomposition choisi par JDemetra+ ? Est-ce que vous êtes d'accord ?
 
 ## Outliers
 
--   Dans la fenêtre `Main results`
+-   Dans la fenêtre `Main results` :
 
     -   Combien d'*outliers* ont été détectés par JDemetra+ ?
 
         -   Y en a-t-il trop ?
 
--   Dans la fenêtre `Pre-processing`
+-   Dans la fenêtre `Pre-processing` :
 
     -   Quels sont les différents types d'outliers détéctés par JDemetra+ ?
 
--   Retourner dans la fenêtre `Main results`
+-   Retourner dans la fenêtre `Main results` :
 
-    -   Aller dans `Main results > Charts`
+    -   Aller dans `Main results > Charts` :
 
         -   Regarder les différents graphiques : pouvez-vous repérer, sur la série brute, les points atypiques détéctés dans le modèle ?
 
 ## S-I Ratio
 
--   Aller dans la fenêtre `Main results > S-I ratio`
+-   Aller dans la fenêtre `Main results > S-I ratio`.
 
 -   Pouvez-vous repérer le schéma de décomposition ?
 
@@ -66,7 +66,7 @@ Pour chaque série, parcourir les diagnostics disponibles dans `Main results` :
 
 -   Quelle est la qualité de la phase de pré-ajustement ?
 
--   Pour des diagnostics plus détaillés, aller dans les sous-branches de `Pre-processing`
+-   Pour des diagnostics plus détaillés, aller dans les sous-branches de `Pre-processing`.
 
 -   Quelle est la qualité de la décomposition (X11) ?
 

@@ -14,19 +14,19 @@ library(knitr)
 
 -   Ouvrir un multiprocessing
 
--   Sélectionner une série et aller dans la fenêtre `Decomposition (X11)`
+-   Sélectionner une série et aller dans la fenêtre `Decomposition (X11)` :
 
     -   Pouvez-vous trouver les filtres utilisés dans X11 ?
 
 # Spécifications de X11
 
-Cliquer sur une série et appuyer sur le bouton `Specification` en haut à droite de la fenêtre de votre multiprocessing.
+Cliquer sur une série et appuyer sur le bouton `Specification` en haut à droite de la fenêtre de votre multiprocessing :
 
 ![](img/tp5_jd_1.png)
 
 ## Filtre saisonnier
 
--   Essayer de changer le filtre saisonnier dans `X11 > Seasonal filter`
+-   Essayer de changer le filtre saisonnier dans `X11 > Seasonal filter` :
 
     -   Lorsque vous prenez un filtre plus long ou plus court, qu'observez vous sur les M statistics, S-I ratios, la saisonnalité et la série désaisonnalisée ?
 
@@ -34,7 +34,7 @@ Cliquer sur une série et appuyer sur le bouton `Specification` en haut à droit
 
 ## Filtre de Henderson
 
--   Essayer de changer le filtre de Henderson dans `X11 > Henderson filter`
+-   Essayer de changer le filtre de Henderson dans `X11 > Henderson filter` :
 
     -   Lorsque vous prenez un filtre plus long ou plus court, qu'observez vous sur les M statistics, S-I ratios, la saisonnalité et la série désaisonnalisée ?
 
@@ -42,7 +42,7 @@ Cliquer sur une série et appuyer sur le bouton `Specification` en haut à droit
 
 ## Lsigma and Usigma
 
--   Essayer de changer les paramètres `Lsigma` et `Usigma`
+-   Essayer de changer les paramètres `Lsigma` et `Usigma` :
 
     -   Qu'observez-vous sur les statistiques M ?
 
@@ -50,7 +50,7 @@ Cliquer sur une série et appuyer sur le bouton `Specification` en haut à droit
 
 ## Calendar sigma
 
--   Aller dans la fenêtre `Decomposition (X11) > Quality measures > Details` et descendre jusqu'au test de Cochran
+-   Aller dans la fenêtre `Decomposition (X11) > Quality measures > Details` et descendre jusqu'au test de Cochran :
 
     -   Est-ce que le test est rejeté ?
         Si oui qu'est-ce que cela implique ?
