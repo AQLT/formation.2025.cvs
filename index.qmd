@@ -38,24 +38,24 @@ Vous pouvez retrouver [ici](manuel_installation.qmd) le manuel d'installation de
 
 ## TP JDemetra+
 
-1.  [Première manipulation de JDemetra+](TP/JD_1_Premiere_manipulation_JD.qmd)
+1.  [**Première manipulation de JDemetra+**](TP/JD_1_Premiere_manipulation_JD.qmd)
 
-2.  [Analyse exploratoire](TP/JD_2_Analyse_exploratoire.qmd)
+2.  [**Analyse exploratoire**](TP/JD_2_Analyse_exploratoire.qmd)
 
-3.  [Désaisonnalisation sans correction des jours ouvrables](TP/JD_3_CVS_sans_CJO.qmd)
+3.  [**Désaisonnalisation sans correction des jours ouvrables**](TP/JD_3_CVS_sans_CJO.qmd)
 
-4.  [Désaisonnalisation avec correction des jours ouvrables](TP/JD_4_CVS_CJO.qmd)
+4.  [**Désaisonnalisation avec correction des jours ouvrables**](TP/JD_4_CVS_CJO.qmd)
 
-5.  [Pré-ajustement](TP/JD_5_Preajustment.qmd)
+5.  [**Pré-ajustement**](TP/JD_5_Preajustment.qmd)
 
-6.  [Décomposition (X11)](TP/JD_6_X11.qmd)
+6.  [**Décomposition (X11)**](TP/JD_6_X11.qmd)
 
-7.  [Étude de cas](TP/JD_7_Etude_de_cas.qmd)
+7.  [**Étude de cas**](TP/JD_7_Etude_de_cas.qmd)
 
 
 ## TP {{< fa brands r-project >}}
 
-0.  [(Complément) Traitement des séries temporelles sous {{< fa brands r-project >}}](TP/R_0_Manipulation_series_temporelles.qmd)
+0.  [(Complément) **Traitement des séries temporelles sous {{< fa brands r-project >}}**](TP/R_0_Manipulation_series_temporelles.qmd)
 
 1.  **R et JDemetra+** : [V2](TP/R_1_R_et_JD_v2.qmd) ou [V3](TP/R_1_R_et_JD_v3.qmd)
 
@@ -67,7 +67,7 @@ Vous pouvez retrouver [ici](manuel_installation.qmd) le manuel d'installation de
 
 5. **JDemetra+ en production** : [V2](TP/R_5_JD_in_production_v2.qmd) ou [V3](TP/R_5_JD_in_production_v3.qmd) et programmes [1-cruncher.R](R-macronia/1-cruncher.R) et [2-tableau de bord.R](R-macronia/2-tableau_de_bord.R)
 
-6. Autres programmes : [3-imae-calage.R](R-macronia/3-imae-calage.R) et [4-cvs-indirecte.R](R-macronia/4-cvs-indirecte.R)
+6. **Autres programmes** : [3-imae-calage.R](R-macronia/3-imae-calage.R) et [4-cvs-indirecte.R](R-macronia/4-cvs-indirecte.R)
 
 
 # {{< fa file-zipper >}} Fichiers externes
