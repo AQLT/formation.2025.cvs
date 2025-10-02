@@ -18,17 +18,17 @@ Vous pouvez retrouver [ici](manuel_installation.qmd) le manuel d'installation de
 
 2.  [Introduction R](Cours/02a_Intro_R.pdf) et  [R et JDemetra+](Cours/02b_R_et_JD.pdf)
 
-3.  [(Complément) Exploration des séries et décomposition](Cours/03_Exploration_series.pdf)
+3.  [Exploration des séries et décomposition](Cours/03_Exploration_series.pdf)
 
 4.  [Methode X13-ARIMA](Cours/04_Methode_X13-ARIMA.pdf) et programme [exemple_x11_mens.R](R-macronia/exemple_x11_mens.R)
 
 5.  [La correction des effets de calendrier](Cours/05_CJO.pdf)
 
-6.  [(Complément) Le modèle Reg-ARIMA](Cours/06_Le_modele_Reg-ARIMA.pdf)
+6.  [Le modèle Reg-ARIMA](Cours/06_Le_modele_Reg-ARIMA.pdf)
 
-7.  [(Complément) Problèmes d'estimation du modèle Reg-ARIMA](Cours/07_Pb_estimation_regarima.pdf)
+7.  [Problèmes d'estimation du modèle Reg-ARIMA](Cours/07_Pb_estimation_regarima.pdf)
 
-8.  [(Complément) Les Moyennes Mobiles](Cours/08_Les_Moyennes_Mobiles.pdf)
+8.  [Les Moyennes Mobiles](Cours/08_Les_Moyennes_Mobiles.pdf)
 
 9. [Les trois temps de la production](Cours/09_temps_production.pdf)
 
