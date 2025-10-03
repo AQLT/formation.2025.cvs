@@ -24,7 +24,7 @@ series_sa <- read_delim(
   file.path(
     gsub(".xml", "", new_file_workspace), 
     "Output", 
-    "SAProcessing-1", # MODIFIER SI NOM DU SAProcessing DIFFÉRENT
+    "SAProcessing-1", # !!! MODIFIER SI NOM DU SAProcessing DIFFÉRENT
     "series_sa.csv"),
   delim = ";", escape_double = FALSE, col_names = TRUE,
   # Si sous JDemetra+ les données importées depuis un fichier Excel avec des accents,
@@ -60,11 +60,12 @@ all_jmod <- lapply(all_jmod, function(sap) {
   sap
 })
 
+# Exemple pour récupérer la série désaisonnalisée
 # Permet d'avoir une liste avec les séries désaisonnalisées de chaque SAProcessing
-all_sa<- lapply(all_jmod, function(mp) {
+all_sa <- lapply(all_jmod, function(mp) {
   do.call(ts.union, lapply(mp, ggdemetra3::seasonaladj))
 })
-all_y<- lapply(all_jmod, function(mp) {
+all_y <- lapply(all_jmod, function(mp) {
   do.call(ts.union, lapply(mp, ggdemetra3::raw))
 })
 openxlsx::write.xlsx(all_sa, sheet = "sa.xlsx")
