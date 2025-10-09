@@ -173,10 +173,10 @@ De façon équivalente vous pouvez cliquer sur le Menu `Statistical methods > Se
 ::: {.callout-warning}
 ## Pour information
 Il y a de grandes chances pour qu'un jour vous oubliiez l'étape 3.2 avant de "faire glisser" vos séries. 
-Dans ce cas, vous aurez beau changer la spécification, cela n'affectera vos séries déjà importées. 
+Dans ce cas, vous aurez beau changer la spécification, cela n'affectera pas vos séries déjà importées. 
 Deux solutions s'offrent à vous :
 
-1. Solution brutale : fermer le workspace, supprimer toutes les séries, bref, tout recommencer.
+1. Solution brutale : fermer JDemetra+, supprimer toutes les séries, bref, tout recommencer.
 
 2. Solution maligne : sélectionner toutes les séries (ctrl + clic gauche ou ctrl + a, ou ctrl + maj...), clic droit, `Spécification > Select > choisir la spécification voulue`.
 
