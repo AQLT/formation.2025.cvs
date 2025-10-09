@@ -10,7 +10,7 @@ library(kableExtra)
 library(knitr)
 dir_dl <- "."
 if (! file.exists( file.path(dir_dl, "macronia.xml"))) {
-	download.file("https://aqlt.github.io/formation.cvs.2025/data/macronia.zip",
+	download.file("https://aqlt.github.io/formation.2025.cvs/data/macronia.zip",
 				  file.path(dir_dl, "macronia.zip"))
 	unzip(file.path(dir_dl, "macronia.zip"),
 		  exdir = dir_dl, list = TRUE)
