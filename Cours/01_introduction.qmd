@@ -108,7 +108,7 @@ Parfois, la série brute est la série d'intérêt (ex : IPC)
 
 ### Pourquoi désaisonnaliser ? (2/2)
 
-Pourquoi ne peut-on pas de contenter de l'analyse en glissement brut ?
+Pourquoi ne peut-on pas de contenter de l'analyse en glissement annuel ?
 
 . . .
 
