@@ -67,14 +67,10 @@ Pour chaque série :
 
 Pour chaque série, parcourir les diagnostics disponibles dans `Main results` :
 
--   Quelle est la qualité de la phase de pré-ajustement ?
+-   Quelle est la qualité de la phase de pré-ajustement ? (`Regarima residuals` et `outliers`)
 
--   Pour des diagnostics plus détaillés, aller dans les sous-branches de `Pre-processing`.
-
--   Quelle est la qualité de la décomposition (X11) ?
+-   Quelle est la qualité de la décomposition (X11) ? (`M-Statistics`)
 
 -   La série CVS présente-t-elle des effets saisonniers résiduels ?
 
 -   La série CVS présente-t-elle des effets « jours ouvrables » résiduels ?
-
--   La décomposition réalisée par X11 est-elle de qualité satisfaisante ?
