@@ -72,7 +72,7 @@ CAL <- national_calendar(FR)
 :::
 
 ::: {.callout-note collapse="true"}
-## Exemple de calendrier associé à la Macronie
+## Exemple de calendrier associé à la Macronia
 
 Ici certains jours fériés sont associés à des fêtes mobiles qui sont inscrites dans un fichier Excel
 ```{r}
@@ -522,7 +522,7 @@ colnames(regresseurs_JO_mens) <- paste0(colnames(regresseurs_JO_mens), "_mens")
 :::
 
 ::: {.callout-note collapse="true"}
-## Exemple de calendrier associé à la Macronie
+## Exemple de calendrier associé à la Macronia
 
 Ici certains jours fériés sont associés à des fêtes mobiles qui sont inscrites dans un fichier Excel
 ```{r}
