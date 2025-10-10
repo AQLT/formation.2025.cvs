@@ -1,3 +1,15 @@
+packages_to_install <- c(
+  "readxl",
+  "rjd3filters", "rjd3x11plus", "forecast", "ggplot2"
+)
+
+packages <- packages_to_install[! packages_to_install %in% installed.packages()[,"Package"]]
+if (length(packages) > 0) {
+  install.packages(
+    packages, 
+    repos = c("https://aqlt.r-universe.dev", "https://cloud.r-project.org")
+  )
+}
 library(readxl)
 macronia <- read_excel("data/macronia.xlsx", 
                        sheet = "IMAE")
