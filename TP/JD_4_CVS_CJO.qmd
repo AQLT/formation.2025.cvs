@@ -21,7 +21,7 @@ Dans la majorité des cas il n'est donc plus utile d'exporter les régresseurs e
     
     - `Fixed` pour ajouter un jour férié qui tombe à date fixe (par exemple 8 mai)
     
-    - `Easter Related` pour ajouter un jour férié dont le jour dépend de Pâques : le paramètre `offset` permet de spécifier le nombre de jours avant (si négatif) ou après Pâques (si positif).
+    - `Easter Related` pour ajouter un jour férié dont le jour dépend de Pâques (le dimanche) : le paramètre `offset` permet de spécifier le nombre de jours avant (si négatif) ou après Pâques (si positif).
     
     - `Fixed week` qui permet d'ajouter des jours fériés qui apparaissent certaines semaines de certains mois (par exemple le premier lundi du mois de septembre aux USA)
 
