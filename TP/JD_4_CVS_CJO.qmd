@@ -349,7 +349,7 @@ rjd3workspace::save_workspace(jws, "wk_CJO_v3.xml")
 
 -   Double cliquer sur `x13`.
 
--   Clic-droit sur `RSA5c`.
+-   Clic-droit sur `RSA5c` (ou `RSA5` dans la version 3.x.y).
 
 -   Cliquer sur `Clone`.
 
@@ -903,7 +903,7 @@ rjd3workspace::save_workspace(jws, "wk_CJO_v3.xml")
 
 -   Double cliquer sur `x13`.
 
--   Clic-droit sur `RSA5c`.
+-   Clic-droit sur `RSA5c` (ou `RSA5` dans la version 3.x.y).
 
 -   Cliquer sur `Clone`.
 

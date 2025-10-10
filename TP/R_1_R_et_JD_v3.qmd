@@ -83,7 +83,7 @@ Faire ensuite un graphique avec la série brute et la série désaisonnalisée.
 
 ::: {.callout-caution collapse="true"}
 ## Indice
-Utiliser la spécification `RSA4c` pour la désaisonnalisation.
+Utiliser la spécification `RSA4` pour la désaisonnalisation.
 
 Si le modèle créé s'appelle `sa_jd3`, regarder les valeurs de `sa_jd3$result$final` et `rjd3toolkit::sa_decomposition(sa_jd3)`.
 :::
