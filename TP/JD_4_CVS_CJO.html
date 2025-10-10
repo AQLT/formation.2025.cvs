@@ -169,12 +169,19 @@ gtag('config', 'G-X652XRGDPL', { 'anonymize_ip': true});
     <h2 id="toc-title">Sur cette page</h2>
    
   <ul>
-  <li><a href="#importer-les-jeux-de-régresseurs-jours-ouvrables-sous-jdemetra" id="toc-importer-les-jeux-de-régresseurs-jours-ouvrables-sous-jdemetra" class="nav-link active" data-scroll-target="#importer-les-jeux-de-régresseurs-jours-ouvrables-sous-jdemetra"><span class="header-section-number">1</span> Importer les jeux de régresseurs « Jours Ouvrables » sous JDemetra+</a>
+  <li><a href="#sec-calendrier" id="toc-sec-calendrier" class="nav-link active" data-scroll-target="#sec-calendrier"><span class="header-section-number">1</span> Utilisation d’un calendrier personnalisé dans JDemetra+</a>
   <ul class="collapse">
-  <li><a href="#jdemetra-2.x.y" id="toc-jdemetra-2.x.y" class="nav-link" data-scroll-target="#jdemetra-2.x.y"><span class="header-section-number">1.1</span> JDemetra+ 2.x.y</a></li>
-  <li><a href="#jdemetra-3.x.y" id="toc-jdemetra-3.x.y" class="nav-link" data-scroll-target="#jdemetra-3.x.y"><span class="header-section-number">1.2</span> JDemetra+ 3.x.y</a></li>
+  <li><a href="#création-du-calendrier-depuis-jdemetra" id="toc-création-du-calendrier-depuis-jdemetra" class="nav-link" data-scroll-target="#création-du-calendrier-depuis-jdemetra"><span class="header-section-number">1.1</span> Création du calendrier depuis JDemetra+</a></li>
+  <li><a href="#création-du-calendrier-depuis-r-v3.x.y" id="toc-création-du-calendrier-depuis-r-v3.x.y" class="nav-link" data-scroll-target="#création-du-calendrier-depuis-r-v3.x.y"><span class="header-section-number">1.2</span> Création du calendrier depuis R (v3.x.y)</a></li>
+  <li><a href="#créer-une-spécification-incluant-le-calendrier-personnalisé" id="toc-créer-une-spécification-incluant-le-calendrier-personnalisé" class="nav-link" data-scroll-target="#créer-une-spécification-incluant-le-calendrier-personnalisé"><span class="header-section-number">1.3</span> Créer une spécification incluant le calendrier personnalisé</a></li>
+  <li><a href="#exporter-son-calendrier-dans-un-autre-workspace" id="toc-exporter-son-calendrier-dans-un-autre-workspace" class="nav-link" data-scroll-target="#exporter-son-calendrier-dans-un-autre-workspace"><span class="header-section-number">1.4</span> Exporter son calendrier dans un autre workspace</a></li>
   </ul></li>
-  <li><a href="#créer-une-spécification-incluant-les-jeux-de-régresseurs-jours-ouvrables-personnalisés" id="toc-créer-une-spécification-incluant-les-jeux-de-régresseurs-jours-ouvrables-personnalisés" class="nav-link" data-scroll-target="#créer-une-spécification-incluant-les-jeux-de-régresseurs-jours-ouvrables-personnalisés"><span class="header-section-number">2</span> Créer une spécification incluant les jeux de régresseurs « jours ouvrables » personnalisés</a></li>
+  <li><a href="#sec-import-reg" id="toc-sec-import-reg" class="nav-link" data-scroll-target="#sec-import-reg"><span class="header-section-number">2</span> Importer les jeux de régresseurs « Jours Ouvrables » sous JDemetra+</a>
+  <ul class="collapse">
+  <li><a href="#importer-des-régresseurs-manuellement" id="toc-importer-des-régresseurs-manuellement" class="nav-link" data-scroll-target="#importer-des-régresseurs-manuellement"><span class="header-section-number">2.1</span> Importer des régresseurs manuellement</a></li>
+  <li><a href="#importer-des-régresseurs-grâce-à-r" id="toc-importer-des-régresseurs-grâce-à-r" class="nav-link" data-scroll-target="#importer-des-régresseurs-grâce-à-r"><span class="header-section-number">2.2</span> Importer des régresseurs grâce à R</a></li>
+  <li><a href="#créer-une-spécification-incluant-les-jeux-de-régresseurs-jours-ouvrables-personnalisés" id="toc-créer-une-spécification-incluant-les-jeux-de-régresseurs-jours-ouvrables-personnalisés" class="nav-link" data-scroll-target="#créer-une-spécification-incluant-les-jeux-de-régresseurs-jours-ouvrables-personnalisés"><span class="header-section-number">2.3</span> Créer une spécification incluant les jeux de régresseurs « jours ouvrables » personnalisés</a></li>
+  </ul></li>
   <li><a href="#réaliser-une-désaisonnalisation-automatique-de-vos-séries-en-utilisant-la-spécification-x13spec-1" id="toc-réaliser-une-désaisonnalisation-automatique-de-vos-séries-en-utilisant-la-spécification-x13spec-1" class="nav-link" data-scroll-target="#réaliser-une-désaisonnalisation-automatique-de-vos-séries-en-utilisant-la-spécification-x13spec-1"><span class="header-section-number">3</span> Réaliser une désaisonnalisation automatique de vos séries en utilisant la spécification X13Spec-1</a></li>
   <li><a href="#analyser-les-diagnostics-relatifs-à-la-correction-des-effets-de-calendrier" id="toc-analyser-les-diagnostics-relatifs-à-la-correction-des-effets-de-calendrier" class="nav-link" data-scroll-target="#analyser-les-diagnostics-relatifs-à-la-correction-des-effets-de-calendrier"><span class="header-section-number">4</span> Analyser les diagnostics relatifs à la correction des effets de calendrier</a></li>
   </ul>
@@ -209,28 +216,26 @@ gtag('config', 'G-X652XRGDPL', { 'anonymize_ip': true});
 </header>
 
 
-<section id="importer-les-jeux-de-régresseurs-jours-ouvrables-sous-jdemetra" class="level1" data-number="1">
-<h1 data-number="1"><span class="header-section-number">1</span> Importer les jeux de régresseurs « Jours Ouvrables » sous JDemetra+</h1>
+<p>Dans JDemetra+ 2.x.y, si l’on crée soit-même un calendrier seul deux types de régresseurs sont possibles (<em>trading days</em> et <em>working days</em>) : il est donc vite utile de créer soit même des régresseurs de calendrier et de les importer dans JDemetra+ (<a href="#sec-import-reg" class="quarto-xref">section&nbsp;2</a>). Dans JDemetra+ 3.x.y, il est possible d’utiliser bien plus de régresseurs de calendrier à partir d’un calendrier personnalisé. Dans la majorité des cas il n’est donc plus utile d’exporter les régresseurs et ce calendrier peut directeur être utilisé (<a href="#sec-calendrier" class="quarto-xref">section&nbsp;1</a>) : c’est la solution que nous privilégierons.</p>
+<section id="sec-calendrier" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> Utilisation d’un calendrier personnalisé dans JDemetra+</h1>
+<section id="création-du-calendrier-depuis-jdemetra" class="level2" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="création-du-calendrier-depuis-jdemetra"><span class="header-section-number">1.1</span> Création du calendrier depuis JDemetra+</h2>
 <ul>
-<li><p>Cliquer sur l’onglet <code>Providers</code>.</p></li>
-<li><p>Clic-droit sur <code>Spreadsheets</code>.</p></li>
-<li><p>Cliquer sur <code>Open</code>.</p></li>
-<li><p>Cliquer sur le bouton <code>…</code>.</p></li>
-<li><p>Sélectionner le fichier Excel « <a href="data/regcjo.xlsx">regcjo.xlsx</a> » contenant les régresseurs « Jours Ouvrables ».</p></li>
-<li><p>Cliquer sur <code>OK</code>.</p></li>
-<li><p>Cliquer sur l’onglet <code>Workspace</code>.</p></li>
-<li><p>Cliquer sur le <code>+</code> à côté d’<code>Utilities</code>.</p></li>
-<li><p>Clic-droit sur <code>Variables</code>.</p></li>
-<li><p>Cliquer sur <code>New</code>.</p></li>
-<li><p>Cliquer sur le <code>+</code> à côté de <code>Variables</code>.</p></li>
-<li><p>Double cliquer sur l’icône <code>Vars-1</code>.</p></li>
-<li><p>Que se passe-t-il ?</p></li>
-<li><p>Retourner dans l’onglet <code>Providers</code>.</p></li>
-<li><p>Faire glisser l’ensemble des séries du fichier « regcjo.xls » dans l’onglet <code>Vars-1</code>.</p></li>
-<li><p>Renommer les séries en reprenant leur nom d’origine dans le fichier excel « regcjo.xls ».</p></li>
+<li><p>Dans l’onglet <code>Workspace</code>, cliquer droit sur <code>Utilities &gt; Calendars</code> puis <code>Add Calendar &gt; National</code></p></li>
+<li><p>Donner un nom au calendrier (par exemple <code>CAL</code>)</p></li>
+<li><p>Ajouter des jours en cliquant sur le <code>+</code> :</p>
+<ul>
+<li><p><code>Fixed</code> pour ajouter un jour férié qui tombe à date fixe (par exemple 8 mai)</p></li>
+<li><p><code>Easter Related</code> pour ajouter un jour férié dont le jour dépend de Pâques : le paramètre <code>offset</code> permet de spécifier le nombre de jours avant (si négatif) ou après Pâques (si positif).</p></li>
+<li><p><code>Fixed week</code> qui permet d’ajouter des jours fériés qui apparaissent certaines semaines de certains mois (par exemple le premier lundi du mois de septembre aux USA)</p></li>
+<li><p><code>Single Date</code> pour ajouter un jour ferié qui n’a eu lieu qu’une seule fois (i.e.&nbsp;une année seulement).</p></li>
+<li><p><code>Special Day</code> qui permet d’ajouter des jours fériés par rapport à des dates déjà connues dans JDemetra+ (voir tableau ci-dessous). Comme pour la fonction <code>easter_day()</code>, le paramètre <code>offset</code> permet de spécifier la position du jour voulu par rapport rapport à la fête pré-spécifié (par défaut <code>offset = 0</code>, le jour férié coïncide avec le jour pré-spécifié).</p></li>
+</ul></li>
 </ul>
-<p>Ce travail peut être très fastidieux… Heureusement depuis R il existe une solution plus automatique !</p>
-<p>Il existe deux façons de faire, en fonction de si l’on utilise une version 2.x.y ou 3.x.y de JDemetra+. Repartons déjà des régresseurs jours ouvrables (pour leur création, voir le TP R associé en <a href="../TP/R_2_CJO_v2.html">V2</a> ou <a href="../TP/R_2_CJO_v3.html">V3</a>) :</p>
+</section>
+<section id="création-du-calendrier-depuis-r-v3.x.y" class="level2" data-number="1.2">
+<h2 data-number="1.2" class="anchored" data-anchor-id="création-du-calendrier-depuis-r-v3.x.y"><span class="header-section-number">1.2</span> Création du calendrier depuis R (v3.x.y)</h2>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -264,45 +269,7 @@ Exemple de calendrier associé à la France
 <span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>    <span class="fu">special_day</span>(<span class="st">"ALLSAINTSDAY"</span>), <span class="co"># Toussaint</span></span>
 <span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>    <span class="fu">special_day</span>(<span class="st">"ARMISTICE"</span>)</span>
 <span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>))</span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>CAL <span class="ot">&lt;-</span> <span class="fu">national_calendar</span>(FR)</span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>gen_calendrier <span class="ot">&lt;-</span> <span class="cf">function</span>(cal, frequency, <span class="at">start =</span> <span class="fu">c</span>(<span class="dv">1990</span>, <span class="dv">1</span>), <span class="at">end =</span> <span class="fu">c</span>(<span class="dv">2030</span>, <span class="dv">1</span>)) {</span>
-<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>    length <span class="ot">=</span> (end[<span class="dv">1</span>] <span class="sc">-</span> start[<span class="dv">1</span>]) <span class="sc">*</span> frequency <span class="sc">+</span> end[<span class="dv">2</span>] <span class="sc">-</span> start[<span class="dv">2</span>]</span>
-<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>    ly <span class="ot">&lt;-</span> rjd3toolkit<span class="sc">::</span><span class="fu">lp_variable</span>(<span class="at">frequency =</span> frequency, <span class="at">start =</span> start,</span>
-<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>                                   <span class="at">length =</span> length)</span>
-<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>    <span class="co"># N'hésitez pas à ajouter les votre !</span></span>
-<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>    TD7 <span class="ot">&lt;-</span> <span class="fu">calendar_td</span>(cal, <span class="at">frequency =</span> frequency, <span class="at">start =</span> start, <span class="at">length =</span> length,</span>
-<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>                       <span class="at">groups =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>, <span class="dv">0</span>))</span>
-<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>    TD4 <span class="ot">&lt;-</span> <span class="fu">calendar_td</span>(cal, <span class="at">frequency =</span> frequency, <span class="at">start =</span> start, <span class="at">length =</span> length,</span>
-<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>                       <span class="at">groups =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">0</span>))</span>
-<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>    TD3 <span class="ot">&lt;-</span> <span class="fu">calendar_td</span>(cal, <span class="at">frequency =</span> frequency, <span class="at">start =</span> start, <span class="at">length =</span> length,</span>
-<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>                       <span class="at">groups =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">0</span>))</span>
-<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>    TD3c <span class="ot">&lt;-</span> <span class="fu">calendar_td</span>(cal, <span class="at">frequency =</span> frequency, <span class="at">start =</span> start, <span class="at">length =</span> length,</span>
-<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>                        <span class="at">groups =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">0</span>))</span>
-<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>    TD2 <span class="ot">&lt;-</span> <span class="fu">calendar_td</span>(cal, <span class="at">frequency =</span> frequency, <span class="at">start =</span> start, <span class="at">length =</span> length,</span>
-<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>                       <span class="at">groups =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">0</span>))</span>
-<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a>    TD2c <span class="ot">&lt;-</span> <span class="fu">calendar_td</span>(cal, <span class="at">frequency =</span> frequency, <span class="at">start =</span> start, <span class="at">length =</span> length,</span>
-<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a>                        <span class="at">groups =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">0</span>))</span>
-<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a>    reg_jo <span class="ot">&lt;-</span> <span class="fu">ts</span>(<span class="fu">cbind</span>(TD2, TD2c, TD3, TD3c, TD4, TD7),</span>
-<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a>                 <span class="at">start =</span> start, <span class="at">frequency =</span> frequency)</span>
-<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a>    reg_jo <span class="ot">&lt;-</span> <span class="fu">ts.intersect</span>(reg_jo,</span>
-<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a>                           ly)</span>
-<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a>    <span class="fu">colnames</span>(reg_jo) <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
-<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a>        <span class="st">"TD2_semaine"</span>,</span>
-<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a>        <span class="st">"TD2c_lundi_samedi"</span>,</span>
-<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a>        <span class="fu">sprintf</span>(<span class="st">"TD3_%s"</span>, <span class="fu">c</span>(<span class="st">"semaine"</span>, <span class="st">"samedi"</span>)),</span>
-<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a>        <span class="fu">sprintf</span>(<span class="st">"TD3c_%s"</span>, <span class="fu">c</span>(<span class="st">"lundi_jeudi"</span>, <span class="st">"vendredi_samedi"</span>)),</span>
-<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a>        <span class="fu">sprintf</span>(<span class="st">"TD4_%s"</span>, <span class="fu">c</span>(<span class="st">"lundi_jeudi"</span>, <span class="st">"vendredi"</span>, <span class="st">"samedi"</span>)),</span>
-<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a>        <span class="fu">sprintf</span>(<span class="st">"TD7_%s"</span>, <span class="fu">c</span>(<span class="st">"lundi"</span>, <span class="st">"mardi"</span>, <span class="st">"mercredi"</span>, <span class="st">"jeudi"</span>, <span class="st">"vendredi"</span>, <span class="st">"samedi"</span>)),</span>
-<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a>        <span class="st">"leap_year"</span>)</span>
-<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a>    reg_jo</span>
-<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a>regresseurs_JO_trim <span class="ot">&lt;-</span> <span class="fu">gen_calendrier</span>(CAL, <span class="at">frequency =</span> <span class="dv">4</span>)</span>
-<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a>regresseurs_JO_mens <span class="ot">&lt;-</span> <span class="fu">gen_calendrier</span>(CAL, <span class="at">frequency =</span> <span class="dv">12</span>)</span>
-<span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(regresseurs_JO_trim) <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="fu">colnames</span>(regresseurs_JO_trim), <span class="st">"_trim"</span>)</span>
-<span id="cb1-59"><a href="#cb1-59" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(regresseurs_JO_mens) <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="fu">colnames</span>(regresseurs_JO_mens), <span class="st">"_mens"</span>)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>CAL <span class="ot">&lt;-</span> <span class="fu">national_calendar</span>(FR)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
@@ -562,123 +529,29 @@ Exemple de calendrier associé à la Macronie
 <span id="cb2-239"><a href="#cb2-239" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2023-09-04"</span>),</span>
 <span id="cb2-240"><a href="#cb2-240" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2024-08-23"</span>)</span>
 <span id="cb2-241"><a href="#cb2-241" aria-hidden="true" tabindex="-1"></a>  ))</span>
-<span id="cb2-242"><a href="#cb2-242" aria-hidden="true" tabindex="-1"></a>CAL <span class="ot">&lt;-</span> <span class="fu">national_calendar</span>(jours_macronia)</span>
-<span id="cb2-243"><a href="#cb2-243" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-244"><a href="#cb2-244" aria-hidden="true" tabindex="-1"></a>gen_calendrier <span class="ot">&lt;-</span> <span class="cf">function</span>(cal, frequency, <span class="at">start =</span> <span class="fu">c</span>(<span class="dv">1990</span>, <span class="dv">1</span>), <span class="at">end =</span> <span class="fu">c</span>(<span class="dv">2030</span>, <span class="dv">1</span>)) {</span>
-<span id="cb2-245"><a href="#cb2-245" aria-hidden="true" tabindex="-1"></a>    length <span class="ot">=</span> (end[<span class="dv">1</span>] <span class="sc">-</span> start[<span class="dv">1</span>]) <span class="sc">*</span> frequency <span class="sc">+</span> end[<span class="dv">2</span>] <span class="sc">-</span> start[<span class="dv">2</span>]</span>
-<span id="cb2-246"><a href="#cb2-246" aria-hidden="true" tabindex="-1"></a>    ly <span class="ot">&lt;-</span> rjd3toolkit<span class="sc">::</span><span class="fu">lp_variable</span>(<span class="at">frequency =</span> frequency, <span class="at">start =</span> start,</span>
-<span id="cb2-247"><a href="#cb2-247" aria-hidden="true" tabindex="-1"></a>                                   <span class="at">length =</span> length)</span>
-<span id="cb2-248"><a href="#cb2-248" aria-hidden="true" tabindex="-1"></a>    <span class="co"># N'hésitez pas à ajouter les votre !</span></span>
-<span id="cb2-249"><a href="#cb2-249" aria-hidden="true" tabindex="-1"></a>    TD7 <span class="ot">&lt;-</span> <span class="fu">calendar_td</span>(cal, <span class="at">frequency =</span> frequency, <span class="at">start =</span> start, <span class="at">length =</span> length,</span>
-<span id="cb2-250"><a href="#cb2-250" aria-hidden="true" tabindex="-1"></a>                       <span class="at">groups =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>, <span class="dv">0</span>))</span>
-<span id="cb2-251"><a href="#cb2-251" aria-hidden="true" tabindex="-1"></a>    TD4 <span class="ot">&lt;-</span> <span class="fu">calendar_td</span>(cal, <span class="at">frequency =</span> frequency, <span class="at">start =</span> start, <span class="at">length =</span> length,</span>
-<span id="cb2-252"><a href="#cb2-252" aria-hidden="true" tabindex="-1"></a>                       <span class="at">groups =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">0</span>))</span>
-<span id="cb2-253"><a href="#cb2-253" aria-hidden="true" tabindex="-1"></a>    TD3 <span class="ot">&lt;-</span> <span class="fu">calendar_td</span>(cal, <span class="at">frequency =</span> frequency, <span class="at">start =</span> start, <span class="at">length =</span> length,</span>
-<span id="cb2-254"><a href="#cb2-254" aria-hidden="true" tabindex="-1"></a>                       <span class="at">groups =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">0</span>))</span>
-<span id="cb2-255"><a href="#cb2-255" aria-hidden="true" tabindex="-1"></a>    TD3c <span class="ot">&lt;-</span> <span class="fu">calendar_td</span>(cal, <span class="at">frequency =</span> frequency, <span class="at">start =</span> start, <span class="at">length =</span> length,</span>
-<span id="cb2-256"><a href="#cb2-256" aria-hidden="true" tabindex="-1"></a>                        <span class="at">groups =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">0</span>))</span>
-<span id="cb2-257"><a href="#cb2-257" aria-hidden="true" tabindex="-1"></a>    TD2 <span class="ot">&lt;-</span> <span class="fu">calendar_td</span>(cal, <span class="at">frequency =</span> frequency, <span class="at">start =</span> start, <span class="at">length =</span> length,</span>
-<span id="cb2-258"><a href="#cb2-258" aria-hidden="true" tabindex="-1"></a>                       <span class="at">groups =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">0</span>))</span>
-<span id="cb2-259"><a href="#cb2-259" aria-hidden="true" tabindex="-1"></a>    TD2c <span class="ot">&lt;-</span> <span class="fu">calendar_td</span>(cal, <span class="at">frequency =</span> frequency, <span class="at">start =</span> start, <span class="at">length =</span> length,</span>
-<span id="cb2-260"><a href="#cb2-260" aria-hidden="true" tabindex="-1"></a>                        <span class="at">groups =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">0</span>))</span>
-<span id="cb2-261"><a href="#cb2-261" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb2-262"><a href="#cb2-262" aria-hidden="true" tabindex="-1"></a>    reg_jo <span class="ot">&lt;-</span> <span class="fu">ts</span>(<span class="fu">cbind</span>(TD2, TD2c, TD3, TD3c, TD4, TD7),</span>
-<span id="cb2-263"><a href="#cb2-263" aria-hidden="true" tabindex="-1"></a>                 <span class="at">start =</span> start, <span class="at">frequency =</span> frequency)</span>
-<span id="cb2-264"><a href="#cb2-264" aria-hidden="true" tabindex="-1"></a>    reg_jo <span class="ot">&lt;-</span> <span class="fu">ts.intersect</span>(reg_jo,</span>
-<span id="cb2-265"><a href="#cb2-265" aria-hidden="true" tabindex="-1"></a>                           ly)</span>
-<span id="cb2-266"><a href="#cb2-266" aria-hidden="true" tabindex="-1"></a>    <span class="fu">colnames</span>(reg_jo) <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
-<span id="cb2-267"><a href="#cb2-267" aria-hidden="true" tabindex="-1"></a>        <span class="st">"TD2_semaine"</span>,</span>
-<span id="cb2-268"><a href="#cb2-268" aria-hidden="true" tabindex="-1"></a>        <span class="st">"TD2c_lundi_samedi"</span>,</span>
-<span id="cb2-269"><a href="#cb2-269" aria-hidden="true" tabindex="-1"></a>        <span class="fu">sprintf</span>(<span class="st">"TD3_%s"</span>, <span class="fu">c</span>(<span class="st">"semaine"</span>, <span class="st">"samedi"</span>)),</span>
-<span id="cb2-270"><a href="#cb2-270" aria-hidden="true" tabindex="-1"></a>        <span class="fu">sprintf</span>(<span class="st">"TD3c_%s"</span>, <span class="fu">c</span>(<span class="st">"lundi_jeudi"</span>, <span class="st">"vendredi_samedi"</span>)),</span>
-<span id="cb2-271"><a href="#cb2-271" aria-hidden="true" tabindex="-1"></a>        <span class="fu">sprintf</span>(<span class="st">"TD4_%s"</span>, <span class="fu">c</span>(<span class="st">"lundi_jeudi"</span>, <span class="st">"vendredi"</span>, <span class="st">"samedi"</span>)),</span>
-<span id="cb2-272"><a href="#cb2-272" aria-hidden="true" tabindex="-1"></a>        <span class="fu">sprintf</span>(<span class="st">"TD7_%s"</span>, <span class="fu">c</span>(<span class="st">"lundi"</span>, <span class="st">"mardi"</span>, <span class="st">"mercredi"</span>, <span class="st">"jeudi"</span>, <span class="st">"vendredi"</span>, <span class="st">"samedi"</span>)),</span>
-<span id="cb2-273"><a href="#cb2-273" aria-hidden="true" tabindex="-1"></a>        <span class="st">"leap_year"</span>)</span>
-<span id="cb2-274"><a href="#cb2-274" aria-hidden="true" tabindex="-1"></a>    reg_jo</span>
-<span id="cb2-275"><a href="#cb2-275" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb2-276"><a href="#cb2-276" aria-hidden="true" tabindex="-1"></a>regresseurs_JO_trim <span class="ot">&lt;-</span> <span class="fu">gen_calendrier</span>(CAL, <span class="at">frequency =</span> <span class="dv">4</span>)</span>
-<span id="cb2-277"><a href="#cb2-277" aria-hidden="true" tabindex="-1"></a>regresseurs_JO_mens <span class="ot">&lt;-</span> <span class="fu">gen_calendrier</span>(CAL, <span class="at">frequency =</span> <span class="dv">12</span>)</span>
-<span id="cb2-278"><a href="#cb2-278" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-279"><a href="#cb2-279" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(regresseurs_JO_trim) <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="fu">colnames</span>(regresseurs_JO_trim), <span class="st">"_trim"</span>)</span>
-<span id="cb2-280"><a href="#cb2-280" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(regresseurs_JO_mens) <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="fu">colnames</span>(regresseurs_JO_mens), <span class="st">"_mens"</span>)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-242"><a href="#cb2-242" aria-hidden="true" tabindex="-1"></a>CAL <span class="ot">&lt;-</span> <span class="fu">national_calendar</span>(jours_macronia)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
 </div>
-<section id="jdemetra-2.x.y" class="level2" data-number="1.1">
-<h2 data-number="1.1" class="anchored" data-anchor-id="jdemetra-2.x.y"><span class="header-section-number">1.1</span> JDemetra+ 2.x.y</h2>
-<p>Ci-dessous un code pour vous éviter de faire le travail manuel. Il est un peu peu compliqué mais une fois le code écrit, vous pouvez l’utiliser tel quel ! Vous pourrez ensuite repartir du workspace créé pour y ajouter vos propres séries.</p>
+<p>Une fois le calendrier défini, un workspace peut être créé de la façon suivante :</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># On va créer un nouveau workspace où l'on va ajouter les nouvelles variables</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(RJDemetra)</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(rJava)</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>complete_variables <span class="ot">&lt;-</span> <span class="cf">function</span>(liste_var, workspace){</span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span>(<span class="sc">!</span><span class="fu">is.mts</span>(liste_var))</span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>        <span class="fu">stop</span>(<span class="st">"liste_var doit être de type mts"</span>)</span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>    context_dictionary <span class="ot">&lt;-</span> <span class="fu">.jcall</span>(workspace,<span class="st">"Lec/tstoolkit/algorithm/ProcessingContext;"</span>, <span class="st">"getContext"</span>)</span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>    ts_variable_managers <span class="ot">&lt;-</span> context_dictionary<span class="sc">$</span><span class="fu">getTsVariableManagers</span>()</span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>    ts_variables <span class="ot">&lt;-</span> <span class="fu">.jnew</span>(<span class="st">"ec/tstoolkit/timeseries/regression/TsVariables"</span>)</span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>    jd_r_variables <span class="ot">&lt;-</span> ts_variable_managers<span class="sc">$</span><span class="fu">get</span>(<span class="st">"r"</span>)</span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (<span class="fu">is.null</span>(jd_r_variables)) {</span>
-<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>        ts_variable_managers<span class="sc">$</span><span class="fu">set</span>(<span class="st">"r"</span>,</span>
-<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>                                 <span class="fu">.jnew</span>(<span class="st">"ec/tstoolkit/timeseries/regression/TsVariables"</span>))</span>
-<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>        jd_r_variables <span class="ot">&lt;-</span> ts_variable_managers<span class="sc">$</span><span class="fu">get</span>(<span class="st">"r"</span>)</span>
-<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>    }</span>
-<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>    jd_var_names <span class="ot">&lt;-</span> jd_r_variables<span class="sc">$</span><span class="fu">getNames</span>()</span>
-<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>    model_var_names <span class="ot">&lt;-</span> <span class="fu">colnames</span>(liste_var)</span>
-<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> (i <span class="cf">in</span> <span class="fu">seq_along</span>(model_var_names)) {</span>
-<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>        name <span class="ot">&lt;-</span> model_var_names[i]</span>
-<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a>        dictionary_var <span class="ot">&lt;-</span> jd_r_variables<span class="sc">$</span><span class="fu">get</span>(name)</span>
-<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a>        tsvar <span class="ot">&lt;-</span> <span class="fu">.jnew</span>(<span class="st">"ec/tstoolkit/timeseries/regression/TsVariable"</span>,</span>
-<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a>                       name, RJDemetra<span class="sc">:::</span><span class="fu">ts_r2jd</span>(liste_var[, i]))</span>
-<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> (<span class="fu">is.null</span>(dictionary_var)) {</span>
-<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a>            jd_r_variables<span class="sc">$</span><span class="fu">set</span>(name, tsvar)</span>
-<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a>        } <span class="cf">else</span> {</span>
-<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a>            <span class="fu">warning</span>(<span class="fu">sprintf</span>(<span class="st">"La variable %s existe déjà"</span>, name))</span>
-<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a>        }</span>
-<span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a>    }</span>
-<span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb3-32"><a href="#cb3-32" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-33"><a href="#cb3-33" aria-hidden="true" tabindex="-1"></a><span class="co"># Création d'un nouveaux</span></span>
-<span id="cb3-34"><a href="#cb3-34" aria-hidden="true" tabindex="-1"></a>jws <span class="ot">&lt;-</span> <span class="fu">new_workspace</span>()</span>
-<span id="cb3-35"><a href="#cb3-35" aria-hidden="true" tabindex="-1"></a><span class="co"># regresseurs_JO est l'objet mts qui contient tous vos régresseurs</span></span>
-<span id="cb3-36"><a href="#cb3-36" aria-hidden="true" tabindex="-1"></a><span class="co"># Il doit donc déjà être créé (voir code ci-dessus) !</span></span>
-<span id="cb3-37"><a href="#cb3-37" aria-hidden="true" tabindex="-1"></a><span class="fu">complete_variables</span>(regresseurs_JO_mens, jws)</span>
-<span id="cb3-38"><a href="#cb3-38" aria-hidden="true" tabindex="-1"></a><span class="fu">complete_variables</span>(regresseurs_JO_trim, jws)</span>
-<span id="cb3-39"><a href="#cb3-39" aria-hidden="true" tabindex="-1"></a><span class="fu">save_workspace</span>(jws,<span class="st">"wk_CJO.xml"</span>)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># On va créer deux groupes de variables, on peut donc simplifier les noms</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>ctxt <span class="ot">&lt;-</span> rjd3toolkit<span class="sc">::</span><span class="fu">modelling_context</span>(</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    <span class="co"># on appelle "CAL" le calendrier</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">calendars =</span> <span class="fu">list</span>(<span class="at">CAL =</span> CAL)</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>) </span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>jws <span class="ot">&lt;-</span> rjd3workspace<span class="sc">::</span><span class="fu">jws_new</span>(ctxt)</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>rjd3workspace<span class="sc">::</span><span class="fu">save_workspace</span>(jws, <span class="st">"wk_CJO_v3.xml"</span>)</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="co"># # Si le workspace existe déjà on peut utiliser le code suivant :</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="co"># jws &lt;- rjd3workspace::.jws_open("chemin_vers_workspace")</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="co"># rjd3workspace::add_calendar(jws, "CAL", CAL)</span></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="co"># rjd3workspace::save_workspace(jws, "chemin_vers_nouveau_workspace")</span></span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="jdemetra-3.x.y" class="level2" data-number="1.2">
-<h2 data-number="1.2" class="anchored" data-anchor-id="jdemetra-3.x.y"><span class="header-section-number">1.2</span> JDemetra+ 3.x.y</h2>
-<p>Pour la version 3 de JDemetra+, le code est plus simple. Vous pouvez également ajouter les calendriers</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># On va créer deux groupes de variables, on peut donc simplifier les noms</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(regresseurs_JO_mens) <span class="ot">&lt;-</span> </span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">colnames</span>(regresseurs_JO_trim) <span class="ot">&lt;-</span> </span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">gsub</span>(<span class="st">"_mens"</span>, <span class="st">""</span>, <span class="fu">colnames</span>(regresseurs_JO_mens))</span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>ctxt <span class="ot">&lt;-</span> rjd3toolkit<span class="sc">::</span><span class="fu">modelling_context</span>(</span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>    <span class="co"># on appelle "CAL" le calendrier</span></span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">calendars =</span> <span class="fu">list</span>(<span class="at">CAL =</span> CAL), </span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>    <span class="co"># on crée un groupe de variables "cjo_mens" contenant les régresseurs mensuels</span></span>
-<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>    <span class="co"># et un groupe de variables "cjo_trim" contenant les régresseurs trimestriels</span></span>
-<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">variables =</span> <span class="fu">list</span>(<span class="at">cjo_mens =</span> regresseurs_JO_mens,</span>
-<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>                     <span class="at">cjo_trim =</span> regresseurs_JO_trim)</span>
-<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>) </span>
-<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>jws <span class="ot">&lt;-</span> rjd3workspace<span class="sc">::</span><span class="fu">jws_new</span>(ctxt)</span>
-<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a><span class="co"># On peut également ajouter les calendriers et les variables avec les fonctions :</span></span>
-<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a><span class="co"># rjd3workspace:::add_variables()</span></span>
-<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a><span class="co"># rjd3workspace:::add_calendar()</span></span>
-<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a><span class="co"># Pour modifier un workspace existant :</span></span>
-<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a><span class="co"># rjd3workspace::set_context()</span></span>
-<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a>rjd3workspace<span class="sc">::</span><span class="fu">save_workspace</span>(jws, <span class="st">"wk_CJO_v3.xml"</span>)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-</section>
-<section id="créer-une-spécification-incluant-les-jeux-de-régresseurs-jours-ouvrables-personnalisés" class="level1" data-number="2">
-<h1 data-number="2"><span class="header-section-number">2</span> Créer une spécification incluant les jeux de régresseurs « jours ouvrables » personnalisés</h1>
+<section id="créer-une-spécification-incluant-le-calendrier-personnalisé" class="level2" data-number="1.3">
+<h2 data-number="1.3" class="anchored" data-anchor-id="créer-une-spécification-incluant-le-calendrier-personnalisé"><span class="header-section-number">1.3</span> Créer une spécification incluant le calendrier personnalisé</h2>
 <ul>
 <li><p>Cliquer sur l’onglet <code>Workspace</code>.</p></li>
 <li><p>Double cliquer sur <code>Seasonal adjustment</code>.</p></li>
@@ -690,15 +563,540 @@ Exemple de calendrier associé à la Macronie
 <li><p>Double-cliquer sur <code>X13Spec-1</code>.</p></li>
 <li><p>Cliquer sur le <code>+</code> à côté de <code>Calendar</code>.</p></li>
 <li><p>Cliquer sur le <code>+</code> à côté de <code>tradingDays</code>.</p></li>
-<li><p>Cliquer sur <code>Default</code> à côté de option.</p></li>
+<li><p>Cliquer sur <code>Default</code> à côté de <code>option</code> (ligne 1) et choisir l’option <code>Holidays</code>.</p></li>
+<li><p>Cliquer sur <code>Default</code> à côté de <code>holidays</code> (ligne 3) et choisir votre calendrier</p></li>
+</ul>
+<p>Par défaut l’option trading days (TD7) les autres options possibles dans JDemetra+ 3.x.y sont :</p>
+<p>Même si un raisonnement économique est à privilégier pour le choix des régresseurs, une sélection automatique peut être faite par JDemetra+ (option <code>automatic</code>, ligne 2) en utilisant des tests de Wald ou en minimisant un critère d’information (BIC ou AIC).</p>
+</section>
+<section id="exporter-son-calendrier-dans-un-autre-workspace" class="level2" data-number="1.4">
+<h2 data-number="1.4" class="anchored" data-anchor-id="exporter-son-calendrier-dans-un-autre-workspace"><span class="header-section-number">1.4</span> Exporter son calendrier dans un autre workspace</h2>
+<p>Si vous souhaitez exporter votre calendrier, il est possible de créer un fichier config depuis l’interface qui peut ensuite être importé :</p>
+<ul>
+<li><p>Dans l’onglet <code>Workspace &gt; Utilities &gt; Calendars</code>, clic-droit sur le calendrier souhaité puis <code>Export to &gt; File...</code> celui crée un fichier <code>.cfgx</code>.</p></li>
+<li><p>Si vous créer un nouveau workspace, cet objet est importable dans JDemetra+ via l’onglet <code>Workspace &gt; Utilities &gt; Calendars</code>, clic-droit sur <code>Calendars</code> puis <code>Import from &gt; File...</code> et en sélectionnant le fichier <code>.cfgx</code> précédemment créé.</p></li>
+</ul>
+</section>
+</section>
+<section id="sec-import-reg" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> Importer les jeux de régresseurs « Jours Ouvrables » sous JDemetra+</h1>
+<section id="importer-des-régresseurs-manuellement" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="importer-des-régresseurs-manuellement"><span class="header-section-number">2.1</span> Importer des régresseurs manuellement</h2>
+<ul>
+<li><p>Cliquer sur l’onglet <code>Providers</code>.</p></li>
+<li><p>Clic-droit sur <code>Spreadsheets</code>.</p></li>
+<li><p>Cliquer sur <code>Open</code>.</p></li>
+<li><p>Cliquer sur le bouton <code>…</code>.</p></li>
+<li><p>Sélectionner le fichier Excel « <a href="data/regcjo.xlsx">regcjo.xlsx</a> » contenant les régresseurs « Jours Ouvrables » de la Macronie.</p></li>
+<li><p>Cliquer sur <code>OK</code>.</p></li>
+<li><p>Cliquer sur l’onglet <code>Workspace</code>.</p></li>
+<li><p>Cliquer sur le <code>+</code> à côté d’<code>Utilities</code>.</p></li>
+<li><p>Clic-droit sur <code>Variables</code>.</p></li>
+<li><p>Cliquer sur <code>New</code>.</p></li>
+<li><p>Cliquer sur le <code>+</code> à côté de <code>Variables</code>.</p></li>
+<li><p>Double cliquer sur l’icône <code>Vars-1</code>.</p></li>
 <li><p>Que se passe-t-il ?</p></li>
-<li><p>Cliquer sur <code>UserDefined</code>.</p></li>
+<li><p>Retourner dans l’onglet <code>Providers</code>.</p></li>
+<li><p>Faire glisser l’ensemble des séries du fichier « regcjo.xls » dans l’onglet <code>Vars-1</code>.</p></li>
+<li><p>Renommer les séries en reprenant leur nom d’origine dans le fichier excel « regcjo.xls ».</p></li>
+</ul>
+<p>Ce travail peut être très fastidieux… Heureusement depuis R il existe une solution plus automatique !</p>
+</section>
+<section id="importer-des-régresseurs-grâce-à-r" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="importer-des-régresseurs-grâce-à-r"><span class="header-section-number">2.2</span> Importer des régresseurs grâce à R</h2>
+<p>Il existe deux façons de faire, en fonction de si l’on utilise une version 2.x.y ou 3.x.y de JDemetra+. Repartons déjà des régresseurs jours ouvrables (pour leur création, voir le TP R associé en <a href="../TP/R_2_CJO_v2.html">V2</a> ou <a href="../TP/R_2_CJO_v3.html">V3</a>) :</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Exemple de calendrier associé à la France
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span> <span class="st">"rjd3toolkit"</span> <span class="sc">%in%</span> <span class="fu">installed.packages</span>()[,<span class="st">"Package"</span>]) {</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">install.packages</span>(<span class="st">"rjd3toolkit"</span>, <span class="at">repos =</span> <span class="fu">c</span>(<span class="st">"https://aqlt.r-universe.dev"</span>, <span class="st">"https://cloud.r-project.org"</span>))</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span> <span class="st">"rjd3workspace"</span> <span class="sc">%in%</span> <span class="fu">installed.packages</span>()[,<span class="st">"Package"</span>]) {</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">install.packages</span>(<span class="st">"rjd3workspace"</span>, <span class="at">repos =</span> <span class="fu">c</span>(<span class="st">"https://aqlt.r-universe.dev"</span>, <span class="st">"https://cloud.r-project.org"</span>))</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(rjd3toolkit)</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Exemple de calendrier associé à la France</span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>FR <span class="ot">&lt;-</span> <span class="fu">national_calendar</span>(<span class="fu">list</span>(</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>    <span class="fu">special_day</span>(<span class="st">"NEWYEAR"</span>),</span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>    <span class="fu">special_day</span>(<span class="st">"EASTERMONDAY"</span>), <span class="co"># Lundi de Pâques</span></span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>    <span class="fu">special_day</span>(<span class="st">"MAYDAY"</span>), <span class="co"># 1er mai</span></span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>    <span class="fu">special_day</span>(<span class="st">"ASCENSION"</span>), <span class="co"># Jour de l'Ascension</span></span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>    <span class="fu">fixed_day</span>(<span class="dv">5</span>, <span class="dv">8</span>),</span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>    <span class="fu">special_day</span>(<span class="st">"WHITMONDAY"</span>), <span class="co"># Lundi de Pentecôte</span></span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>    <span class="fu">fixed_day</span>(<span class="dv">7</span>, <span class="dv">14</span>),</span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>    <span class="fu">special_day</span>(<span class="st">"ASSUMPTION"</span>), <span class="co"># Assomption</span></span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>    <span class="fu">special_day</span>(<span class="st">"ALLSAINTSDAY"</span>), <span class="co"># Toussaint</span></span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a>    <span class="fu">special_day</span>(<span class="st">"ARMISTICE"</span>)</span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a>))</span>
+<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a>CAL <span class="ot">&lt;-</span> <span class="fu">national_calendar</span>(FR)</span>
+<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a>gen_calendrier <span class="ot">&lt;-</span> <span class="cf">function</span>(cal, frequency, <span class="at">start =</span> <span class="fu">c</span>(<span class="dv">1990</span>, <span class="dv">1</span>), <span class="at">end =</span> <span class="fu">c</span>(<span class="dv">2030</span>, <span class="dv">1</span>)) {</span>
+<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a>    length <span class="ot">=</span> (end[<span class="dv">1</span>] <span class="sc">-</span> start[<span class="dv">1</span>]) <span class="sc">*</span> frequency <span class="sc">+</span> end[<span class="dv">2</span>] <span class="sc">-</span> start[<span class="dv">2</span>]</span>
+<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a>    ly <span class="ot">&lt;-</span> rjd3toolkit<span class="sc">::</span><span class="fu">lp_variable</span>(<span class="at">frequency =</span> frequency, <span class="at">start =</span> start,</span>
+<span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a>                                   <span class="at">length =</span> length)</span>
+<span id="cb4-27"><a href="#cb4-27" aria-hidden="true" tabindex="-1"></a>    <span class="co"># N'hésitez pas à ajouter les votre !</span></span>
+<span id="cb4-28"><a href="#cb4-28" aria-hidden="true" tabindex="-1"></a>    TD7 <span class="ot">&lt;-</span> <span class="fu">calendar_td</span>(cal, <span class="at">frequency =</span> frequency, <span class="at">start =</span> start, <span class="at">length =</span> length,</span>
+<span id="cb4-29"><a href="#cb4-29" aria-hidden="true" tabindex="-1"></a>                       <span class="at">groups =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>, <span class="dv">0</span>))</span>
+<span id="cb4-30"><a href="#cb4-30" aria-hidden="true" tabindex="-1"></a>    TD4 <span class="ot">&lt;-</span> <span class="fu">calendar_td</span>(cal, <span class="at">frequency =</span> frequency, <span class="at">start =</span> start, <span class="at">length =</span> length,</span>
+<span id="cb4-31"><a href="#cb4-31" aria-hidden="true" tabindex="-1"></a>                       <span class="at">groups =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">0</span>))</span>
+<span id="cb4-32"><a href="#cb4-32" aria-hidden="true" tabindex="-1"></a>    TD3 <span class="ot">&lt;-</span> <span class="fu">calendar_td</span>(cal, <span class="at">frequency =</span> frequency, <span class="at">start =</span> start, <span class="at">length =</span> length,</span>
+<span id="cb4-33"><a href="#cb4-33" aria-hidden="true" tabindex="-1"></a>                       <span class="at">groups =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">0</span>))</span>
+<span id="cb4-34"><a href="#cb4-34" aria-hidden="true" tabindex="-1"></a>    TD3c <span class="ot">&lt;-</span> <span class="fu">calendar_td</span>(cal, <span class="at">frequency =</span> frequency, <span class="at">start =</span> start, <span class="at">length =</span> length,</span>
+<span id="cb4-35"><a href="#cb4-35" aria-hidden="true" tabindex="-1"></a>                        <span class="at">groups =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">0</span>))</span>
+<span id="cb4-36"><a href="#cb4-36" aria-hidden="true" tabindex="-1"></a>    TD2 <span class="ot">&lt;-</span> <span class="fu">calendar_td</span>(cal, <span class="at">frequency =</span> frequency, <span class="at">start =</span> start, <span class="at">length =</span> length,</span>
+<span id="cb4-37"><a href="#cb4-37" aria-hidden="true" tabindex="-1"></a>                       <span class="at">groups =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">0</span>))</span>
+<span id="cb4-38"><a href="#cb4-38" aria-hidden="true" tabindex="-1"></a>    TD2c <span class="ot">&lt;-</span> <span class="fu">calendar_td</span>(cal, <span class="at">frequency =</span> frequency, <span class="at">start =</span> start, <span class="at">length =</span> length,</span>
+<span id="cb4-39"><a href="#cb4-39" aria-hidden="true" tabindex="-1"></a>                        <span class="at">groups =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">0</span>))</span>
+<span id="cb4-40"><a href="#cb4-40" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb4-41"><a href="#cb4-41" aria-hidden="true" tabindex="-1"></a>    reg_jo <span class="ot">&lt;-</span> <span class="fu">ts</span>(<span class="fu">cbind</span>(TD2, TD2c, TD3, TD3c, TD4, TD7),</span>
+<span id="cb4-42"><a href="#cb4-42" aria-hidden="true" tabindex="-1"></a>                 <span class="at">start =</span> start, <span class="at">frequency =</span> frequency)</span>
+<span id="cb4-43"><a href="#cb4-43" aria-hidden="true" tabindex="-1"></a>    reg_jo <span class="ot">&lt;-</span> <span class="fu">ts.intersect</span>(reg_jo,</span>
+<span id="cb4-44"><a href="#cb4-44" aria-hidden="true" tabindex="-1"></a>                           ly)</span>
+<span id="cb4-45"><a href="#cb4-45" aria-hidden="true" tabindex="-1"></a>    <span class="fu">colnames</span>(reg_jo) <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
+<span id="cb4-46"><a href="#cb4-46" aria-hidden="true" tabindex="-1"></a>        <span class="st">"TD2_semaine"</span>,</span>
+<span id="cb4-47"><a href="#cb4-47" aria-hidden="true" tabindex="-1"></a>        <span class="st">"TD2c_lundi_samedi"</span>,</span>
+<span id="cb4-48"><a href="#cb4-48" aria-hidden="true" tabindex="-1"></a>        <span class="fu">sprintf</span>(<span class="st">"TD3_%s"</span>, <span class="fu">c</span>(<span class="st">"semaine"</span>, <span class="st">"samedi"</span>)),</span>
+<span id="cb4-49"><a href="#cb4-49" aria-hidden="true" tabindex="-1"></a>        <span class="fu">sprintf</span>(<span class="st">"TD3c_%s"</span>, <span class="fu">c</span>(<span class="st">"lundi_jeudi"</span>, <span class="st">"vendredi_samedi"</span>)),</span>
+<span id="cb4-50"><a href="#cb4-50" aria-hidden="true" tabindex="-1"></a>        <span class="fu">sprintf</span>(<span class="st">"TD4_%s"</span>, <span class="fu">c</span>(<span class="st">"lundi_jeudi"</span>, <span class="st">"vendredi"</span>, <span class="st">"samedi"</span>)),</span>
+<span id="cb4-51"><a href="#cb4-51" aria-hidden="true" tabindex="-1"></a>        <span class="fu">sprintf</span>(<span class="st">"TD7_%s"</span>, <span class="fu">c</span>(<span class="st">"lundi"</span>, <span class="st">"mardi"</span>, <span class="st">"mercredi"</span>, <span class="st">"jeudi"</span>, <span class="st">"vendredi"</span>, <span class="st">"samedi"</span>)),</span>
+<span id="cb4-52"><a href="#cb4-52" aria-hidden="true" tabindex="-1"></a>        <span class="st">"leap_year"</span>)</span>
+<span id="cb4-53"><a href="#cb4-53" aria-hidden="true" tabindex="-1"></a>    reg_jo</span>
+<span id="cb4-54"><a href="#cb4-54" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb4-55"><a href="#cb4-55" aria-hidden="true" tabindex="-1"></a>regresseurs_JO_trim <span class="ot">&lt;-</span> <span class="fu">gen_calendrier</span>(CAL, <span class="at">frequency =</span> <span class="dv">4</span>)</span>
+<span id="cb4-56"><a href="#cb4-56" aria-hidden="true" tabindex="-1"></a>regresseurs_JO_mens <span class="ot">&lt;-</span> <span class="fu">gen_calendrier</span>(CAL, <span class="at">frequency =</span> <span class="dv">12</span>)</span>
+<span id="cb4-57"><a href="#cb4-57" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-58"><a href="#cb4-58" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(regresseurs_JO_trim) <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="fu">colnames</span>(regresseurs_JO_trim), <span class="st">"_trim"</span>)</span>
+<span id="cb4-59"><a href="#cb4-59" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(regresseurs_JO_mens) <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="fu">colnames</span>(regresseurs_JO_mens), <span class="st">"_mens"</span>)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Exemple de calendrier associé à la Macronie
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Ici certains jours fériés sont associés à des fêtes mobiles qui sont inscrites dans un fichier Excel</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span> <span class="st">"rjd3toolkit"</span> <span class="sc">%in%</span> <span class="fu">installed.packages</span>()[,<span class="st">"Package"</span>]) {</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">install.packages</span>(<span class="st">"rjd3toolkit"</span>, <span class="at">repos =</span> <span class="fu">c</span>(<span class="st">"https://aqlt.r-universe.dev"</span>, <span class="st">"https://cloud.r-project.org"</span>))</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(rjd3toolkit)</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>jours_macronia <span class="ot">&lt;-</span> <span class="fu">list</span>(</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">special_day</span>(<span class="st">"NEWYEAR"</span>),</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">special_day</span>(<span class="st">"EASTERMONDAY"</span>), <span class="co"># Lundi de Pâques</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fixed_day</span>(<span class="dv">4</span>, <span class="dv">4</span>), <span class="co"># Jour de l'indépendance de la Macronia</span></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">special_day</span>(<span class="st">"MAYDAY"</span>), <span class="co"># 1er mai</span></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">special_day</span>(<span class="st">"ASCENSION"</span>), <span class="co"># Jour de l'Ascension</span></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>    <span class="fu">special_day</span>(<span class="st">"WHITMONDAY"</span>), <span class="co"># Lundi de Pentecôte</span></span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">special_day</span>(<span class="st">"ASSUMPTION"</span>), <span class="co"># Assomption de Marie</span></span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>    <span class="fu">special_day</span>(<span class="st">"ALLSAINTSDAY"</span>), <span class="co"># Toussaint</span></span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">special_day</span>(<span class="st">"CHRISTMAS"</span>) <span class="co"># Noël</span></span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>jours_macronia <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>  jours_macronia,</span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">list</span>(</span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a>    <span class="co"># DEBUT_RAMADAN,</span></span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"1990-03-28"</span>),</span>
+<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"1991-03-18"</span>),</span>
+<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"1992-03-06"</span>),</span>
+<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"1993-02-23"</span>),</span>
+<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"1994-02-12"</span>),</span>
+<span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"1995-02-14"</span>),</span>
+<span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"1996-01-22"</span>),</span>
+<span id="cb5-27"><a href="#cb5-27" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"1997-01-11"</span>),</span>
+<span id="cb5-28"><a href="#cb5-28" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"1997-12-31"</span>),</span>
+<span id="cb5-29"><a href="#cb5-29" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"1998-12-20"</span>),</span>
+<span id="cb5-30"><a href="#cb5-30" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"1999-12-10"</span>),</span>
+<span id="cb5-31"><a href="#cb5-31" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2000-11-28"</span>),</span>
+<span id="cb5-32"><a href="#cb5-32" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2001-11-17"</span>),</span>
+<span id="cb5-33"><a href="#cb5-33" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2002-11-07"</span>),</span>
+<span id="cb5-34"><a href="#cb5-34" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2003-10-27"</span>),</span>
+<span id="cb5-35"><a href="#cb5-35" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2004-10-15"</span>),</span>
+<span id="cb5-36"><a href="#cb5-36" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2005-10-05"</span>),</span>
+<span id="cb5-37"><a href="#cb5-37" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2006-09-24"</span>),</span>
+<span id="cb5-38"><a href="#cb5-38" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2007-09-14"</span>),</span>
+<span id="cb5-39"><a href="#cb5-39" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2008-09-02"</span>),</span>
+<span id="cb5-40"><a href="#cb5-40" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2009-08-22"</span>),</span>
+<span id="cb5-41"><a href="#cb5-41" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2010-08-12"</span>),</span>
+<span id="cb5-42"><a href="#cb5-42" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2011-08-01"</span>),</span>
+<span id="cb5-43"><a href="#cb5-43" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2012-07-20"</span>),</span>
+<span id="cb5-44"><a href="#cb5-44" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2013-07-10"</span>),</span>
+<span id="cb5-45"><a href="#cb5-45" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2014-06-29"</span>),</span>
+<span id="cb5-46"><a href="#cb5-46" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2015-07-18"</span>),</span>
+<span id="cb5-47"><a href="#cb5-47" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2016-06-07"</span>),</span>
+<span id="cb5-48"><a href="#cb5-48" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2017-05-27"</span>),</span>
+<span id="cb5-49"><a href="#cb5-49" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2018-05-17"</span>),</span>
+<span id="cb5-50"><a href="#cb5-50" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2019-05-06"</span>),</span>
+<span id="cb5-51"><a href="#cb5-51" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2020-04-24"</span>),</span>
+<span id="cb5-52"><a href="#cb5-52" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2021-04-14"</span>),</span>
+<span id="cb5-53"><a href="#cb5-53" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2022-04-03"</span>),</span>
+<span id="cb5-54"><a href="#cb5-54" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2023-03-23"</span>),</span>
+<span id="cb5-55"><a href="#cb5-55" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2024-03-12"</span>),</span>
+<span id="cb5-56"><a href="#cb5-56" aria-hidden="true" tabindex="-1"></a><span class="co"># KORITE,</span></span>
+<span id="cb5-57"><a href="#cb5-57" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"1990-04-27"</span>),</span>
+<span id="cb5-58"><a href="#cb5-58" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"1991-04-16"</span>),</span>
+<span id="cb5-59"><a href="#cb5-59" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"1992-04-04"</span>),</span>
+<span id="cb5-60"><a href="#cb5-60" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"1993-03-25"</span>),</span>
+<span id="cb5-61"><a href="#cb5-61" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"1994-03-14"</span>),</span>
+<span id="cb5-62"><a href="#cb5-62" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"1995-03-03"</span>),</span>
+<span id="cb5-63"><a href="#cb5-63" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"1996-02-09"</span>),</span>
+<span id="cb5-64"><a href="#cb5-64" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"1997-02-09"</span>),</span>
+<span id="cb5-65"><a href="#cb5-65" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"1998-01-29"</span>),</span>
+<span id="cb5-66"><a href="#cb5-66" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"1999-01-18"</span>),</span>
+<span id="cb5-67"><a href="#cb5-67" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2000-01-08"</span>),</span>
+<span id="cb5-68"><a href="#cb5-68" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2000-12-27"</span>),</span>
+<span id="cb5-69"><a href="#cb5-69" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2001-12-16"</span>),</span>
+<span id="cb5-70"><a href="#cb5-70" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2002-12-06"</span>),</span>
+<span id="cb5-71"><a href="#cb5-71" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2003-11-25"</span>),</span>
+<span id="cb5-72"><a href="#cb5-72" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2004-11-13"</span>),</span>
+<span id="cb5-73"><a href="#cb5-73" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2005-11-03"</span>),</span>
+<span id="cb5-74"><a href="#cb5-74" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2006-10-23"</span>),</span>
+<span id="cb5-75"><a href="#cb5-75" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2007-10-13"</span>),</span>
+<span id="cb5-76"><a href="#cb5-76" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2008-10-01"</span>),</span>
+<span id="cb5-77"><a href="#cb5-77" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2009-09-20"</span>),</span>
+<span id="cb5-78"><a href="#cb5-78" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2010-09-09"</span>),</span>
+<span id="cb5-79"><a href="#cb5-79" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2011-08-29"</span>),</span>
+<span id="cb5-80"><a href="#cb5-80" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2012-08-17"</span>),</span>
+<span id="cb5-81"><a href="#cb5-81" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2013-08-07"</span>),</span>
+<span id="cb5-82"><a href="#cb5-82" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2014-07-27"</span>),</span>
+<span id="cb5-83"><a href="#cb5-83" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2015-07-16"</span>),</span>
+<span id="cb5-84"><a href="#cb5-84" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2016-07-05"</span>),</span>
+<span id="cb5-85"><a href="#cb5-85" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2017-06-24"</span>),</span>
+<span id="cb5-86"><a href="#cb5-86" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2018-06-14"</span>),</span>
+<span id="cb5-87"><a href="#cb5-87" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2019-06-03"</span>),</span>
+<span id="cb5-88"><a href="#cb5-88" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2020-05-22"</span>),</span>
+<span id="cb5-89"><a href="#cb5-89" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2021-05-12"</span>),</span>
+<span id="cb5-90"><a href="#cb5-90" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2022-05-01"</span>),</span>
+<span id="cb5-91"><a href="#cb5-91" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2023-04-20"</span>),</span>
+<span id="cb5-92"><a href="#cb5-92" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2024-04-10"</span>),</span>
+<span id="cb5-93"><a href="#cb5-93" aria-hidden="true" tabindex="-1"></a><span class="co"># TABASKI,</span></span>
+<span id="cb5-94"><a href="#cb5-94" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"1990-06-24"</span>),</span>
+<span id="cb5-95"><a href="#cb5-95" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"1991-06-23"</span>),</span>
+<span id="cb5-96"><a href="#cb5-96" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"1992-06-11"</span>),</span>
+<span id="cb5-97"><a href="#cb5-97" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"1993-06-01"</span>),</span>
+<span id="cb5-98"><a href="#cb5-98" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"1994-05-21"</span>),</span>
+<span id="cb5-99"><a href="#cb5-99" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"1995-05-10"</span>),</span>
+<span id="cb5-100"><a href="#cb5-100" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"1996-04-29"</span>),</span>
+<span id="cb5-101"><a href="#cb5-101" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"1997-04-19"</span>),</span>
+<span id="cb5-102"><a href="#cb5-102" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"1998-04-08"</span>),</span>
+<span id="cb5-103"><a href="#cb5-103" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"1999-03-28"</span>),</span>
+<span id="cb5-104"><a href="#cb5-104" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2000-03-17"</span>),</span>
+<span id="cb5-105"><a href="#cb5-105" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2001-03-06"</span>),</span>
+<span id="cb5-106"><a href="#cb5-106" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2002-02-23"</span>),</span>
+<span id="cb5-107"><a href="#cb5-107" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2003-02-13"</span>),</span>
+<span id="cb5-108"><a href="#cb5-108" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2004-02-02"</span>),</span>
+<span id="cb5-109"><a href="#cb5-109" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2005-01-21"</span>),</span>
+<span id="cb5-110"><a href="#cb5-110" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2006-01-11"</span>),</span>
+<span id="cb5-111"><a href="#cb5-111" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2006-12-31"</span>),</span>
+<span id="cb5-112"><a href="#cb5-112" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2007-12-21"</span>),</span>
+<span id="cb5-113"><a href="#cb5-113" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2008-12-09"</span>),</span>
+<span id="cb5-114"><a href="#cb5-114" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2009-11-11"</span>),</span>
+<span id="cb5-115"><a href="#cb5-115" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2010-11-18"</span>),</span>
+<span id="cb5-116"><a href="#cb5-116" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2011-11-07"</span>),</span>
+<span id="cb5-117"><a href="#cb5-117" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2012-10-26"</span>),</span>
+<span id="cb5-118"><a href="#cb5-118" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2013-10-16"</span>),</span>
+<span id="cb5-119"><a href="#cb5-119" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2014-10-05"</span>),</span>
+<span id="cb5-120"><a href="#cb5-120" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2015-09-25"</span>),</span>
+<span id="cb5-121"><a href="#cb5-121" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2016-09-13"</span>),</span>
+<span id="cb5-122"><a href="#cb5-122" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2017-09-02"</span>),</span>
+<span id="cb5-123"><a href="#cb5-123" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2018-08-23"</span>),</span>
+<span id="cb5-124"><a href="#cb5-124" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2019-08-12"</span>),</span>
+<span id="cb5-125"><a href="#cb5-125" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2020-07-31"</span>),</span>
+<span id="cb5-126"><a href="#cb5-126" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2021-07-21"</span>),</span>
+<span id="cb5-127"><a href="#cb5-127" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2022-06-10"</span>),</span>
+<span id="cb5-128"><a href="#cb5-128" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2023-06-29"</span>),</span>
+<span id="cb5-129"><a href="#cb5-129" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2024-06-18"</span>),</span>
+<span id="cb5-130"><a href="#cb5-130" aria-hidden="true" tabindex="-1"></a><span class="co"># TAMKHARITE,</span></span>
+<span id="cb5-131"><a href="#cb5-131" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"1990-07-04"</span>),</span>
+<span id="cb5-132"><a href="#cb5-132" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"1991-07-22"</span>),</span>
+<span id="cb5-133"><a href="#cb5-133" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"1992-07-11"</span>),</span>
+<span id="cb5-134"><a href="#cb5-134" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"1993-06-30"</span>),</span>
+<span id="cb5-135"><a href="#cb5-135" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"1994-06-19"</span>),</span>
+<span id="cb5-136"><a href="#cb5-136" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"1995-06-09"</span>),</span>
+<span id="cb5-137"><a href="#cb5-137" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"1996-05-28"</span>),</span>
+<span id="cb5-138"><a href="#cb5-138" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"1997-05-18"</span>),</span>
+<span id="cb5-139"><a href="#cb5-139" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"1998-05-07"</span>),</span>
+<span id="cb5-140"><a href="#cb5-140" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"1999-04-26"</span>),</span>
+<span id="cb5-141"><a href="#cb5-141" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2000-04-15"</span>),</span>
+<span id="cb5-142"><a href="#cb5-142" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2001-04-04"</span>),</span>
+<span id="cb5-143"><a href="#cb5-143" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2002-03-24"</span>),</span>
+<span id="cb5-144"><a href="#cb5-144" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2003-03-14"</span>),</span>
+<span id="cb5-145"><a href="#cb5-145" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2004-03-02"</span>),</span>
+<span id="cb5-146"><a href="#cb5-146" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2005-02-19"</span>),</span>
+<span id="cb5-147"><a href="#cb5-147" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2006-02-09"</span>),</span>
+<span id="cb5-148"><a href="#cb5-148" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2007-01-29"</span>),</span>
+<span id="cb5-149"><a href="#cb5-149" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2008-01-19"</span>),</span>
+<span id="cb5-150"><a href="#cb5-150" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2009-01-07"</span>),</span>
+<span id="cb5-151"><a href="#cb5-151" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2009-12-27"</span>),</span>
+<span id="cb5-152"><a href="#cb5-152" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2010-12-17"</span>),</span>
+<span id="cb5-153"><a href="#cb5-153" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2011-12-06"</span>),</span>
+<span id="cb5-154"><a href="#cb5-154" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2012-11-24"</span>),</span>
+<span id="cb5-155"><a href="#cb5-155" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2013-11-14"</span>),</span>
+<span id="cb5-156"><a href="#cb5-156" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2014-11-03"</span>),</span>
+<span id="cb5-157"><a href="#cb5-157" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2015-11-30"</span>),</span>
+<span id="cb5-158"><a href="#cb5-158" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2016-10-12"</span>),</span>
+<span id="cb5-159"><a href="#cb5-159" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2017-10-01"</span>),</span>
+<span id="cb5-160"><a href="#cb5-160" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2018-09-21"</span>),</span>
+<span id="cb5-161"><a href="#cb5-161" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2019-09-10"</span>),</span>
+<span id="cb5-162"><a href="#cb5-162" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2020-08-29"</span>),</span>
+<span id="cb5-163"><a href="#cb5-163" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2021-08-19"</span>),</span>
+<span id="cb5-164"><a href="#cb5-164" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2022-08-08"</span>),</span>
+<span id="cb5-165"><a href="#cb5-165" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2023-07-28"</span>),</span>
+<span id="cb5-166"><a href="#cb5-166" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2024-07-17"</span>),</span>
+<span id="cb5-167"><a href="#cb5-167" aria-hidden="true" tabindex="-1"></a><span class="co"># MAOULOUD,</span></span>
+<span id="cb5-168"><a href="#cb5-168" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"1990-10-02"</span>),</span>
+<span id="cb5-169"><a href="#cb5-169" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"1991-09-21"</span>),</span>
+<span id="cb5-170"><a href="#cb5-170" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"1992-09-10"</span>),</span>
+<span id="cb5-171"><a href="#cb5-171" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"1993-08-30"</span>),</span>
+<span id="cb5-172"><a href="#cb5-172" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"1994-08-19"</span>),</span>
+<span id="cb5-173"><a href="#cb5-173" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"1995-08-09"</span>),</span>
+<span id="cb5-174"><a href="#cb5-174" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"1996-07-28"</span>),</span>
+<span id="cb5-175"><a href="#cb5-175" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"1997-07-18"</span>),</span>
+<span id="cb5-176"><a href="#cb5-176" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"1998-07-07"</span>),</span>
+<span id="cb5-177"><a href="#cb5-177" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"1999-06-26"</span>),</span>
+<span id="cb5-178"><a href="#cb5-178" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2000-06-15"</span>),</span>
+<span id="cb5-179"><a href="#cb5-179" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2001-06-04"</span>),</span>
+<span id="cb5-180"><a href="#cb5-180" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2002-05-24"</span>),</span>
+<span id="cb5-181"><a href="#cb5-181" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2003-05-14"</span>),</span>
+<span id="cb5-182"><a href="#cb5-182" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2004-05-02"</span>),</span>
+<span id="cb5-183"><a href="#cb5-183" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2005-04-21"</span>),</span>
+<span id="cb5-184"><a href="#cb5-184" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2006-04-11"</span>),</span>
+<span id="cb5-185"><a href="#cb5-185" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2007-03-31"</span>),</span>
+<span id="cb5-186"><a href="#cb5-186" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2008-03-20"</span>),</span>
+<span id="cb5-187"><a href="#cb5-187" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2009-03-09"</span>),</span>
+<span id="cb5-188"><a href="#cb5-188" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2010-02-26"</span>),</span>
+<span id="cb5-189"><a href="#cb5-189" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2011-02-16"</span>),</span>
+<span id="cb5-190"><a href="#cb5-190" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2012-02-05"</span>),</span>
+<span id="cb5-191"><a href="#cb5-191" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2013-01-24"</span>),</span>
+<span id="cb5-192"><a href="#cb5-192" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2014-01-14"</span>),</span>
+<span id="cb5-193"><a href="#cb5-193" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2015-01-03"</span>),</span>
+<span id="cb5-194"><a href="#cb5-194" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2015-11-23"</span>),</span>
+<span id="cb5-195"><a href="#cb5-195" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2016-12-12"</span>),</span>
+<span id="cb5-196"><a href="#cb5-196" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2018-12-01"</span>),</span>
+<span id="cb5-197"><a href="#cb5-197" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2018-11-21"</span>),</span>
+<span id="cb5-198"><a href="#cb5-198" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2019-11-18"</span>),</span>
+<span id="cb5-199"><a href="#cb5-199" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2020-10-29"</span>),</span>
+<span id="cb5-200"><a href="#cb5-200" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2021-10-19"</span>),</span>
+<span id="cb5-201"><a href="#cb5-201" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2022-10-08"</span>),</span>
+<span id="cb5-202"><a href="#cb5-202" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2023-09-27"</span>),</span>
+<span id="cb5-203"><a href="#cb5-203" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2024-09-15"</span>),</span>
+<span id="cb5-204"><a href="#cb5-204" aria-hidden="true" tabindex="-1"></a><span class="co"># MAGAL,</span></span>
+<span id="cb5-205"><a href="#cb5-205" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"1990-09-09"</span>),</span>
+<span id="cb5-206"><a href="#cb5-206" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"1991-08-29"</span>),</span>
+<span id="cb5-207"><a href="#cb5-207" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"1992-09-18"</span>),</span>
+<span id="cb5-208"><a href="#cb5-208" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"1993-10-07"</span>),</span>
+<span id="cb5-209"><a href="#cb5-209" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"1994-07-27"</span>),</span>
+<span id="cb5-210"><a href="#cb5-210" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"1995-07-17"</span>),</span>
+<span id="cb5-211"><a href="#cb5-211" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"1996-07-05"</span>),</span>
+<span id="cb5-212"><a href="#cb5-212" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"1997-06-25"</span>),</span>
+<span id="cb5-213"><a href="#cb5-213" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"1998-06-14"</span>),</span>
+<span id="cb5-214"><a href="#cb5-214" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"1999-06-03"</span>),</span>
+<span id="cb5-215"><a href="#cb5-215" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2000-05-23"</span>),</span>
+<span id="cb5-216"><a href="#cb5-216" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2001-05-12"</span>),</span>
+<span id="cb5-217"><a href="#cb5-217" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2002-05-01"</span>),</span>
+<span id="cb5-218"><a href="#cb5-218" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2003-04-21"</span>),</span>
+<span id="cb5-219"><a href="#cb5-219" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2004-04-09"</span>),</span>
+<span id="cb5-220"><a href="#cb5-220" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2005-03-29"</span>),</span>
+<span id="cb5-221"><a href="#cb5-221" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2006-03-19"</span>),</span>
+<span id="cb5-222"><a href="#cb5-222" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2007-03-08"</span>),</span>
+<span id="cb5-223"><a href="#cb5-223" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2008-02-26"</span>),</span>
+<span id="cb5-224"><a href="#cb5-224" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2009-02-14"</span>),</span>
+<span id="cb5-225"><a href="#cb5-225" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2010-02-03"</span>),</span>
+<span id="cb5-226"><a href="#cb5-226" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2011-01-03"</span>),</span>
+<span id="cb5-227"><a href="#cb5-227" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2012-01-13"</span>),</span>
+<span id="cb5-228"><a href="#cb5-228" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2013-01-01"</span>),</span>
+<span id="cb5-229"><a href="#cb5-229" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2013-12-22"</span>),</span>
+<span id="cb5-230"><a href="#cb5-230" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2014-12-11"</span>),</span>
+<span id="cb5-231"><a href="#cb5-231" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2015-12-01"</span>),</span>
+<span id="cb5-232"><a href="#cb5-232" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2016-11-19"</span>),</span>
+<span id="cb5-233"><a href="#cb5-233" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2017-11-08"</span>),</span>
+<span id="cb5-234"><a href="#cb5-234" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2018-10-29"</span>),</span>
+<span id="cb5-235"><a href="#cb5-235" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2019-10-18"</span>),</span>
+<span id="cb5-236"><a href="#cb5-236" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2020-10-06"</span>),</span>
+<span id="cb5-237"><a href="#cb5-237" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2021-09-26"</span>),</span>
+<span id="cb5-238"><a href="#cb5-238" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2022-09-15"</span>),</span>
+<span id="cb5-239"><a href="#cb5-239" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2023-09-04"</span>),</span>
+<span id="cb5-240"><a href="#cb5-240" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2024-08-23"</span>)</span>
+<span id="cb5-241"><a href="#cb5-241" aria-hidden="true" tabindex="-1"></a>  ))</span>
+<span id="cb5-242"><a href="#cb5-242" aria-hidden="true" tabindex="-1"></a>CAL <span class="ot">&lt;-</span> <span class="fu">national_calendar</span>(jours_macronia)</span>
+<span id="cb5-243"><a href="#cb5-243" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-244"><a href="#cb5-244" aria-hidden="true" tabindex="-1"></a>gen_calendrier <span class="ot">&lt;-</span> <span class="cf">function</span>(cal, frequency, <span class="at">start =</span> <span class="fu">c</span>(<span class="dv">1990</span>, <span class="dv">1</span>), <span class="at">end =</span> <span class="fu">c</span>(<span class="dv">2030</span>, <span class="dv">1</span>)) {</span>
+<span id="cb5-245"><a href="#cb5-245" aria-hidden="true" tabindex="-1"></a>    length <span class="ot">=</span> (end[<span class="dv">1</span>] <span class="sc">-</span> start[<span class="dv">1</span>]) <span class="sc">*</span> frequency <span class="sc">+</span> end[<span class="dv">2</span>] <span class="sc">-</span> start[<span class="dv">2</span>]</span>
+<span id="cb5-246"><a href="#cb5-246" aria-hidden="true" tabindex="-1"></a>    ly <span class="ot">&lt;-</span> rjd3toolkit<span class="sc">::</span><span class="fu">lp_variable</span>(<span class="at">frequency =</span> frequency, <span class="at">start =</span> start,</span>
+<span id="cb5-247"><a href="#cb5-247" aria-hidden="true" tabindex="-1"></a>                                   <span class="at">length =</span> length)</span>
+<span id="cb5-248"><a href="#cb5-248" aria-hidden="true" tabindex="-1"></a>    <span class="co"># N'hésitez pas à ajouter les votre !</span></span>
+<span id="cb5-249"><a href="#cb5-249" aria-hidden="true" tabindex="-1"></a>    TD7 <span class="ot">&lt;-</span> <span class="fu">calendar_td</span>(cal, <span class="at">frequency =</span> frequency, <span class="at">start =</span> start, <span class="at">length =</span> length,</span>
+<span id="cb5-250"><a href="#cb5-250" aria-hidden="true" tabindex="-1"></a>                       <span class="at">groups =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>, <span class="dv">0</span>))</span>
+<span id="cb5-251"><a href="#cb5-251" aria-hidden="true" tabindex="-1"></a>    TD4 <span class="ot">&lt;-</span> <span class="fu">calendar_td</span>(cal, <span class="at">frequency =</span> frequency, <span class="at">start =</span> start, <span class="at">length =</span> length,</span>
+<span id="cb5-252"><a href="#cb5-252" aria-hidden="true" tabindex="-1"></a>                       <span class="at">groups =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">0</span>))</span>
+<span id="cb5-253"><a href="#cb5-253" aria-hidden="true" tabindex="-1"></a>    TD3 <span class="ot">&lt;-</span> <span class="fu">calendar_td</span>(cal, <span class="at">frequency =</span> frequency, <span class="at">start =</span> start, <span class="at">length =</span> length,</span>
+<span id="cb5-254"><a href="#cb5-254" aria-hidden="true" tabindex="-1"></a>                       <span class="at">groups =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">0</span>))</span>
+<span id="cb5-255"><a href="#cb5-255" aria-hidden="true" tabindex="-1"></a>    TD3c <span class="ot">&lt;-</span> <span class="fu">calendar_td</span>(cal, <span class="at">frequency =</span> frequency, <span class="at">start =</span> start, <span class="at">length =</span> length,</span>
+<span id="cb5-256"><a href="#cb5-256" aria-hidden="true" tabindex="-1"></a>                        <span class="at">groups =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">0</span>))</span>
+<span id="cb5-257"><a href="#cb5-257" aria-hidden="true" tabindex="-1"></a>    TD2 <span class="ot">&lt;-</span> <span class="fu">calendar_td</span>(cal, <span class="at">frequency =</span> frequency, <span class="at">start =</span> start, <span class="at">length =</span> length,</span>
+<span id="cb5-258"><a href="#cb5-258" aria-hidden="true" tabindex="-1"></a>                       <span class="at">groups =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">0</span>))</span>
+<span id="cb5-259"><a href="#cb5-259" aria-hidden="true" tabindex="-1"></a>    TD2c <span class="ot">&lt;-</span> <span class="fu">calendar_td</span>(cal, <span class="at">frequency =</span> frequency, <span class="at">start =</span> start, <span class="at">length =</span> length,</span>
+<span id="cb5-260"><a href="#cb5-260" aria-hidden="true" tabindex="-1"></a>                        <span class="at">groups =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">0</span>))</span>
+<span id="cb5-261"><a href="#cb5-261" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb5-262"><a href="#cb5-262" aria-hidden="true" tabindex="-1"></a>    reg_jo <span class="ot">&lt;-</span> <span class="fu">ts</span>(<span class="fu">cbind</span>(TD2, TD2c, TD3, TD3c, TD4, TD7),</span>
+<span id="cb5-263"><a href="#cb5-263" aria-hidden="true" tabindex="-1"></a>                 <span class="at">start =</span> start, <span class="at">frequency =</span> frequency)</span>
+<span id="cb5-264"><a href="#cb5-264" aria-hidden="true" tabindex="-1"></a>    reg_jo <span class="ot">&lt;-</span> <span class="fu">ts.intersect</span>(reg_jo,</span>
+<span id="cb5-265"><a href="#cb5-265" aria-hidden="true" tabindex="-1"></a>                           ly)</span>
+<span id="cb5-266"><a href="#cb5-266" aria-hidden="true" tabindex="-1"></a>    <span class="fu">colnames</span>(reg_jo) <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
+<span id="cb5-267"><a href="#cb5-267" aria-hidden="true" tabindex="-1"></a>        <span class="st">"TD2_semaine"</span>,</span>
+<span id="cb5-268"><a href="#cb5-268" aria-hidden="true" tabindex="-1"></a>        <span class="st">"TD2c_lundi_samedi"</span>,</span>
+<span id="cb5-269"><a href="#cb5-269" aria-hidden="true" tabindex="-1"></a>        <span class="fu">sprintf</span>(<span class="st">"TD3_%s"</span>, <span class="fu">c</span>(<span class="st">"semaine"</span>, <span class="st">"samedi"</span>)),</span>
+<span id="cb5-270"><a href="#cb5-270" aria-hidden="true" tabindex="-1"></a>        <span class="fu">sprintf</span>(<span class="st">"TD3c_%s"</span>, <span class="fu">c</span>(<span class="st">"lundi_jeudi"</span>, <span class="st">"vendredi_samedi"</span>)),</span>
+<span id="cb5-271"><a href="#cb5-271" aria-hidden="true" tabindex="-1"></a>        <span class="fu">sprintf</span>(<span class="st">"TD4_%s"</span>, <span class="fu">c</span>(<span class="st">"lundi_jeudi"</span>, <span class="st">"vendredi"</span>, <span class="st">"samedi"</span>)),</span>
+<span id="cb5-272"><a href="#cb5-272" aria-hidden="true" tabindex="-1"></a>        <span class="fu">sprintf</span>(<span class="st">"TD7_%s"</span>, <span class="fu">c</span>(<span class="st">"lundi"</span>, <span class="st">"mardi"</span>, <span class="st">"mercredi"</span>, <span class="st">"jeudi"</span>, <span class="st">"vendredi"</span>, <span class="st">"samedi"</span>)),</span>
+<span id="cb5-273"><a href="#cb5-273" aria-hidden="true" tabindex="-1"></a>        <span class="st">"leap_year"</span>)</span>
+<span id="cb5-274"><a href="#cb5-274" aria-hidden="true" tabindex="-1"></a>    reg_jo</span>
+<span id="cb5-275"><a href="#cb5-275" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb5-276"><a href="#cb5-276" aria-hidden="true" tabindex="-1"></a>regresseurs_JO_trim <span class="ot">&lt;-</span> <span class="fu">gen_calendrier</span>(CAL, <span class="at">frequency =</span> <span class="dv">4</span>)</span>
+<span id="cb5-277"><a href="#cb5-277" aria-hidden="true" tabindex="-1"></a>regresseurs_JO_mens <span class="ot">&lt;-</span> <span class="fu">gen_calendrier</span>(CAL, <span class="at">frequency =</span> <span class="dv">12</span>)</span>
+<span id="cb5-278"><a href="#cb5-278" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-279"><a href="#cb5-279" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(regresseurs_JO_trim) <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="fu">colnames</span>(regresseurs_JO_trim), <span class="st">"_trim"</span>)</span>
+<span id="cb5-280"><a href="#cb5-280" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(regresseurs_JO_mens) <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="fu">colnames</span>(regresseurs_JO_mens), <span class="st">"_mens"</span>)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+</div>
+<p>Une fois votre calendrier créé, vous pouvez l’exporter dans un workspace JDemetra+ :</p>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+JDemetra+ 2.x.y
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Ci-dessous un code pour vous éviter de faire le travail manuel. Il est un peu peu compliqué mais une fois le code écrit, vous pouvez l’utiliser tel quel ! Vous pourrez ensuite repartir du workspace créé pour y ajouter vos propres séries.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># On va créer un nouveau workspace où l'on va ajouter les nouvelles variables</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(RJDemetra)</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(rJava)</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>complete_variables <span class="ot">&lt;-</span> <span class="cf">function</span>(liste_var, workspace){</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span>(<span class="sc">!</span><span class="fu">is.mts</span>(liste_var))</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>        <span class="fu">stop</span>(<span class="st">"liste_var doit être de type mts"</span>)</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>    context_dictionary <span class="ot">&lt;-</span> <span class="fu">.jcall</span>(workspace,<span class="st">"Lec/tstoolkit/algorithm/ProcessingContext;"</span>, <span class="st">"getContext"</span>)</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>    ts_variable_managers <span class="ot">&lt;-</span> context_dictionary<span class="sc">$</span><span class="fu">getTsVariableManagers</span>()</span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>    ts_variables <span class="ot">&lt;-</span> <span class="fu">.jnew</span>(<span class="st">"ec/tstoolkit/timeseries/regression/TsVariables"</span>)</span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>    jd_r_variables <span class="ot">&lt;-</span> ts_variable_managers<span class="sc">$</span><span class="fu">get</span>(<span class="st">"r"</span>)</span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (<span class="fu">is.null</span>(jd_r_variables)) {</span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>        ts_variable_managers<span class="sc">$</span><span class="fu">set</span>(<span class="st">"r"</span>,</span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>                                 <span class="fu">.jnew</span>(<span class="st">"ec/tstoolkit/timeseries/regression/TsVariables"</span>))</span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>        jd_r_variables <span class="ot">&lt;-</span> ts_variable_managers<span class="sc">$</span><span class="fu">get</span>(<span class="st">"r"</span>)</span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a>    jd_var_names <span class="ot">&lt;-</span> jd_r_variables<span class="sc">$</span><span class="fu">getNames</span>()</span>
+<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a>    model_var_names <span class="ot">&lt;-</span> <span class="fu">colnames</span>(liste_var)</span>
+<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> (i <span class="cf">in</span> <span class="fu">seq_along</span>(model_var_names)) {</span>
+<span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a>        name <span class="ot">&lt;-</span> model_var_names[i]</span>
+<span id="cb6-22"><a href="#cb6-22" aria-hidden="true" tabindex="-1"></a>        dictionary_var <span class="ot">&lt;-</span> jd_r_variables<span class="sc">$</span><span class="fu">get</span>(name)</span>
+<span id="cb6-23"><a href="#cb6-23" aria-hidden="true" tabindex="-1"></a>        tsvar <span class="ot">&lt;-</span> <span class="fu">.jnew</span>(<span class="st">"ec/tstoolkit/timeseries/regression/TsVariable"</span>,</span>
+<span id="cb6-24"><a href="#cb6-24" aria-hidden="true" tabindex="-1"></a>                       name, RJDemetra<span class="sc">:::</span><span class="fu">ts_r2jd</span>(liste_var[, i]))</span>
+<span id="cb6-25"><a href="#cb6-25" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> (<span class="fu">is.null</span>(dictionary_var)) {</span>
+<span id="cb6-26"><a href="#cb6-26" aria-hidden="true" tabindex="-1"></a>            jd_r_variables<span class="sc">$</span><span class="fu">set</span>(name, tsvar)</span>
+<span id="cb6-27"><a href="#cb6-27" aria-hidden="true" tabindex="-1"></a>        } <span class="cf">else</span> {</span>
+<span id="cb6-28"><a href="#cb6-28" aria-hidden="true" tabindex="-1"></a>            <span class="fu">warning</span>(<span class="fu">sprintf</span>(<span class="st">"La variable %s existe déjà"</span>, name))</span>
+<span id="cb6-29"><a href="#cb6-29" aria-hidden="true" tabindex="-1"></a>        }</span>
+<span id="cb6-30"><a href="#cb6-30" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb6-31"><a href="#cb6-31" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb6-32"><a href="#cb6-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-33"><a href="#cb6-33" aria-hidden="true" tabindex="-1"></a><span class="co"># Création d'un nouveaux</span></span>
+<span id="cb6-34"><a href="#cb6-34" aria-hidden="true" tabindex="-1"></a>jws <span class="ot">&lt;-</span> <span class="fu">new_workspace</span>()</span>
+<span id="cb6-35"><a href="#cb6-35" aria-hidden="true" tabindex="-1"></a><span class="co"># regresseurs_JO est l'objet mts qui contient tous vos régresseurs</span></span>
+<span id="cb6-36"><a href="#cb6-36" aria-hidden="true" tabindex="-1"></a><span class="co"># Il doit donc déjà être créé (voir code ci-dessus) !</span></span>
+<span id="cb6-37"><a href="#cb6-37" aria-hidden="true" tabindex="-1"></a><span class="fu">complete_variables</span>(regresseurs_JO_mens, jws)</span>
+<span id="cb6-38"><a href="#cb6-38" aria-hidden="true" tabindex="-1"></a><span class="fu">complete_variables</span>(regresseurs_JO_trim, jws)</span>
+<span id="cb6-39"><a href="#cb6-39" aria-hidden="true" tabindex="-1"></a><span class="fu">save_workspace</span>(jws,<span class="st">"wk_CJO.xml"</span>)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+JDemetra+ 3.x.y
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Pour la version 3 de JDemetra+, le code est plus simple. Le code ci-dessous permet également d’ajouter le calendrier en tant qu’objet calendrier de JDemetra+ (et donc pas nécessairement besoin de passer par l’ajout de variables externes).</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># On va créer deux groupes de variables, on peut donc simplifier les noms</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(regresseurs_JO_mens) <span class="ot">&lt;-</span> </span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">colnames</span>(regresseurs_JO_trim) <span class="ot">&lt;-</span> </span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">gsub</span>(<span class="st">"_mens"</span>, <span class="st">""</span>, <span class="fu">colnames</span>(regresseurs_JO_mens))</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>ctxt <span class="ot">&lt;-</span> rjd3toolkit<span class="sc">::</span><span class="fu">modelling_context</span>(</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>    <span class="co"># on appelle "CAL" le calendrier</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">calendars =</span> <span class="fu">list</span>(<span class="at">CAL =</span> CAL), </span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>    <span class="co"># on crée un groupe de variables "cjo_mens" contenant les régresseurs mensuels</span></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>    <span class="co"># et un groupe de variables "cjo_trim" contenant les régresseurs trimestriels</span></span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">variables =</span> <span class="fu">list</span>(<span class="at">cjo_mens =</span> regresseurs_JO_mens,</span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>                     <span class="at">cjo_trim =</span> regresseurs_JO_trim)</span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>) </span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>jws <span class="ot">&lt;-</span> rjd3workspace<span class="sc">::</span><span class="fu">jws_new</span>(ctxt)</span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a><span class="co"># On peut également ajouter les calendriers et les variables avec les fonctions :</span></span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a><span class="co"># rjd3workspace::add_variables()</span></span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a><span class="co"># rjd3workspace::add_calendar()</span></span>
+<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a><span class="co"># Pour modifier un workspace existant :</span></span>
+<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a><span class="co"># rjd3workspace::set_context()</span></span>
+<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a>rjd3workspace<span class="sc">::</span><span class="fu">save_workspace</span>(jws, <span class="st">"wk_CJO_v3.xml"</span>)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="créer-une-spécification-incluant-les-jeux-de-régresseurs-jours-ouvrables-personnalisés" class="level2" data-number="2.3">
+<h2 data-number="2.3" class="anchored" data-anchor-id="créer-une-spécification-incluant-les-jeux-de-régresseurs-jours-ouvrables-personnalisés"><span class="header-section-number">2.3</span> Créer une spécification incluant les jeux de régresseurs « jours ouvrables » personnalisés</h2>
+<ul>
+<li><p>Cliquer sur l’onglet <code>Workspace</code>.</p></li>
+<li><p>Double cliquer sur <code>Seasonal adjustment</code>.</p></li>
+<li><p>Double cliquer sur <code>specifications</code>.</p></li>
+<li><p>Double cliquer sur <code>x13</code>.</p></li>
+<li><p>Clic-droit sur <code>RSA5c</code>.</p></li>
+<li><p>Cliquer sur <code>Clone</code>.</p></li>
+<li><p>Que se passe-t-il ?</p></li>
+<li><p>Double-cliquer sur <code>X13Spec-1</code>.</p></li>
+<li><p>Cliquer sur le <code>+</code> à côté de <code>Calendar</code>.</p></li>
+<li><p>Cliquer sur le <code>+</code> à côté de <code>tradingDays</code>.</p></li>
+<li><p>Cliquer sur <code>Default</code> à côté de option et cliquer ensuite sur <code>UserDefined</code>.</p></li>
 <li><p>Cliquer sur <code>Unused</code> à côté de <code>userVariables</code>.</p></li>
 <li><p>Que se passe-t-il ?</p></li>
 <li><p>Faire passer les 6 régresseurs du jeu de régresseurs TD6 + leap_year de la gauche vers la droite.</p></li>
 <li><p>Cliquer sur le bouton <code>Done</code>.</p></li>
 <li><p>Cliquer sur <code>OK</code>.</p></li>
 </ul>
+</section>
 </section>
 <section id="réaliser-une-désaisonnalisation-automatique-de-vos-séries-en-utilisant-la-spécification-x13spec-1" class="level1" data-number="3">
 <h1 data-number="3"><span class="header-section-number">3</span> Réaliser une désaisonnalisation automatique de vos séries en utilisant la spécification X13Spec-1</h1>
