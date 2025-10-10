@@ -35,7 +35,7 @@ Dans la majorité des cas il n'est donc plus utile d'exporter les régresseurs e
 #| echo: false
 #| eval: true
 library(kableExtra)
-special_days <- readWorksheetFromFile("holidaysJD.xlsx", sheet = 1)
+special_days <- XLConnect::readWorksheetFromFile("holidaysJD.xlsx", sheet = 1)
 # special_days <- special_days[!special_days[,1]%in%c("THANKSGIVING", "LABORDAY", "JULIANEASTER"),]
 kbl(special_days,booktabs = TRUE,caption = "Jours pré-spécifiés (`Special Day`)",row.names = FALSE) %>%
 	kable_paper("hover", full_width = F)
