@@ -549,7 +549,7 @@ kable(data_reg,escape = FALSE, booktabs = TRUE, format = "latex") %>% kable_styl
 ```
 
 
-Dans JDemetra+, TD2 = *working days* et TD6 = *trading-days*.
+Dans JDemetra+, TD2 = *working days* et TD7 = *trading-days*.
 
 {{< fa info-circle >}} Package [`rjd3toolkit`](https://github.com/palatej/rjd3toolkit) permet de générer tous les types de jeux de régresseurs.
 
