@@ -452,250 +452,44 @@ Solution
 <span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">special_day</span>(<span class="st">"ALLSAINTSDAY"</span>), <span class="co"># Toussaint</span></span>
 <span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">special_day</span>(<span class="st">"CHRISTMAS"</span>) <span class="co"># Noël</span></span>
 <span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a><span class="co"># # Manque Début ramadan, Korité (Aïd al-Fitr), Tabaski (Aïd el-Kébir), Tamkharite, Magal de Touba (non officiel), Maouloud et jours décrétés</span></span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a><span class="co"># # Manque Début ramadan et jours décrétés</span></span>
 <span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a><span class="co"># # On récupère ces jours construisant un fichier Excel</span></span>
-<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a><span class="co"># jours_mobiles &lt;- readxl::read_excel("ex-cjo/DateFetesMusulmanes_Macronia.xlsx") |&gt;</span></span>
+<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a><span class="co"># jours_mobiles &lt;- readxl::read_excel("../data/DateFetesMusulmanes_Macronia.xlsx") |&gt;</span></span>
 <span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a><span class="co">#   as.data.frame()</span></span>
-<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a><span class="co"># jours_mobiles &lt;- jours_mobiles[,-1] #on enlève l'année</span></span>
-<span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a><span class="co"># jours_mobiles &lt;- lapply(jours_mobiles, function(x){</span></span>
-<span id="cb9-18"><a href="#cb9-18" aria-hidden="true" tabindex="-1"></a><span class="co">#   na.omit(as.character(format(x, "%Y-%m-%d")))</span></span>
-<span id="cb9-19"><a href="#cb9-19" aria-hidden="true" tabindex="-1"></a><span class="co">#   })</span></span>
-<span id="cb9-20"><a href="#cb9-20" aria-hidden="true" tabindex="-1"></a><span class="co"># cat(unlist(lapply(names(jours_mobiles), function(day){</span></span>
-<span id="cb9-21"><a href="#cb9-21" aria-hidden="true" tabindex="-1"></a><span class="co">#   c(</span></span>
-<span id="cb9-22"><a href="#cb9-22" aria-hidden="true" tabindex="-1"></a><span class="co">#     sprintf("# %s", day),</span></span>
-<span id="cb9-23"><a href="#cb9-23" aria-hidden="true" tabindex="-1"></a><span class="co">#     sprintf('single_day("%s")', jours_mobiles[[day]])</span></span>
-<span id="cb9-24"><a href="#cb9-24" aria-hidden="true" tabindex="-1"></a><span class="co">#   )</span></span>
-<span id="cb9-25"><a href="#cb9-25" aria-hidden="true" tabindex="-1"></a><span class="co"># })),</span></span>
-<span id="cb9-26"><a href="#cb9-26" aria-hidden="true" tabindex="-1"></a><span class="co">#   sep= ",\n")</span></span>
-<span id="cb9-27"><a href="#cb9-27" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-28"><a href="#cb9-28" aria-hidden="true" tabindex="-1"></a>jours_macronia <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
-<span id="cb9-29"><a href="#cb9-29" aria-hidden="true" tabindex="-1"></a>  jours_macronia,</span>
-<span id="cb9-30"><a href="#cb9-30" aria-hidden="true" tabindex="-1"></a>  <span class="fu">list</span>(</span>
-<span id="cb9-31"><a href="#cb9-31" aria-hidden="true" tabindex="-1"></a>    <span class="co"># DEBUT_RAMADAN,</span></span>
-<span id="cb9-32"><a href="#cb9-32" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"1990-03-28"</span>),</span>
-<span id="cb9-33"><a href="#cb9-33" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"1991-03-18"</span>),</span>
-<span id="cb9-34"><a href="#cb9-34" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"1992-03-06"</span>),</span>
-<span id="cb9-35"><a href="#cb9-35" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"1993-02-23"</span>),</span>
-<span id="cb9-36"><a href="#cb9-36" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"1994-02-12"</span>),</span>
-<span id="cb9-37"><a href="#cb9-37" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"1995-02-14"</span>),</span>
-<span id="cb9-38"><a href="#cb9-38" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"1996-01-22"</span>),</span>
-<span id="cb9-39"><a href="#cb9-39" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"1997-01-11"</span>),</span>
-<span id="cb9-40"><a href="#cb9-40" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"1997-12-31"</span>),</span>
-<span id="cb9-41"><a href="#cb9-41" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"1998-12-20"</span>),</span>
-<span id="cb9-42"><a href="#cb9-42" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"1999-12-10"</span>),</span>
-<span id="cb9-43"><a href="#cb9-43" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2000-11-28"</span>),</span>
-<span id="cb9-44"><a href="#cb9-44" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2001-11-17"</span>),</span>
-<span id="cb9-45"><a href="#cb9-45" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2002-11-07"</span>),</span>
-<span id="cb9-46"><a href="#cb9-46" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2003-10-27"</span>),</span>
-<span id="cb9-47"><a href="#cb9-47" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2004-10-15"</span>),</span>
-<span id="cb9-48"><a href="#cb9-48" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2005-10-05"</span>),</span>
-<span id="cb9-49"><a href="#cb9-49" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2006-09-24"</span>),</span>
-<span id="cb9-50"><a href="#cb9-50" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2007-09-14"</span>),</span>
-<span id="cb9-51"><a href="#cb9-51" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2008-09-02"</span>),</span>
-<span id="cb9-52"><a href="#cb9-52" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2009-08-22"</span>),</span>
-<span id="cb9-53"><a href="#cb9-53" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2010-08-12"</span>),</span>
-<span id="cb9-54"><a href="#cb9-54" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2011-08-01"</span>),</span>
-<span id="cb9-55"><a href="#cb9-55" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2012-07-20"</span>),</span>
-<span id="cb9-56"><a href="#cb9-56" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2013-07-10"</span>),</span>
-<span id="cb9-57"><a href="#cb9-57" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2014-06-29"</span>),</span>
-<span id="cb9-58"><a href="#cb9-58" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2015-07-18"</span>),</span>
-<span id="cb9-59"><a href="#cb9-59" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2016-06-07"</span>),</span>
-<span id="cb9-60"><a href="#cb9-60" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2017-05-27"</span>),</span>
-<span id="cb9-61"><a href="#cb9-61" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2018-05-17"</span>),</span>
-<span id="cb9-62"><a href="#cb9-62" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2019-05-06"</span>),</span>
-<span id="cb9-63"><a href="#cb9-63" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2020-04-24"</span>),</span>
-<span id="cb9-64"><a href="#cb9-64" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2021-04-14"</span>),</span>
-<span id="cb9-65"><a href="#cb9-65" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2022-04-03"</span>),</span>
-<span id="cb9-66"><a href="#cb9-66" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2023-03-23"</span>),</span>
-<span id="cb9-67"><a href="#cb9-67" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2024-03-12"</span>),</span>
-<span id="cb9-68"><a href="#cb9-68" aria-hidden="true" tabindex="-1"></a><span class="co"># KORITE,</span></span>
-<span id="cb9-69"><a href="#cb9-69" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"1990-04-27"</span>),</span>
-<span id="cb9-70"><a href="#cb9-70" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"1991-04-16"</span>),</span>
-<span id="cb9-71"><a href="#cb9-71" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"1992-04-04"</span>),</span>
-<span id="cb9-72"><a href="#cb9-72" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"1993-03-25"</span>),</span>
-<span id="cb9-73"><a href="#cb9-73" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"1994-03-14"</span>),</span>
-<span id="cb9-74"><a href="#cb9-74" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"1995-03-03"</span>),</span>
-<span id="cb9-75"><a href="#cb9-75" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"1996-02-09"</span>),</span>
-<span id="cb9-76"><a href="#cb9-76" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"1997-02-09"</span>),</span>
-<span id="cb9-77"><a href="#cb9-77" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"1998-01-29"</span>),</span>
-<span id="cb9-78"><a href="#cb9-78" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"1999-01-18"</span>),</span>
-<span id="cb9-79"><a href="#cb9-79" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2000-01-08"</span>),</span>
-<span id="cb9-80"><a href="#cb9-80" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2000-12-27"</span>),</span>
-<span id="cb9-81"><a href="#cb9-81" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2001-12-16"</span>),</span>
-<span id="cb9-82"><a href="#cb9-82" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2002-12-06"</span>),</span>
-<span id="cb9-83"><a href="#cb9-83" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2003-11-25"</span>),</span>
-<span id="cb9-84"><a href="#cb9-84" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2004-11-13"</span>),</span>
-<span id="cb9-85"><a href="#cb9-85" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2005-11-03"</span>),</span>
-<span id="cb9-86"><a href="#cb9-86" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2006-10-23"</span>),</span>
-<span id="cb9-87"><a href="#cb9-87" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2007-10-13"</span>),</span>
-<span id="cb9-88"><a href="#cb9-88" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2008-10-01"</span>),</span>
-<span id="cb9-89"><a href="#cb9-89" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2009-09-20"</span>),</span>
-<span id="cb9-90"><a href="#cb9-90" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2010-09-09"</span>),</span>
-<span id="cb9-91"><a href="#cb9-91" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2011-08-29"</span>),</span>
-<span id="cb9-92"><a href="#cb9-92" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2012-08-17"</span>),</span>
-<span id="cb9-93"><a href="#cb9-93" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2013-08-07"</span>),</span>
-<span id="cb9-94"><a href="#cb9-94" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2014-07-27"</span>),</span>
-<span id="cb9-95"><a href="#cb9-95" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2015-07-16"</span>),</span>
-<span id="cb9-96"><a href="#cb9-96" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2016-07-05"</span>),</span>
-<span id="cb9-97"><a href="#cb9-97" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2017-06-24"</span>),</span>
-<span id="cb9-98"><a href="#cb9-98" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2018-06-14"</span>),</span>
-<span id="cb9-99"><a href="#cb9-99" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2019-06-03"</span>),</span>
-<span id="cb9-100"><a href="#cb9-100" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2020-05-22"</span>),</span>
-<span id="cb9-101"><a href="#cb9-101" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2021-05-12"</span>),</span>
-<span id="cb9-102"><a href="#cb9-102" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2022-05-01"</span>),</span>
-<span id="cb9-103"><a href="#cb9-103" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2023-04-20"</span>),</span>
-<span id="cb9-104"><a href="#cb9-104" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2024-04-10"</span>),</span>
-<span id="cb9-105"><a href="#cb9-105" aria-hidden="true" tabindex="-1"></a><span class="co"># TABASKI,</span></span>
-<span id="cb9-106"><a href="#cb9-106" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"1990-06-24"</span>),</span>
-<span id="cb9-107"><a href="#cb9-107" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"1991-06-23"</span>),</span>
-<span id="cb9-108"><a href="#cb9-108" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"1992-06-11"</span>),</span>
-<span id="cb9-109"><a href="#cb9-109" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"1993-06-01"</span>),</span>
-<span id="cb9-110"><a href="#cb9-110" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"1994-05-21"</span>),</span>
-<span id="cb9-111"><a href="#cb9-111" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"1995-05-10"</span>),</span>
-<span id="cb9-112"><a href="#cb9-112" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"1996-04-29"</span>),</span>
-<span id="cb9-113"><a href="#cb9-113" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"1997-04-19"</span>),</span>
-<span id="cb9-114"><a href="#cb9-114" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"1998-04-08"</span>),</span>
-<span id="cb9-115"><a href="#cb9-115" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"1999-03-28"</span>),</span>
-<span id="cb9-116"><a href="#cb9-116" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2000-03-17"</span>),</span>
-<span id="cb9-117"><a href="#cb9-117" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2001-03-06"</span>),</span>
-<span id="cb9-118"><a href="#cb9-118" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2002-02-23"</span>),</span>
-<span id="cb9-119"><a href="#cb9-119" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2003-02-13"</span>),</span>
-<span id="cb9-120"><a href="#cb9-120" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2004-02-02"</span>),</span>
-<span id="cb9-121"><a href="#cb9-121" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2005-01-21"</span>),</span>
-<span id="cb9-122"><a href="#cb9-122" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2006-01-11"</span>),</span>
-<span id="cb9-123"><a href="#cb9-123" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2006-12-31"</span>),</span>
-<span id="cb9-124"><a href="#cb9-124" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2007-12-21"</span>),</span>
-<span id="cb9-125"><a href="#cb9-125" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2008-12-09"</span>),</span>
-<span id="cb9-126"><a href="#cb9-126" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2009-11-11"</span>),</span>
-<span id="cb9-127"><a href="#cb9-127" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2010-11-18"</span>),</span>
-<span id="cb9-128"><a href="#cb9-128" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2011-11-07"</span>),</span>
-<span id="cb9-129"><a href="#cb9-129" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2012-10-26"</span>),</span>
-<span id="cb9-130"><a href="#cb9-130" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2013-10-16"</span>),</span>
-<span id="cb9-131"><a href="#cb9-131" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2014-10-05"</span>),</span>
-<span id="cb9-132"><a href="#cb9-132" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2015-09-25"</span>),</span>
-<span id="cb9-133"><a href="#cb9-133" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2016-09-13"</span>),</span>
-<span id="cb9-134"><a href="#cb9-134" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2017-09-02"</span>),</span>
-<span id="cb9-135"><a href="#cb9-135" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2018-08-23"</span>),</span>
-<span id="cb9-136"><a href="#cb9-136" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2019-08-12"</span>),</span>
-<span id="cb9-137"><a href="#cb9-137" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2020-07-31"</span>),</span>
-<span id="cb9-138"><a href="#cb9-138" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2021-07-21"</span>),</span>
-<span id="cb9-139"><a href="#cb9-139" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2022-06-10"</span>),</span>
-<span id="cb9-140"><a href="#cb9-140" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2023-06-29"</span>),</span>
-<span id="cb9-141"><a href="#cb9-141" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2024-06-18"</span>),</span>
-<span id="cb9-142"><a href="#cb9-142" aria-hidden="true" tabindex="-1"></a><span class="co"># TAMKHARITE,</span></span>
-<span id="cb9-143"><a href="#cb9-143" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"1990-07-04"</span>),</span>
-<span id="cb9-144"><a href="#cb9-144" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"1991-07-22"</span>),</span>
-<span id="cb9-145"><a href="#cb9-145" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"1992-07-11"</span>),</span>
-<span id="cb9-146"><a href="#cb9-146" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"1993-06-30"</span>),</span>
-<span id="cb9-147"><a href="#cb9-147" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"1994-06-19"</span>),</span>
-<span id="cb9-148"><a href="#cb9-148" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"1995-06-09"</span>),</span>
-<span id="cb9-149"><a href="#cb9-149" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"1996-05-28"</span>),</span>
-<span id="cb9-150"><a href="#cb9-150" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"1997-05-18"</span>),</span>
-<span id="cb9-151"><a href="#cb9-151" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"1998-05-07"</span>),</span>
-<span id="cb9-152"><a href="#cb9-152" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"1999-04-26"</span>),</span>
-<span id="cb9-153"><a href="#cb9-153" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2000-04-15"</span>),</span>
-<span id="cb9-154"><a href="#cb9-154" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2001-04-04"</span>),</span>
-<span id="cb9-155"><a href="#cb9-155" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2002-03-24"</span>),</span>
-<span id="cb9-156"><a href="#cb9-156" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2003-03-14"</span>),</span>
-<span id="cb9-157"><a href="#cb9-157" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2004-03-02"</span>),</span>
-<span id="cb9-158"><a href="#cb9-158" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2005-02-19"</span>),</span>
-<span id="cb9-159"><a href="#cb9-159" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2006-02-09"</span>),</span>
-<span id="cb9-160"><a href="#cb9-160" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2007-01-29"</span>),</span>
-<span id="cb9-161"><a href="#cb9-161" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2008-01-19"</span>),</span>
-<span id="cb9-162"><a href="#cb9-162" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2009-01-07"</span>),</span>
-<span id="cb9-163"><a href="#cb9-163" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2009-12-27"</span>),</span>
-<span id="cb9-164"><a href="#cb9-164" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2010-12-17"</span>),</span>
-<span id="cb9-165"><a href="#cb9-165" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2011-12-06"</span>),</span>
-<span id="cb9-166"><a href="#cb9-166" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2012-11-24"</span>),</span>
-<span id="cb9-167"><a href="#cb9-167" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2013-11-14"</span>),</span>
-<span id="cb9-168"><a href="#cb9-168" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2014-11-03"</span>),</span>
-<span id="cb9-169"><a href="#cb9-169" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2015-11-30"</span>),</span>
-<span id="cb9-170"><a href="#cb9-170" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2016-10-12"</span>),</span>
-<span id="cb9-171"><a href="#cb9-171" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2017-10-01"</span>),</span>
-<span id="cb9-172"><a href="#cb9-172" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2018-09-21"</span>),</span>
-<span id="cb9-173"><a href="#cb9-173" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2019-09-10"</span>),</span>
-<span id="cb9-174"><a href="#cb9-174" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2020-08-29"</span>),</span>
-<span id="cb9-175"><a href="#cb9-175" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2021-08-19"</span>),</span>
-<span id="cb9-176"><a href="#cb9-176" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2022-08-08"</span>),</span>
-<span id="cb9-177"><a href="#cb9-177" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2023-07-28"</span>),</span>
-<span id="cb9-178"><a href="#cb9-178" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2024-07-17"</span>),</span>
-<span id="cb9-179"><a href="#cb9-179" aria-hidden="true" tabindex="-1"></a><span class="co"># MAOULOUD,</span></span>
-<span id="cb9-180"><a href="#cb9-180" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"1990-10-02"</span>),</span>
-<span id="cb9-181"><a href="#cb9-181" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"1991-09-21"</span>),</span>
-<span id="cb9-182"><a href="#cb9-182" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"1992-09-10"</span>),</span>
-<span id="cb9-183"><a href="#cb9-183" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"1993-08-30"</span>),</span>
-<span id="cb9-184"><a href="#cb9-184" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"1994-08-19"</span>),</span>
-<span id="cb9-185"><a href="#cb9-185" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"1995-08-09"</span>),</span>
-<span id="cb9-186"><a href="#cb9-186" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"1996-07-28"</span>),</span>
-<span id="cb9-187"><a href="#cb9-187" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"1997-07-18"</span>),</span>
-<span id="cb9-188"><a href="#cb9-188" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"1998-07-07"</span>),</span>
-<span id="cb9-189"><a href="#cb9-189" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"1999-06-26"</span>),</span>
-<span id="cb9-190"><a href="#cb9-190" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2000-06-15"</span>),</span>
-<span id="cb9-191"><a href="#cb9-191" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2001-06-04"</span>),</span>
-<span id="cb9-192"><a href="#cb9-192" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2002-05-24"</span>),</span>
-<span id="cb9-193"><a href="#cb9-193" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2003-05-14"</span>),</span>
-<span id="cb9-194"><a href="#cb9-194" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2004-05-02"</span>),</span>
-<span id="cb9-195"><a href="#cb9-195" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2005-04-21"</span>),</span>
-<span id="cb9-196"><a href="#cb9-196" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2006-04-11"</span>),</span>
-<span id="cb9-197"><a href="#cb9-197" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2007-03-31"</span>),</span>
-<span id="cb9-198"><a href="#cb9-198" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2008-03-20"</span>),</span>
-<span id="cb9-199"><a href="#cb9-199" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2009-03-09"</span>),</span>
-<span id="cb9-200"><a href="#cb9-200" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2010-02-26"</span>),</span>
-<span id="cb9-201"><a href="#cb9-201" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2011-02-16"</span>),</span>
-<span id="cb9-202"><a href="#cb9-202" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2012-02-05"</span>),</span>
-<span id="cb9-203"><a href="#cb9-203" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2013-01-24"</span>),</span>
-<span id="cb9-204"><a href="#cb9-204" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2014-01-14"</span>),</span>
-<span id="cb9-205"><a href="#cb9-205" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2015-01-03"</span>),</span>
-<span id="cb9-206"><a href="#cb9-206" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2015-11-23"</span>),</span>
-<span id="cb9-207"><a href="#cb9-207" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2016-12-12"</span>),</span>
-<span id="cb9-208"><a href="#cb9-208" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2018-12-01"</span>),</span>
-<span id="cb9-209"><a href="#cb9-209" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2018-11-21"</span>),</span>
-<span id="cb9-210"><a href="#cb9-210" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2019-11-18"</span>),</span>
-<span id="cb9-211"><a href="#cb9-211" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2020-10-29"</span>),</span>
-<span id="cb9-212"><a href="#cb9-212" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2021-10-19"</span>),</span>
-<span id="cb9-213"><a href="#cb9-213" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2022-10-08"</span>),</span>
-<span id="cb9-214"><a href="#cb9-214" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2023-09-27"</span>),</span>
-<span id="cb9-215"><a href="#cb9-215" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2024-09-15"</span>),</span>
-<span id="cb9-216"><a href="#cb9-216" aria-hidden="true" tabindex="-1"></a><span class="co"># MAGAL,</span></span>
-<span id="cb9-217"><a href="#cb9-217" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"1990-09-09"</span>),</span>
-<span id="cb9-218"><a href="#cb9-218" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"1991-08-29"</span>),</span>
-<span id="cb9-219"><a href="#cb9-219" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"1992-09-18"</span>),</span>
-<span id="cb9-220"><a href="#cb9-220" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"1993-10-07"</span>),</span>
-<span id="cb9-221"><a href="#cb9-221" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"1994-07-27"</span>),</span>
-<span id="cb9-222"><a href="#cb9-222" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"1995-07-17"</span>),</span>
-<span id="cb9-223"><a href="#cb9-223" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"1996-07-05"</span>),</span>
-<span id="cb9-224"><a href="#cb9-224" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"1997-06-25"</span>),</span>
-<span id="cb9-225"><a href="#cb9-225" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"1998-06-14"</span>),</span>
-<span id="cb9-226"><a href="#cb9-226" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"1999-06-03"</span>),</span>
-<span id="cb9-227"><a href="#cb9-227" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2000-05-23"</span>),</span>
-<span id="cb9-228"><a href="#cb9-228" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2001-05-12"</span>),</span>
-<span id="cb9-229"><a href="#cb9-229" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2002-05-01"</span>),</span>
-<span id="cb9-230"><a href="#cb9-230" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2003-04-21"</span>),</span>
-<span id="cb9-231"><a href="#cb9-231" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2004-04-09"</span>),</span>
-<span id="cb9-232"><a href="#cb9-232" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2005-03-29"</span>),</span>
-<span id="cb9-233"><a href="#cb9-233" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2006-03-19"</span>),</span>
-<span id="cb9-234"><a href="#cb9-234" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2007-03-08"</span>),</span>
-<span id="cb9-235"><a href="#cb9-235" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2008-02-26"</span>),</span>
-<span id="cb9-236"><a href="#cb9-236" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2009-02-14"</span>),</span>
-<span id="cb9-237"><a href="#cb9-237" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2010-02-03"</span>),</span>
-<span id="cb9-238"><a href="#cb9-238" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2011-01-03"</span>),</span>
-<span id="cb9-239"><a href="#cb9-239" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2012-01-13"</span>),</span>
-<span id="cb9-240"><a href="#cb9-240" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2013-01-01"</span>),</span>
-<span id="cb9-241"><a href="#cb9-241" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2013-12-22"</span>),</span>
-<span id="cb9-242"><a href="#cb9-242" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2014-12-11"</span>),</span>
-<span id="cb9-243"><a href="#cb9-243" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2015-12-01"</span>),</span>
-<span id="cb9-244"><a href="#cb9-244" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2016-11-19"</span>),</span>
-<span id="cb9-245"><a href="#cb9-245" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2017-11-08"</span>),</span>
-<span id="cb9-246"><a href="#cb9-246" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2018-10-29"</span>),</span>
-<span id="cb9-247"><a href="#cb9-247" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2019-10-18"</span>),</span>
-<span id="cb9-248"><a href="#cb9-248" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2020-10-06"</span>),</span>
-<span id="cb9-249"><a href="#cb9-249" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2021-09-26"</span>),</span>
-<span id="cb9-250"><a href="#cb9-250" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2022-09-15"</span>),</span>
-<span id="cb9-251"><a href="#cb9-251" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2023-09-04"</span>),</span>
-<span id="cb9-252"><a href="#cb9-252" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2024-08-23"</span>)</span>
-<span id="cb9-253"><a href="#cb9-253" aria-hidden="true" tabindex="-1"></a>  ))</span>
-<span id="cb9-254"><a href="#cb9-254" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-255"><a href="#cb9-255" aria-hidden="true" tabindex="-1"></a>CAL <span class="ot">&lt;-</span> <span class="fu">national_calendar</span>(jours_macronia)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a><span class="co"># jours_mobiles &lt;- jours_mobiles[,-1, drop = FALSE] # on enlève l'année</span></span>
+<span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-18"><a href="#cb9-18" aria-hidden="true" tabindex="-1"></a>jours_macronia <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
+<span id="cb9-19"><a href="#cb9-19" aria-hidden="true" tabindex="-1"></a>  jours_macronia,</span>
+<span id="cb9-20"><a href="#cb9-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">list</span>(</span>
+<span id="cb9-21"><a href="#cb9-21" aria-hidden="true" tabindex="-1"></a>    <span class="co"># DEBUT_RAMADAN,</span></span>
+<span id="cb9-22"><a href="#cb9-22" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2000-11-28"</span>),</span>
+<span id="cb9-23"><a href="#cb9-23" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2001-11-17"</span>),</span>
+<span id="cb9-24"><a href="#cb9-24" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2002-11-07"</span>),</span>
+<span id="cb9-25"><a href="#cb9-25" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2003-10-27"</span>),</span>
+<span id="cb9-26"><a href="#cb9-26" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2004-10-15"</span>),</span>
+<span id="cb9-27"><a href="#cb9-27" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2005-10-05"</span>),</span>
+<span id="cb9-28"><a href="#cb9-28" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2006-09-24"</span>),</span>
+<span id="cb9-29"><a href="#cb9-29" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2007-09-14"</span>),</span>
+<span id="cb9-30"><a href="#cb9-30" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2008-09-02"</span>),</span>
+<span id="cb9-31"><a href="#cb9-31" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2009-08-22"</span>),</span>
+<span id="cb9-32"><a href="#cb9-32" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2010-08-12"</span>),</span>
+<span id="cb9-33"><a href="#cb9-33" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2011-08-01"</span>),</span>
+<span id="cb9-34"><a href="#cb9-34" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2012-07-20"</span>),</span>
+<span id="cb9-35"><a href="#cb9-35" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2013-07-10"</span>),</span>
+<span id="cb9-36"><a href="#cb9-36" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2014-06-29"</span>),</span>
+<span id="cb9-37"><a href="#cb9-37" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2015-07-18"</span>),</span>
+<span id="cb9-38"><a href="#cb9-38" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2016-06-07"</span>),</span>
+<span id="cb9-39"><a href="#cb9-39" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2017-05-27"</span>),</span>
+<span id="cb9-40"><a href="#cb9-40" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2018-05-17"</span>),</span>
+<span id="cb9-41"><a href="#cb9-41" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2019-05-06"</span>),</span>
+<span id="cb9-42"><a href="#cb9-42" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2020-04-24"</span>),</span>
+<span id="cb9-43"><a href="#cb9-43" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2021-04-14"</span>),</span>
+<span id="cb9-44"><a href="#cb9-44" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2022-04-03"</span>),</span>
+<span id="cb9-45"><a href="#cb9-45" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2023-03-23"</span>),</span>
+<span id="cb9-46"><a href="#cb9-46" aria-hidden="true" tabindex="-1"></a><span class="fu">single_day</span>(<span class="st">"2024-03-12"</span>)</span>
+<span id="cb9-47"><a href="#cb9-47" aria-hidden="true" tabindex="-1"></a>  ))</span>
+<span id="cb9-48"><a href="#cb9-48" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-49"><a href="#cb9-49" aria-hidden="true" tabindex="-1"></a>CAL <span class="ot">&lt;-</span> <span class="fu">national_calendar</span>(jours_macronia)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
@@ -775,31 +569,31 @@ Solution
 <span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(wkd <span class="sc">-</span> wkd_def,<span class="dv">1</span>)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>      Jan  Feb  Mar  Apr  May  Jun  Jul  Aug  Sep  Oct  Nov  Dec
-2000  2.5  0.0 -2.8 -1.7  1.0 -9.0  0.0 -1.0  0.0  0.0 -4.5 -4.5
-2001 -1.0  0.0 -2.8 -1.7  1.0 -2.0  0.0 -1.0  0.0  0.0 -1.0 -1.0
-2002 -1.0  0.0  0.7 -1.7 -6.0  1.5  0.0 -1.0  0.0  0.0 -4.5 -4.5
-2003 -1.0 -3.5 -2.8 -1.7 -2.5 -2.0  0.0 -1.0  0.0 -3.5 -1.0 -1.0
-2004 -1.0 -3.5 -2.8 -1.7  1.0  1.5  0.0  2.5  0.0 -3.5 -1.0  2.5
-2005 -1.0  0.0 -6.3 -1.7  1.0  1.5  0.0 -1.0  0.0 -3.5 -4.5  2.5
-2006 -1.0 -3.5  0.7 -5.2  1.0 -2.0  0.0 -1.0  0.0 -3.5 -1.0 -1.0
-2007 -4.5  0.0 -2.8 -1.7 -2.5  1.5  0.0 -1.0 -3.5  0.0 -1.0 -4.5
-2008 -1.0 -3.5 -6.3  1.8  1.0  1.5  0.0 -1.0 -3.5 -3.5  2.5 -4.5
-2009 -4.5  0.0 -2.8  1.8  1.0 -2.0  0.0  2.5  0.0  0.0 -1.0 -1.0
-2010 -1.0 -7.0  0.7  1.8  1.0  1.5  0.0 -1.0 -3.5  0.0 -4.5 -1.0
-2011 -1.0 -3.5  0.7 -1.7  8.0 -5.5  0.0 -8.0  0.0  0.0 -4.5 -1.0
-2012 -1.0  0.0  0.7 -1.7 -2.5  1.5 -3.5 -4.5  0.0 -3.5 -1.0 -1.0
-2013 -4.5  0.0  0.7 -1.7 -2.5  1.5 -3.5 -4.5  0.0 -3.5 -4.5 -1.0
-2014 -4.5  0.0  0.7 -1.7  1.0 -2.0  0.0 -1.0  0.0  0.0 -1.0 -4.5
-2015 -1.0  0.0  0.7  1.8 -2.5  1.5 -3.5  2.5 -3.5  0.0 -4.5 -4.5
-2016 -1.0  0.0 -2.8  1.8  1.0 -2.0 -3.5 -1.0 -3.5 -3.5 -1.0 -1.0
-2017  2.5  0.0  0.7 -1.7  1.0 -2.0  0.0 -1.0  0.0  0.0 -4.5 -1.0
-2018 -1.0  0.0  0.7 -1.7 -6.0 -2.0  0.0 -4.5 -3.5 -3.5 -4.5 -1.0
-2019 -1.0  0.0  0.7 -1.7 -2.5 -5.5  0.0 -4.5 -3.5 -3.5 -4.5 -1.0
-2020 -1.0  0.0  0.7 -1.7 -2.5 -2.0 -3.5  2.5  0.0 -7.0  2.5 -1.0
-2021 -1.0  0.0  0.7 -1.7 -2.5  1.5 -3.5 -1.0  0.0 -3.5 -1.0  2.5
-2022  2.5  0.0  0.7 -1.7  4.5 -5.5  0.0 -4.5 -3.5  0.0 -1.0  2.5
-2023  2.5  0.0 -2.8 -5.2 -2.5 -2.0 -3.5 -1.0 -7.0  0.0 -1.0 -1.0
-2024 -1.0  0.0 -2.8 -5.2 -2.5 -2.0 -3.5 -4.5  0.0  0.0 -1.0 -1.0
+2000  2.5  0.0  0.7 -1.7  4.5 -5.5  0.0 -1.0  0.0  0.0 -4.5 -1.0
+2001 -1.0  0.0  0.7 -1.7  1.0 -2.0  0.0 -1.0  0.0  0.0 -1.0 -1.0
+2002 -1.0  0.0  0.7 -1.7 -2.5  1.5  0.0 -1.0  0.0  0.0 -4.5 -1.0
+2003 -1.0  0.0  0.7 -1.7  1.0 -2.0  0.0 -1.0  0.0 -3.5  2.5 -1.0
+2004 -1.0  0.0  0.7  1.8  1.0  1.5  0.0  2.5  0.0 -3.5 -1.0  2.5
+2005  2.5  0.0 -2.8  1.8  1.0  1.5  0.0 -1.0  0.0 -3.5 -1.0  2.5
+2006  2.5  0.0  0.7 -1.7  1.0 -2.0  0.0 -1.0  0.0  0.0 -1.0 -1.0
+2007 -1.0  0.0  0.7 -1.7 -2.5  1.5  0.0 -1.0 -3.5  0.0 -1.0 -1.0
+2008 -1.0  0.0 -2.8  1.8  1.0  1.5  0.0 -1.0 -3.5  0.0  2.5 -1.0
+2009 -1.0  0.0  0.7  1.8  1.0 -2.0  0.0  2.5  0.0  0.0  2.5 -1.0
+2010 -1.0  0.0  0.7  1.8  1.0  1.5  0.0 -1.0  0.0  0.0 -1.0  2.5
+2011  2.5  0.0  0.7 -1.7  8.0 -5.5  0.0 -4.5  0.0  0.0 -1.0  2.5
+2012  2.5  0.0  0.7 -1.7 -2.5  1.5 -3.5 -1.0  0.0  0.0 -1.0 -1.0
+2013 -1.0  0.0  0.7 -1.7 -2.5  1.5 -3.5 -1.0  0.0  0.0 -1.0 -1.0
+2014 -1.0  0.0  0.7 -1.7  1.0 -2.0  0.0 -1.0  0.0  0.0  2.5 -1.0
+2015 -1.0  0.0  0.7  1.8 -2.5  1.5  0.0  2.5  0.0  0.0  2.5 -1.0
+2016 -1.0  0.0 -2.8  1.8  1.0 -2.0  0.0 -1.0  0.0  0.0 -1.0  2.5
+2017  2.5  0.0  0.7 -1.7  1.0 -2.0  0.0 -1.0  0.0  0.0 -1.0 -1.0
+2018 -1.0  0.0  0.7 -1.7 -6.0  1.5  0.0 -1.0  0.0  0.0 -1.0 -1.0
+2019 -1.0  0.0  0.7 -1.7 -2.5 -2.0  0.0 -1.0  0.0  0.0 -1.0 -1.0
+2020 -1.0  0.0  0.7 -1.7  1.0 -2.0  0.0  2.5  0.0  0.0  2.5 -1.0
+2021 -1.0  0.0  0.7 -1.7  1.0  1.5  0.0  2.5  0.0  0.0 -1.0  2.5
+2022  2.5  0.0  0.7 -1.7  4.5 -2.0  0.0 -1.0  0.0  0.0 -1.0  2.5
+2023  2.5  0.0 -2.8 -1.7 -2.5  1.5  0.0 -1.0  0.0  0.0 -1.0 -1.0
+2024 -1.0  0.0 -2.8 -1.7 -2.5  1.5  0.0 -1.0  0.0  0.0 -1.0 -1.0
 2025 -1.0  0.0  0.7 -1.7  1.0 -2.0  0.0 -1.0  0.0  0.0  2.5 -1.0
 2026 -1.0  0.0  0.7  1.8 -2.5  1.5  0.0  2.5  0.0  0.0  2.5 -1.0
 2027 -1.0  0.0 -2.8  5.3  1.0  1.5  0.0  2.5  0.0  0.0 -1.0  2.5
@@ -1138,7 +932,7 @@ Solution
 <span id="cb18-17"><a href="#cb18-17" aria-hidden="true" tabindex="-1"></a>myreg1 <span class="ot">&lt;-</span> <span class="fu">regarima</span>(ipi_fr, myspec1)</span>
 <span id="cb18-18"><a href="#cb18-18" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(myreg1)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>y = regression model + arima (2, 1, 0, 0, 1, 1)
+<pre><code>y = regression model + arima (2, 1, 1, 0, 1, 1)
 
 Model: RegARIMA - X13
 Estimation span: from 1-1990 to 12-2019
@@ -1147,30 +941,31 @@ Regression model: no mean, trading days effect(7), no leap year effect, no Easte
 
 Coefficients:
 ARIMA: 
-          Estimate Std. Error T-stat Pr(&gt;|t|)    
-Phi(1)     0.60670    0.04953  12.25   &lt;2e-16 ***
-Phi(2)     0.45313    0.04899   9.25   &lt;2e-16 ***
-BTheta(1) -0.64655    0.04336 -14.91   &lt;2e-16 ***
+          Estimate Std. Error  T-stat Pr(&gt;|t|)    
+Phi(1)     0.28608    0.13444   2.128   0.0340 *  
+Phi(2)     0.24312    0.08163   2.978   0.0031 ** 
+Theta(1)  -0.31214    0.13573  -2.300   0.0221 *  
+BTheta(1) -0.63321    0.04438 -14.269   &lt;2e-16 ***
 ---
 Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 
 Regression model: 
               Estimate Std. Error  T-stat Pr(&gt;|t|)    
-lundi         0.004172   0.001443   2.891  0.00408 ** 
-mardi         0.007923   0.001641   4.828 2.07e-06 ***
-mercredi      0.009767   0.001651   5.916 7.91e-09 ***
-jeudi         0.003675   0.001573   2.336  0.02005 *  
-vendredi      0.004746   0.001634   2.905  0.00391 ** 
-samedi       -0.016705   0.001580 -10.576  &lt; 2e-16 ***
-leap_year     0.019788   0.006864   2.883  0.00418 ** 
-LS (11-2008) -0.113562   0.016059  -7.072 8.49e-12 ***
-TC (2-2009)  -0.076609   0.017046  -4.494 9.52e-06 ***
+lundi         0.004817   0.001512   3.185 0.001578 ** 
+mardi         0.009870   0.001730   5.705 2.50e-08 ***
+mercredi      0.008431   0.001744   4.834 2.01e-06 ***
+jeudi         0.006585   0.001777   3.705 0.000246 ***
+vendredi      0.004267   0.001740   2.452 0.014696 *  
+samedi       -0.015883   0.001588 -10.000  &lt; 2e-16 ***
+leap_year     0.021423   0.006296   3.403 0.000746 ***
+LS (11-2008) -0.092121   0.015309  -6.017 4.50e-09 ***
+LS (1-2009)  -0.067697   0.015325  -4.417 1.34e-05 ***
 ---
 Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 
 
-Residual standard error: 0.02176 on 334 degrees of freedom
-Log likelihood = 832.2, aic =  1567, aicc =  1568, bic(corrected for length) = -7.453</code></pre>
+Residual standard error: 0.01943 on 333 degrees of freedom
+Log likelihood = 871.8, aic =  1490, aicc =  1491, bic(corrected for length) = -7.663</code></pre>
 </div>
 </div>
 <div class="callout callout-style-default callout-warning callout-titled">
@@ -1205,9 +1000,9 @@ samedi = 0
 Model 1: restricted model
 Model 2: myreg1
 
-  Res.Df Df      F    Pr(&gt;F)    
-1    340                        
-2    334  6 69.457 &lt; 2.2e-16 ***
+  Res.Df Df     F    Pr(&gt;F)    
+1    339                       
+2    333  6 116.8 &lt; 2.2e-16 ***
 ---
 Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
 </div>
@@ -1225,8 +1020,8 @@ Model 1: restricted model
 Model 2: myreg1
 
   Res.Df Df      F  Pr(&gt;F)  
-1    338                    
-2    334  4 2.7377 0.02882 *
+1    337                    
+2    333  4 2.1578 0.07349 .
 ---
 Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
 </div>
@@ -1265,32 +1060,32 @@ portion of the variance in the original series,
 after the removal of the long term trend
  Trend computed by Hodrick-Prescott filter (cycle length = 8.0 years)
            Component
- Cycle         2.267
- Seasonal     72.810
- Irregular     1.291
- TD &amp; Hol.     2.698
- Others       21.525
- Total       100.591
+ Cycle         2.084
+ Seasonal     60.997
+ Irregular     0.780
+ TD &amp; Hol.     2.580
+ Others       34.241
+ Total       100.682
 
 Combined test in the entire series
  Non parametric tests for stable seasonality
                                                           P.value
    Kruskall-Wallis test                                      0.000
    Test for the presence of seasonality assuming stability   0.000
-   Evolutive seasonality test                                0.382
+   Evolutive seasonality test                                0.673
  
  Identifiable seasonality present
 
 Residual seasonality tests
                                       P.value
- qs test on sa                          0.998
- qs test on i                           1.000
- f-test on sa (seasonal dummies)        0.983
- f-test on i (seasonal dummies)         0.973
- Residual seasonality (entire series)   0.974
- Residual seasonality (last 3 years)    0.883
- f-test on sa (td)                      0.000
- f-test on i (td)                       0.000</code></pre>
+ qs test on sa                          0.078
+ qs test on i                           0.054
+ f-test on sa (seasonal dummies)        0.998
+ f-test on i (seasonal dummies)         0.988
+ Residual seasonality (entire series)   1.000
+ Residual seasonality (last 3 years)    0.901
+ f-test on sa (td)                      0.068
+ f-test on i (td)                       0.229</code></pre>
 </div>
 </div>
 <p>Sous JDemetra+, les tests affichés portent sur les 8 dernières années et dans RJDemetra sur la série entière ! Pour reproduire les résultats de JDemetra+, utiliser la fonction <code>rjd3toolkit::td_f()</code>. Pour le test, six spécifications différentes sont possibles :</p>
@@ -1328,24 +1123,24 @@ y_t - \bar y =\sum_{i=1}^{6} \beta_i (N_{it} - N_{7t}) +  \varepsilon_t
 <span id="cb26-7"><a href="#cb26-7" aria-hidden="true" tabindex="-1"></a>}</span>
 <span id="cb26-8"><a href="#cb26-8" aria-hidden="true" tabindex="-1"></a>rjd3toolkit<span class="sc">::</span><span class="fu">td_f</span>(sa, <span class="at">nyears =</span> <span class="dv">8</span>, <span class="at">model =</span> <span class="st">"R100"</span>)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Value: 8.220707 
+<pre><code>Value: 6.203392 
 P-Value: 0.0000 </code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>rjd3toolkit<span class="sc">::</span><span class="fu">td_f</span>(i, <span class="at">nyears =</span> <span class="dv">8</span>, <span class="at">model =</span> <span class="st">"R100"</span>)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Value: 5.440446 
-P-Value: 0.0001 </code></pre>
+<pre><code>Value: 3.759636 
+P-Value: 0.0022 </code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Résultats différents sur l'ensemble de la série</span></span>
 <span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>rjd3toolkit<span class="sc">::</span><span class="fu">td_f</span>(sa, <span class="at">nyears =</span> <span class="dv">0</span>, <span class="at">model =</span> <span class="st">"R100"</span>)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Value: 10.24736 
-P-Value: 0.0000 </code></pre>
+<pre><code>Value: 3.128356 
+P-Value: 0.0053 </code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>rjd3toolkit<span class="sc">::</span><span class="fu">td_f</span>(i, <span class="at">nyears =</span> <span class="dv">0</span>, <span class="at">model =</span> <span class="st">"R100"</span>)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Value: 5.356625 
-P-Value: 0.0000 </code></pre>
+<pre><code>Value: 1.161422 
+P-Value: 0.3265 </code></pre>
 </div>
 </div>
 <p>En réalité les tests affichés dans JDemetra+ et RJDemetra ne sont pas effectuées sur les composantes “finales” de l’irrégulier et la série désaisonnalisée, mais sur les composantes issues de X-11 avant ajout des points atypiques du préajustement. Pour X-13-ARIMA ces séries ne sont pas exportées par défaut (et ne sont pas exportables depuis JDemetra+). Pour les extraires, nous allons réestimer le modèle<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> :</p>
@@ -1364,10 +1159,10 @@ P-Value: 0.0000 </code></pre>
 <span id="cb34-12"><a href="#cb34-12" aria-hidden="true" tabindex="-1"></a>))</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>     value    pvalue      
-[1,] 9.759979 5.922774e-10
-[2,] 8.189835 4.787726e-07
-[3,] 4.803432 9.995053e-05
-[4,] 5.441369 7.976051e-05</code></pre>
+[1,] 2.646733 0.01594339  
+[2,] 6.207867 1.830266e-05
+[3,] 1.166123 0.3238788   
+[4,] 3.728232 0.002376407 </code></pre>
 </div>
 </div>
 <p>En utilisant la fonction <code>rjd3toolkit::sarima_estimate()</code> et le package <code>car</code>, vous pouvez aussi construire vous-même le test<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> :</p>
@@ -1398,11 +1193,9 @@ Model 1: restricted model
 Model 2: rjd3toolkit::sarima_estimate(sa, order = c(0, 1, 1), seasonal = c(0, 
     0, 0), mean = FALSE, xreg = rjd3toolkit::td(s = sa))
 
-  Res.Df Df      F    Pr(&gt;F)    
-1    357                        
-2    351  6 5.4096 2.303e-05 ***
----
-Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
+  Res.Df Df     F Pr(&gt;F)
+1    357                
+2    351  6 1.473 0.1864</code></pre>
 </div>
 </div>
 <p>Une autre solution est de passer par les objets <code>jSA</code> et d’exporter les indicateurs <code>"diagnostics.td-i-last"</code> et <code>"diagnostics.td-sa-last"</code>, ou bien de rajouter ces indicateurs dans le paramètre <code>userdefined</code> de <code>x13()</code> :</p>
@@ -1411,27 +1204,27 @@ Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
 <span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a><span class="fu">get_indicators</span>(jsa,<span class="st">"diagnostics.td-sa-last"</span>)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>$`diagnostics.td-sa-last`
-[1] 5.956079e+00 2.957319e-05
+[1] 5.1596190676 0.0001381414
 attr(,"description")
 [1] "F with 6 degrees of freedom in the nominator and 88 degrees of freedom in the denominator"</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="fu">get_indicators</span>(jsa,<span class="st">"diagnostics.td-i-last"</span>)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>$`diagnostics.td-i-last`
-[1] 4.2797902641 0.0007868723
+[1] 3.306097404 0.005557358
 attr(,"description")
 [1] "F with 6 degrees of freedom in the nominator and 88 degrees of freedom in the denominator"</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a>mysa <span class="ot">&lt;-</span> <span class="fu">x13</span>(ipi_fr, myspec1_sa, <span class="at">userdefined =</span> <span class="fu">c</span>(<span class="st">"diagnostics.td-sa-last"</span>, <span class="st">"diagnostics.td-i-last"</span>))</span>
 <span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a>mysa<span class="sc">$</span>user_defined<span class="sc">$</span><span class="st">`</span><span class="at">diagnostics.td-sa-last</span><span class="st">`</span></span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 5.956079e+00 2.957319e-05
+<pre><code>[1] 5.1596190676 0.0001381414
 attr(,"description")
 [1] "F with 6 degrees of freedom in the nominator and 88 degrees of freedom in the denominator"</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb44"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a>mysa<span class="sc">$</span>user_defined<span class="sc">$</span><span class="st">`</span><span class="at">diagnostics.td-i-last</span><span class="st">`</span></span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 4.2797902641 0.0007868723
+<pre><code>[1] 3.306097404 0.005557358
 attr(,"description")
 [1] "F with 6 degrees of freedom in the nominator and 88 degrees of freedom in the denominator"</code></pre>
 </div>
