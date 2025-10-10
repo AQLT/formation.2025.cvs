@@ -36,7 +36,7 @@ Dans la majorité des cas il n'est donc plus utile d'exporter les régresseurs e
 #| eval: true
 library(kableExtra)
 special_days <- XLConnect::readWorksheetFromFile("holidaysJD.xlsx", sheet = 1)
-# special_days <- special_days[!special_days[,1]%in%c("THANKSGIVING", "LABORDAY", "JULIANEASTER"),]
+special_days <- special_days[!special_days[,1]%in%c("THANKSGIVING", "LABORDAY", "JULIANEASTER"),]
 kbl(special_days,booktabs = TRUE,caption = "Jours pré-spécifiés (`Special Day`)",row.names = FALSE) %>%
 	kable_paper("hover", full_width = F)
 ```
@@ -399,13 +399,16 @@ kable(data_reg,escape = FALSE, booktabs = TRUE)
 
 Même si un raisonnement économique est à privilégier pour le choix des régresseurs, une sélection automatique peut être faite par JDemetra+ (option `automatic`, ligne 2) en utilisant des tests de Wald ou en minimisant un critère d'information (BIC ou AIC).
 
+::: {.callout-tip}
 ## Exporter son calendrier dans un autre workspace
 
-Si vous souhaitez exporter votre calendrier, il est possible de créer un fichier config depuis l'interface qui peut ensuite être importé :
+Si vous souhaitez exporter votre calendrier (sans utiliser R), il est possible de créer un fichier config depuis l'interface qui peut ensuite être importé :
 
 - Dans l'onglet `Workspace > Utilities > Calendars`, clic-droit sur le calendrier souhaité puis `Export to > File...` celui crée un fichier `.cfgx`.
 
 - Si vous créer un nouveau workspace, cet objet est importable dans JDemetra+ via l'onglet `Workspace > Utilities > Calendars`, clic-droit sur `Calendars` puis `Import from > File...` et en sélectionnant le fichier `.cfgx` précédemment créé.
+:::
+
 
 # Importer les jeux de régresseurs « Jours Ouvrables » sous JDemetra+ {#sec-import-reg}
 
