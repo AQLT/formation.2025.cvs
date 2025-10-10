@@ -66,4 +66,4 @@ library(knitr)
 
         -   Si oui, à quelles fréquences ?
 
--   Faire la même chose en prenant un autre outil que le Periodogram.
+-   Faire la même chose en utilisant le spectre auto-régressif (`Auto-regressive Spectrum`).

@@ -44,7 +44,13 @@ Heureusement depuis R il existe une solution plus automatique !
 Il existe deux façons de faire, en fonction de si l'on utilise une version 2.x.y ou 3.x.y de JDemetra+.
 Repartons déjà des régresseurs jours ouvrables (pour leur création, voir le TP R associé en  [V2](R_2_CJO_v2.qmd) ou [V3](R_2_CJO_v3.qmd)) :
 
+
+::: {.callout-note collapse="true"}
+## Exemple de calendrier associé à la France
 ```{r}
+if (! "rjd3toolkit" %in% installed.packages()[,"Package"]) {
+  install.packages("rjd3toolkit", repos = c("https://aqlt.r-universe.dev", "https://cloud.r-project.org"))
+}
 if (! "rjd3workspace" %in% installed.packages()[,"Package"]) {
   install.packages("rjd3workspace", repos = c("https://aqlt.r-universe.dev", "https://cloud.r-project.org"))
 }
@@ -62,8 +68,57 @@ FR <- national_calendar(list(
 	special_day("ALLSAINTSDAY"), # Toussaint
 	special_day("ARMISTICE")
 ))
+CAL <- national_calendar(FR)
 
-# Exemple de calendrier associé à la Macronia
+gen_calendrier <- function(cal, frequency, start = c(1990, 1), end = c(2030, 1)) {
+	length = (end[1] - start[1]) * frequency + end[2] - start[2]
+	ly <- rjd3toolkit::lp_variable(frequency = frequency, start = start,
+								   length = length)
+	# N'hésitez pas à ajouter les votre !
+	TD7 <- calendar_td(cal, frequency = frequency, start = start, length = length,
+					   groups = c(1, 2, 3, 4, 5, 6, 0))
+	TD4 <- calendar_td(cal, frequency = frequency, start = start, length = length,
+					   groups = c(1, 1, 1, 1, 2, 3, 0))
+	TD3 <- calendar_td(cal, frequency = frequency, start = start, length = length,
+					   groups = c(1, 1, 1, 1, 1, 2, 0))
+	TD3c <- calendar_td(cal, frequency = frequency, start = start, length = length,
+						groups = c(1, 1, 1, 1, 2, 2, 0))
+	TD2 <- calendar_td(cal, frequency = frequency, start = start, length = length,
+					   groups = c(1, 1, 1, 1, 1, 0, 0))
+	TD2c <- calendar_td(cal, frequency = frequency, start = start, length = length,
+						groups = c(1, 1, 1, 1, 1, 1, 0))
+	
+	reg_jo <- ts(cbind(TD2, TD2c, TD3, TD3c, TD4, TD7),
+				 start = start, frequency = frequency)
+	reg_jo <- ts.intersect(reg_jo,
+						   ly)
+	colnames(reg_jo) <- c(
+		"TD2_semaine",
+		"TD2c_lundi_samedi",
+		sprintf("TD3_%s", c("semaine", "samedi")),
+		sprintf("TD3c_%s", c("lundi_jeudi", "vendredi_samedi")),
+		sprintf("TD4_%s", c("lundi_jeudi", "vendredi", "samedi")),
+		sprintf("TD7_%s", c("lundi", "mardi", "mercredi", "jeudi", "vendredi", "samedi")),
+		"leap_year")
+	reg_jo
+}
+regresseurs_JO_trim <- gen_calendrier(CAL, frequency = 4)
+regresseurs_JO_mens <- gen_calendrier(CAL, frequency = 12)
+
+colnames(regresseurs_JO_trim) <- paste0(colnames(regresseurs_JO_trim), "_trim")
+colnames(regresseurs_JO_mens) <- paste0(colnames(regresseurs_JO_mens), "_mens")
+```
+:::
+
+::: {.callout-note collapse="true"}
+## Exemple de calendrier associé à la Macronie
+
+Ici certains jours fériés sont associés à des fêtes mobiles qui sont inscrites dans un fichier Excel
+```{r}
+if (! "rjd3toolkit" %in% installed.packages()[,"Package"]) {
+  install.packages("rjd3toolkit", repos = c("https://aqlt.r-universe.dev", "https://cloud.r-project.org"))
+}
+library(rjd3toolkit)
 jours_macronia <- list(
   special_day("NEWYEAR"),
 	special_day("EASTERMONDAY"), # Lundi de Pâques
@@ -301,7 +356,6 @@ single_day("2022-09-15"),
 single_day("2023-09-04"),
 single_day("2024-08-23")
   ))
-
 CAL <- national_calendar(jours_macronia)
 
 gen_calendrier <- function(cal, frequency, start = c(1990, 1), end = c(2030, 1)) {
@@ -342,6 +396,7 @@ regresseurs_JO_mens <- gen_calendrier(CAL, frequency = 12)
 colnames(regresseurs_JO_trim) <- paste0(colnames(regresseurs_JO_trim), "_trim")
 colnames(regresseurs_JO_mens) <- paste0(colnames(regresseurs_JO_mens), "_mens")
 ```
+:::
 
 
 ## JDemetra+ 2.x.y

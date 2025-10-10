@@ -27,7 +27,7 @@ Pour installer tous les packages utiles de ce TP, lancer le programme :
 #| label: install
 packages_to_install <- c(
   "rjwsacruncher",
-  "rjd3toolkit", "rjd3x13", "rjd3tramoseats", "rjd3providers", "rjd3workspace"
+  "rjd3toolkit", "rjd3x13", "rjd3tramoseats", "rjd3providers", "rjd3workspace", "ggdemetra3"
   )
 
 packages <- packages_to_install[! packages_to_install %in% installed.packages()[,"Package"]]
