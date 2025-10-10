@@ -116,6 +116,8 @@ gtag('js', new Date());
   });
 gtag('config', 'G-X652XRGDPL', { 'anonymize_ip': true});
 </script>
+<script src="../site_libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="../site_libs/lightable-0.0.1/lightable.css" rel="stylesheet">
 
 
 </head>
@@ -233,6 +235,109 @@ gtag('config', 'G-X652XRGDPL', { 'anonymize_ip': true});
 <li><p><code>Special Day</code> qui permet d’ajouter des jours fériés par rapport à des dates déjà connues dans JDemetra+ (voir tableau ci-dessous). Comme pour la fonction <code>easter_day()</code>, le paramètre <code>offset</code> permet de spécifier la position du jour voulu par rapport rapport à la fête pré-spécifié (par défaut <code>offset = 0</code>, le jour férié coïncide avec le jour pré-spécifié).</p></li>
 </ul></li>
 </ul>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<table class="lightable-paper lightable-hover table table-sm table-striped small" data-quarto-postprocess="true">
+<caption>Jours pré-spécifiés (`Special Day`)</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th">Event</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Définition</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">NEWYEAR</td>
+<td style="text-align: left;">Fête fixe, 1er janvier.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">SHROVEMONDAY</td>
+<td style="text-align: left;">Fête mobile, lundi avant le mecredi des cendres (48 jours avant pâques).</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">SHROVETUESDAY</td>
+<td style="text-align: left;">Fête mobile, mardi avant le mecredi des cendres (47 jours avant pâques).</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">ASHWEDNESDAY</td>
+<td style="text-align: left;">Fête mobile, 46 jours avant Pâques.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">EASTER</td>
+<td style="text-align: left;">Fête mobile, Pâques, varie entre le 22 mars et le 25 avril.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">JULIANEASTER</td>
+<td style="text-align: left;">NA</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">MAUNDYTHURSDAY</td>
+<td style="text-align: left;">Fête mobile, le jeudi avant Pâques.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">GOODFRIDAY</td>
+<td style="text-align: left;">Fête mobile, le vendredi avant Pâques.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">EASTERMONDAY</td>
+<td style="text-align: left;">Fête mobile, le lendemain de Pâques.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">ASCENSION</td>
+<td style="text-align: left;">Fête mobile, célébrée un jeudi, 40 jours après Pâques.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">PENTECOST</td>
+<td style="text-align: left;">Fête mobile, 50 jours après Pâques.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">CORPUSCHRISTI</td>
+<td style="text-align: left;">Fête mobile, 60 jours après Pâques.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">WHITMONDAY</td>
+<td style="text-align: left;">Fête mobile, le jour après la Pentecôte.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">MAYDAY</td>
+<td style="text-align: left;">Fête fixe, 1er mai.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">ASSUMPTION</td>
+<td style="text-align: left;">Fête fixe, 15 août.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">LABORDAY</td>
+<td style="text-align: left;">NA</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">HALLOWEEN</td>
+<td style="text-align: left;">Fête fixe, 31 octobre.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">ALLSAINTSDAY</td>
+<td style="text-align: left;">Fête fixe, 1er novembre.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">ARMISTICE</td>
+<td style="text-align: left;">Fête fixe, 11 novembre.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">THANKSGIVING</td>
+<td style="text-align: left;">Fête mobile, celebrated on the second Monday of October (Canada) or on the fourth Thursday of November (United States).</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">CHRISTMAS</td>
+<td style="text-align: left;">Fête fixe, 25 décembre.</td>
+</tr>
+</tbody>
+</table>
+
+
+</div>
+</div>
+</div>
 </section>
 <section id="création-du-calendrier-depuis-r-v3.x.y" class="level2" data-number="1.2">
 <h2 data-number="1.2" class="anchored" data-anchor-id="création-du-calendrier-depuis-r-v3.x.y"><span class="header-section-number">1.2</span> Création du calendrier depuis R (v3.x.y)</h2>
