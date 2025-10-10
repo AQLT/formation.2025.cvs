@@ -18,9 +18,12 @@ library(knitr)
 
 -   Importer les séries (si nécessaire).
 
+-   Créer un nouveau multi-document : `Statistical methods > Seasonal Adjustment > Multi Processing > New`.
+
+-   Renommer le "SAProcessing-1" ("X13-RSA1" par exemple) en faisant un clic droit sur son nom sous l'onglet `Workspace > multi-documents` puis `Rename...`
+
 -   Réaliser une désaisonnalisation automatique de ces séries en choisissant la spécification pré-définie `X13 > RSA3`.
 
--   Renommer le "SAProcessing-1" ("X13" par exemple) en faisant un clic droit sur son nom sous l'onglet `multi-documents`, puis `Rename...`
 
 # Analyser des paramètres automatiques choisis par JDemetra+
 
