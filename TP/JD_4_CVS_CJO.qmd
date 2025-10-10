@@ -173,6 +173,7 @@ Par défaut l'option trading days (TD7) les autres options possibles dans JDemet
 
 ```{r}
 #| echo: false
+#| eval: true
 data_reg <- data.frame(
   "Modèle" = c(
     "TD7", "TD4", "TD3", "TD3c", "TD2c", "TD2"
