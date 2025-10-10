@@ -59,7 +59,7 @@ Vous pouvez retrouver [ici](manuel_installation.qmd) le manuel d'installation de
 
 1.  **R et JDemetra+** : [V2](TP/R_1_R_et_JD_v2.qmd) ou [V3](TP/R_1_R_et_JD_v3.qmd)
 
-2. **Correction des jours ouvrables** : [V2](TP/R_2_CJO_v2.qmd) ou [V3](TP/R_2_CJO_v3.qmd) et programme [export_cjo.R](ex-cjo/export_cjo.R)
+2. **Correction des jours ouvrables** : [V2](TP/R_2_CJO_v2.qmd) ou [V3](TP/R_2_CJO_v3.qmd) et programme [export_cjo.R](R-macronia/export_cjo.R)
 
 3. **(Complément) Preajustement** : [V2](TP/R_3_Preadjustment_v2.qmd) ou [V3](TP/R_3_Preadjustment_v3.qmd)
 
