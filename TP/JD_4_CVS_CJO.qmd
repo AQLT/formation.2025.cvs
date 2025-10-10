@@ -31,7 +31,9 @@ Dans la majorité des cas il n'est donc plus utile d'exporter les régresseurs e
     Comme pour la fonction `easter_day()`, le paramètre `offset` permet de spécifier la position du jour voulu par rapport rapport à la fête pré-spécifié (par défaut `offset = 0`, le jour férié coïncide avec le jour pré-spécifié).
     
 
-```{r, prespecifiespecial_days, echo=FALSE}
+```{r, prespecifiespecial_days}
+#| echo: false
+#| eval: true
 library(kableExtra)
 special_days <- readWorksheetFromFile("holidaysJD.xlsx", sheet = 1)
 # special_days <- special_days[!special_days[,1]%in%c("THANKSGIVING", "LABORDAY", "JULIANEASTER"),]
