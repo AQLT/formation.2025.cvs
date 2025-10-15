@@ -373,7 +373,7 @@ Pour séries mensuelles, Henderson 13 et Macurve $3\times 5,$ 84 mois = 7 ans.
 
 ### Filtre symétrique de X-11 (trim)
 
-Pour séries trimestrielles, Henderson 5 et Macurve $3\times 5,$ 84 mois = 7 ans.
+Pour séries trimestrielles, Henderson 5 et Macurve $3\times 5,$ 28 trim = 7 ans.
 
 ```{r}
 #| echo: false
