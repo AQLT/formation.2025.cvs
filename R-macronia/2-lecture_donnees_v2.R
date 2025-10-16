@@ -1,4 +1,4 @@
-packages_a_installer <- c("rjd3workspace", "ggdemetra3", "rjwsacruncher", "readr", "openxlsx")
+packages_a_installer <- c("RJDemetra", "ggdemetra", "readr", "openxlsx")
 packages_a_installer <- packages_a_installer[! packages_a_installer %in% installed.packages()[,"Package"]]
 if (length(packages_a_installer) > 0) {
   install.packages(packages_a_installer, repos = c("https://aqlt.r-universe.dev", "https://cloud.r-project.org"))
@@ -48,11 +48,11 @@ series_sa2 <- read.csv2(
 
 
 # Méthode 2 : utiliser rjd3workspace pour la v3
-library(rjd3workspace)
 # Chemin vers le workspace, A MODIFIER POUR POINTER VERS VOTRE WORKSPACE
 new_file_workspace <- "R-macronia/macronia_10_2025.xml"
-jws <- jws_open(new_file_workspace)
-all_jmod <- rjd3workspace::.jread_workspace(jws)
+jws <- RJDemetra::load_workspace(new_file_workspace)
+RJDemetra::compute(jws)
+all_jmod <- RJDemetra::get_jmodel(jws)
 all_jmod <- lapply(all_jmod, function(sap) {
   # On enlève les noms des MP dans les SaItem
   names(sap) <- gsub(".*\n", "", names(sap))
@@ -62,9 +62,9 @@ all_jmod <- lapply(all_jmod, function(sap) {
 # Exemple pour récupérer la série désaisonnalisée
 # Permet d'avoir une liste avec les séries désaisonnalisées de chaque SAProcessing
 all_sa <- lapply(all_jmod, function(mp) {
-  do.call(ts.union, lapply(mp, ggdemetra3::seasonaladj))
+  do.call(ts.union, lapply(mp, ggdemetra::seasonaladj))
 })
 all_y <- lapply(all_jmod, function(mp) {
-  do.call(ts.union, lapply(mp, ggdemetra3::raw))
+  do.call(ts.union, lapply(mp, ggdemetra::raw))
 })
 openxlsx::write.xlsx(all_sa, sheet = "sa.xlsx")

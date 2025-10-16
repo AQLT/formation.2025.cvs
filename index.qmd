@@ -65,7 +65,11 @@ Vous pouvez retrouver [ici](manuel_installation.qmd) le manuel d'installation de
 
 4. **(Complément) Décomposition (X11)** : [V2](TP/R_4_X11_v2.qmd) ou [V3](TP/R_4_X11_v3.qmd)
 
-5. **JDemetra+ en production** : [V2](TP/R_5_JD_in_production_v2.qmd) ou [V3](TP/R_5_JD_in_production_v3.qmd) et programmes [1-cruncher.R](R-macronia/1-cruncher.R), [2-lecture_donnees.R](R-macronia/2-lecture_donnees.R) [3-tableau_de_bord.R](R-macronia/3-tableau_de_bord.R)
+5. **JDemetra+ en production** : 
+
+   - En V2 : [TP5](TP/R_5_JD_in_production_v2.qmd)  et programmes  [1-cruncher.R](R-macronia/1-cruncher_v2.R), [2-lecture_donnees.R](R-macronia/2-lecture_donnees_v2.R) et  [3-tableau_de_bord.R](R-macronia/3-tableau_de_bord_v2.R)
+   
+   - En V3 : [TP5](TP/R_5_JD_in_production_v3.qmd) et programmes [1-cruncher.R](R-macronia/1-cruncher.R), [2-lecture_donnees.R](R-macronia/2-lecture_donnees.R) et  [3-tableau_de_bord.R](R-macronia/3-tableau_de_bord.R)
 
 6. **Autres programmes** : [4-imae_calage.R](R-macronia/4-imae_calage.R) et [5-cvs_indirecte.R](R-macronia/5-cvs_indirecte.R)
 
