@@ -119,6 +119,35 @@ gtag('config', 'G-X652XRGDPL', { 'anonymize_ip': true});
 <script src="../site_libs/kePrint-0.0.1/kePrint.js"></script>
 <link href="../site_libs/lightable-0.0.1/lightable.css" rel="stylesheet">
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -463,6 +492,64 @@ Exemple de calendrier associé à la Macronia
 <li><p>Cliquer sur <code>Default</code> à côté de <code>holidays</code> (ligne 3) et choisir votre calendrier</p></li>
 </ul>
 <p>Par défaut l’option trading days (TD7) les autres options possibles dans JDemetra+ 3.x.y sont :</p>
+<div class="cell">
+<div class="cell-output-display">
+<table class="table table-sm table-striped small">
+<colgroup>
+<col style="width: 7%">
+<col style="width: 48%">
+<col style="width: 22%">
+<col style="width: 22%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Modèle</th>
+<th style="text-align: left;">Définition</th>
+<th style="text-align: left;">Référence (contraste)</th>
+<th style="text-align: left;">Nombre de régresseurs</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">TD7</td>
+<td style="text-align: left;">(Lundi), (Mardi), <span class="math inline">\(\dots\)</span>, (Samedi)</td>
+<td style="text-align: left;">Dimanche</td>
+<td style="text-align: left;">6 + LPY</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">TD4</td>
+<td style="text-align: left;">(Lundi = <span class="math inline">\(\dots\)</span> = Jeudi), (Vendredi), (Samedi)</td>
+<td style="text-align: left;">Dimanche</td>
+<td style="text-align: left;">3 + LPY</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">TD3</td>
+<td style="text-align: left;">(Lundi = <span class="math inline">\(\dots\)</span> = Vendredi), (Samedi)</td>
+<td style="text-align: left;">Dimanche</td>
+<td style="text-align: left;">2 + LPY</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">TD3c</td>
+<td style="text-align: left;">(Lundi = <span class="math inline">\(\dots\)</span> = Jeudi), (Vendredi = Samedi)</td>
+<td style="text-align: left;">Dimanche</td>
+<td style="text-align: left;">2 + LPY</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">TD2c</td>
+<td style="text-align: left;">(Lundi = <span class="math inline">\(\dots\)</span> = Samedi)</td>
+<td style="text-align: left;">Dimanche</td>
+<td style="text-align: left;">1 + LPY</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">TD2</td>
+<td style="text-align: left;">(Lundi = <span class="math inline">\(\dots\)</span> = Vendredi)</td>
+<td style="text-align: left;">Samedi + Dimanche</td>
+<td style="text-align: left;">1+LPY</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 <p>Même si un raisonnement économique est à privilégier pour le choix des régresseurs, une sélection automatique peut être faite par JDemetra+ (option <code>automatic</code>, ligne 2) en utilisant des tests de Wald ou en minimisant un critère d’information (BIC ou AIC).</p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
