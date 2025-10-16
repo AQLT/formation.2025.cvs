@@ -606,6 +606,6 @@
     "href": "index.html#tp",
     "title": "Désaisonnaliser une série temporelle",
     "section": "TP ",
-    "text": "TP \n\n(Complément) Traitement des séries temporelles sous \nR et JDemetra+ : V2 ou V3\nCorrection des jours ouvrables : V2 ou V3 et programme export_cjo.R\n(Complément) Preajustement : V2 ou V3\n(Complément) Décomposition (X11) : V2 ou V3\nJDemetra+ en production : V2 ou V3 et programmes 1-cruncher.R et 2-tableau de bord.R\nAutres programmes : 3-imae-calage.R et 4-cvs-indirecte.R"
+    "text": "TP \n\n(Complément) Traitement des séries temporelles sous \nR et JDemetra+ : V2 ou V3\nCorrection des jours ouvrables : V2 ou V3 et programme export_cjo.R\n(Complément) Preajustement : V2 ou V3\n(Complément) Décomposition (X11) : V2 ou V3\nJDemetra+ en production : V2 ou V3 et programmes 1-cruncher.R, 2-lecture_donnees.R 3-tableau_de_bord.R\nAutres programmes : 4-imae_calage.R et 5-cvs_indirecte.R"
   }
 ]
