@@ -52,7 +52,7 @@ library(rjd3workspace)
 # Chemin vers le workspace, A MODIFIER POUR POINTER VERS VOTRE WORKSPACE
 new_file_workspace <- "R-macronia/macronia_10_2025.xml"
 jws <- jws_open(new_file_workspace)
-all_jmod <- rjd3workspace::.jread_workspace(jws)
+all_jmod <- rjd3workspace::jread_workspace(jws)
 all_jmod <- lapply(all_jmod, function(sap) {
   # On enlève les noms des MP dans les SaItem
   names(sap) <- gsub(".*\n", "", names(sap))
