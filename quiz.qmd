@@ -1,0 +1,240 @@
+<!-- --- -->
+<!-- title: "Désaisonnaliser une série temporelle" -->
+<!-- format: docx -->
+<!-- output-file: "Désaisonnaliser une série temporelle" -->
+<!-- --- -->
+
+::: {#exr-def-st}
+Une série temporelle est un processus stochastique, dont on n'observe qu'une réalisation.
+
+**A. Vrai**
+
+B. Faux
+:::
+
+::: {#exr-schema-dec}
+Quel schéma de décomposition est utilisé ?
+
+![](img/quiz_schema.png)
+
+**A. Additif**
+
+B. Multiplicatif
+:::
+
+::: {#exr-def-sais}
+Quelle proposition se rapproche le plus de la définition d'un phénomène saisonnier ?
+
+A. Schéma de fluctuations qui se répète à court terme
+
+**B. Variations infra-annuelles quasi-périodiques de période annuelle**
+
+C. Mouvements qui sont liés aux saisons climatiques
+
+D. Mouvements qui s'annulent sur une année
+:::
+
+::: {#exr-mod-sais-stable}
+Pour les séries mensuelles et un schéma additif, quelle relation décrit un modèle de saisonnalité stable ?
+
+A. La somme des coefficients saisonniers de janvier à décembre est nulle
+
+B. $M_{2\times 12}(S) = 0$
+
+**C. La somme des coefficients saisonniers sur tout douze mois consécutifs est une constante**
+
+D. $fréquence(S) = k\times \pi/6$, pour $k = 1..5$
+:::
+
+::: {#exr-spectre}
+Un spectre est...
+
+A. un graphique décrivant l'évolution de la série par fréquence
+
+B. une transformation d'une série en une fonction périodique
+
+C. un outil efficace pour tester la saisonnalité résiduelle, ainsi que les effets de calendrier résiduels
+
+**D. une décomposition de la variance d'une série par fréquence**
+:::
+
+::: {#exr-effets-cal}
+Quels sont les différents effets du calendrier que l'on corrige ?
+
+A. Les effets jours ouvrables, année bissextile et graduel de Pâques
+
+B. Les effets jours ouvrables, année bissextile et jours fériés
+
+**C. Les effets longueur du mois, types de jour et effets graduels des fêtes mobiles**
+
+D. Les effets longueur du mois, types de jour et jours fériés
+:::
+
+::: {#exr-pq-lineariser}
+Pourquoi fait-on un pré-ajustement des points atypiques ?
+
+A. Pour lisser la série pour l'interpréter plus facilement
+
+**B. Pour linéariser la série pour estimer plus facilement la composante saisonnière**
+:::
+
+::: {#exr-out-visible}
+Les outliers sont visibles sur la série désaisonnalisée :
+
+A. Non car ils sont corrigés pendant le pré-ajustement
+
+**B. Oui**
+:::
+
+::: {#exr-schema-dec}
+Quel schéma de décomposition est utilisé ?
+
+![](img/quiz_schema2.png)
+
+A. Additif
+
+**B. Multiplicatif**
+:::
+
+::: {#exr-comp-ao}
+À quelle composante est associée un *additive outlier* ?
+
+A. Tendance-cycle
+
+B. Saisonnalité
+
+C. Calendrier
+
+**D. Irrégulier**
+
+E. Autre
+:::
+
+::: {#exr-comp-ls}
+À quelle composante est associée un *level shift* ?
+
+**A. Tendance-cycle**
+
+B. Saisonnalité
+
+C. Calendrier
+
+D. Irrégulier
+
+E. Autre
+:::
+
+::: {#exr-comp-tc}
+À quelle composante est associée un *transitory change* ?
+
+A. Tendance-cycle
+
+B. Saisonnalité
+
+C. Calendrier
+
+**D. Irrégulier**
+
+E. Autre
+:::
+
+::: {#exr-comp-so}
+À quelle composante est associée un *seasonal outlier* ?
+
+A. Tendance-cycle
+
+**B. Saisonnalité**
+
+C. Calendrier
+
+D. Irrégulier
+
+E. Autre
+:::
+
+
+::: {#exr-sal-ao}
+J'étudie mon salaire et j'ai un suppression de ma prime de décembre 2021 uniquement du fait du covid. 
+Quel type de point atypique je suis susceptible de détecter ?
+
+__A. *Additive outlier* (AO)__
+
+B. *Transitory Change* (TC)
+
+C. *Level Shift* (LS)
+
+D. *Seasonal Outlier* (SO)
+
+E. Un autre type
+:::
+
+::: {#exr-sal-pso}
+J'étudie mon salaire et pour des raisons administratives la prime que j'avais habituellement en décembre est maintenant versée en janvier. 
+Quel type de point atypique je suis susceptible de détecter ?
+
+A. *Additive outlier* (AO)
+
+B. *Transitory Change* (TC)
+
+C. *Level Shift* (LS)
+
+D. *Seasonal Outlier* (SO)
+
+**E. Un autre type**
+:::
+
+::: {#exr-comp-stat}
+Les composantes Tendance, Cycle et Saisonnalité sont elles stationnaires ?
+
+A. La tendance n'est pas stationnaire, mais le cycle et la saisonnalité sont stationnaires
+
+**B. Aucune composante n'est stationnaire car leurs espérances d'ensemble dépendent du temps (ou variances)**
+
+C. Seule la saisonnalité est stationnaire
+
+D. Seul le cycle est stationnaire
+:::
+
+::: {#exr-prop-m2x12}
+Quelles sont les propriétés de la moyenne mobile $M_{2\times 12}$ ?
+
+A. Elle permet d'extraire la composante tendance-cycle finale
+
+B. Elle est longue de 12 termes, centrée et symétrique
+
+C. Elle préserve les tendance-cycles de forme polynomiale, et réduit fortement le bruit
+
+**D. Elle préserve des droites, supprime une saisonnalité constante et réduit la taille du bruit**
+:::
+
+::: {#exr-prop-m3x5}
+La moyenne composée $M_{3\times 5}$ appliquée sur chaque mois ou chaque trimestre permet d'extraire une saisonnalité qui évolue linéairement
+
+**A. Vrai**
+
+B. Faux
+:::
+
+::: {#exr-qual-decom}
+Quels indicateurs relatifs à la qualité de la décomposition doivent être examinés en priorité ?
+
+**A. Les statistiques M7 et Q-M2**
+
+B. La statistique Q qui résume en un seul indicateur l'ensemble des critères permettant d'évaluer la qualité
+
+C. La statistique M7 qui indique s'il existe une saisonnalité identifiable
+
+D. Les statistiques M7, M6, M9 puis M11
+:::
+
+::: {#exr-rafraîchissement}
+Quelle est la méthode de rafraîchissement recommandée en campagnes mensuelles ou trimestrielles ?
+
+A. Concurrent last outliers
+
+B. Current last outliers
+
+**C. Partial-concurrent last outliers**
+
+D. Partial-current last outliers
+:::
