@@ -74,6 +74,8 @@ for (sap in names(all_jmod)) {
                     output = sprintf("%s/%s.pdf", dir_exp, sap))
 }
 # On combine tous les pdfs pour produire un cahier complet
-qpdf::pdf_combine(input = sprintf("%s/%s.pdf", dir_exp, names(all_jmod)),
+chemin <- qpdf::pdf_combine(input = sprintf("%s/%s.pdf", dir_exp, names(all_jmod)),
                   output = sprintf("%s/%s.pdf", dir_exp, "cahier_complet"))
-
+chemin
+# Pour ouvrir le fichier automatiquement (optionnel)
+browseURL(chemin)
