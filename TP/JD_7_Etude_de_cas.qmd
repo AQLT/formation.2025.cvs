@@ -23,6 +23,7 @@ if (!file.exists("Etude_de_cas.xml")) {
 Disclaimer : il peut exister plusieurs solutions, celles données dans ce TP ne sont que des propositions qui peuvent être discuté.
 
 Pour télécharger le workspace, cliquer [ici](/data/Etude_de_cas.zip) et dézipper le fichier.
+Les données utilisées sont des indices de production industrielle (IPI) ou des indices de chiffres d'affaires (ICA)
 
 <!-- ```{r} -->
 <!-- #| eval: false -->
@@ -43,7 +44,7 @@ Pour télécharger le workspace, cliquer [ici](/data/Etude_de_cas.zip) et dézip
 
 # Pré-ajustement
 
-## Série RF2932
+## Série RF2932 (IPI, Fabrication d'autres équipements automobiles)
 
 ::: callout-note
 ## Exercice
@@ -81,7 +82,7 @@ Décision : forcer le schéma en multiplicatif.
 <!-- ``` -->
 <!-- ::: -->
 
-## Série RF2813
+## Série RF2813 (IPI, Fabrication d'autres pompes et compresseurs)
 
 L'analyse de cette série nécessite d'avoir vu les statistiques M qui jugent la qualité de la décomposition.
 
@@ -104,7 +105,7 @@ La mauvaise décomposition vient du fait que la tendance est plate et donc que l
 Décision : forcer le schéma en additif.
 :::
 
-## Série RF2223
+## Série RF2223 (IPI, Fabrication d'éléments en matières plastiques pour la construction)
 
 ::: callout-note 
 ## Exercice
@@ -153,7 +154,7 @@ Il est préférable de rajouter les outliers à la main plutôt que de modifier 
 <!-- ``` -->
 <!-- ::: -->
 
-## Série RF2453 : TC or not TC
+## Série RF2453 (IPI, Fonderie de métaux légers) : TC or not TC
 
 ::: callout-note 
 ## Exercice
@@ -196,7 +197,7 @@ Décision : désactiver la détection automatique de TC.
 
 # S-I Ratio
 
-## Série RF1101
+## Série RF1101 (IPI, Production de boissons alcooliques distillées)
 
 ::: callout-note
 ## Exercice
@@ -215,7 +216,7 @@ Une autre solution est de rajouter un seasonal outlier en août 2008.
 
 # Saisonnalité résiduelle
 
-## Série RF2561
+## Série RF2561 (IPI, Traitement et revêtement des métaux)
 
 ::: callout-note 
 ## Exercice
@@ -240,7 +241,7 @@ Pas d'intervention pour corriger la qualité des résidus.
 :::
 
 
-## Série RF3299
+## Série RF3299 (IPI, Autres activités manufacturières n.c.a.)
 
 ::: callout-note 
 ## Exercice
@@ -257,7 +258,7 @@ Analyser correctement le problème de saisonnalité résiduelle.
 Ajouter des SO en 10-2012 et 12-2015.
 :::
 
-## Séries C4672
+## Séries C4672 (ICA, Commerce de gros de minerais et métaux)
 
 ::: callout-note
 ## Exercice
@@ -279,7 +280,7 @@ Saisonnalité résiduelle non détectée pour modèle ensemble mais détectée s
 Ajouter un SO 11-2008.
 :::
 
-## Série C4773
+## Série C4773 (ICA, Commerce de détail de produits pharmaceutiques en magasin spécialisé)
 
 ::: callout-note 
 ## Exercice
