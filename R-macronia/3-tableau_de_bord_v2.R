@@ -39,7 +39,7 @@ for (sap in names(all_jmod)) {
     
     # On crée le nom du fichier
     file <- file.path(dir_exp, sap, paste0(
-      substr(series, 1, nchar_f), # on ne prend que les nchar_f premiers caractères pour les noms des fichiers
+      gsub("(\n)|/", " ", substr(series, 1, nchar_f)), # on ne prend que les nchar_f premiers caractères pour les noms des fichiers
       ".pdf"))
     # Si le fichier existe déjà (et que replace_existing_file == FALSE) on ne fait pas l'export
     if (!replace_existing_file && file.exists(file))
@@ -67,7 +67,7 @@ for (sap in names(all_jmod)) {
 
 # Ensuite on va créer un cahier avec tous les pdfs
 for (sap in names(all_jmod)) {
-  qpdf::pdf_combine(input = sprintf("%s/%s/%s.pdf", dir_exp, sap, substr(names(all_jmod[[sap]]), 1, nchar_f)),
+  qpdf::pdf_combine(input = sprintf("%s/%s/%s.pdf", dir_exp, sap, gsub("(\n)|/", " ", substr(names(all_jmod[[sap]]), 1, nchar_f))),
                     output = sprintf("%s/%s.pdf", dir_exp, sap))
 }
 # On combine tous les pdfs pour produire un cahier complet
