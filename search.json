@@ -606,6 +606,6 @@
     "href": "index.html#tp",
     "title": "Désaisonnaliser une série temporelle",
     "section": "TP ",
-    "text": "TP \n\n(Complément) Traitement des séries temporelles sous \nR et JDemetra+ : V2 ou V3\nCorrection des jours ouvrables : V2 ou V3 et programme export_cjo.R\n(Complément) Preajustement : V2 ou V3\n(Complément) Décomposition (X11) : V2 ou V3\nJDemetra+ en production :\n\nEn V2 : TP5 et programmes 1-cruncher_v2.R, 2-lecture_donnees_v2.R et 3-tableau_de_bord_v2.R\nEn V3 : TP5 et programmes 1-cruncher.R, 2-lecture_donnees.R, 2b-lecture_tests.R et 3-tableau_de_bord.R\n\nAutres programmes : 4-imae_calage.R et 5-cvs_indirecte.R"
+    "text": "TP \n\n(Complément) Traitement des séries temporelles sous \nR et JDemetra+ : V2 ou V3\nCorrection des jours ouvrables : V2 ou V3 et programme export_cjo.R\n(Complément) Preajustement : V2 ou V3\n(Complément) Décomposition (X11) : V2 ou V3\nJDemetra+ en production :\n\nEn V2 : TP5 et programmes 1-cruncher_v2.R, 2-lecture_donnees_v2.R, 2b-lecture_tests_v2.R et 3-tableau_de_bord_v2.R\nEn V3 : TP5 et programmes 1-cruncher.R, 2-lecture_donnees.R, 2b-lecture_tests.R et 3-tableau_de_bord.R\n\nAutres programmes : 4-imae_calage.R et 5-cvs_indirecte.R"
   }
 ]

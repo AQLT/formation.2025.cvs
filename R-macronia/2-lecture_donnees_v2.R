@@ -47,9 +47,9 @@ series_sa2 <- read.csv2(
 )
 
 
-# Méthode 2 : utiliser rjd3workspace pour la v3
+# Méthode 2 : utiliser RJDemetra pour la v2
 # Chemin vers le workspace, A MODIFIER POUR POINTER VERS VOTRE WORKSPACE
-new_file_workspace <- "R-macronia/macronia_10_2025.xml"
+new_file_workspace <- "data/macronia.xml"
 jws <- RJDemetra::load_workspace(new_file_workspace)
 RJDemetra::compute(jws)
 all_jmod <- RJDemetra::get_jmodel(jws)
