@@ -8,14 +8,13 @@ if (length(packages_a_installer) > 0) {
 # Remplacer "R-macronia/macronia_10_2025.xml" par le chemin vers votre workspace
 jws <- RJDemetra::load_workspace(
   # À MODIFIER SI BESOIN
-  "R-macronia/macronia_10_2025.xml"
+  "data/macronia.xml"
 ) 
 # Dossier où l'on veut exporter les résultats
 dir_exp <- "R-macronia/graphs" # A MODIFIER si besoin
 
 RJDemetra::compute(jws)
 all_jmod <- RJDemetra::get_jmodel(jws) # On charge tous les modèles
-all_jmod <- jread_workspace(jws,compute = TRUE)
 all_jmod <- lapply(all_jmod, function(sap) {
   # On enlève les noms des MP dans les SaItem
   names(sap) <- gsub(".*\n", "", names(sap))
