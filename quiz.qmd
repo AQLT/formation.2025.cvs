@@ -155,7 +155,7 @@ E. Autre
 
 ::: {#exr-sal-ao}
 J'étudie mon salaire et j'ai un suppression de ma prime de décembre 2021 uniquement du fait du covid. 
-Quel type de point atypique je suis susceptible de détecter ?
+Quel type de point atypique est le plus adapté ?
 
 __A. *Additive outlier* (AO)__
 
@@ -165,12 +165,12 @@ C. *Level Shift* (LS)
 
 D. *Seasonal Outlier* (SO)
 
-E. Un autre type
+E. Un autre type  (pure seasonal outlier, ramp, etc.) 
 :::
 
 ::: {#exr-sal-pso}
 J'étudie mon salaire et pour des raisons administratives la prime que j'avais habituellement en décembre est maintenant versée en janvier. 
-Quel type de point atypique je suis susceptible de détecter ?
+Quel type de point atypique est le plus adapté ?
 
 A. *Additive outlier* (AO)
 
@@ -180,7 +180,7 @@ C. *Level Shift* (LS)
 
 D. *Seasonal Outlier* (SO)
 
-**E. Un autre type**
+__E. Un autre type (**pure seasonal outlier**, **ramp**, etc.)__
 :::
 
 ::: {#exr-comp-stat}
@@ -218,23 +218,23 @@ B. Faux
 ::: {#exr-qual-decom}
 Quels indicateurs relatifs à la qualité de la décomposition doivent être examinés en priorité ?
 
-**A. Les statistiques M7 et Q-M2**
+A. Les statistiques Q et Q-M2
 
 B. La statistique Q qui résume en un seul indicateur l'ensemble des critères permettant d'évaluer la qualité
 
 C. La statistique M7 qui indique s'il existe une saisonnalité identifiable
 
-D. Les statistiques M7, M6, M9 puis M11
+**D. Les tests de saisonnalité résiduelle**
 :::
 
 ::: {#exr-rafraîchissement}
 Quelle est la méthode de rafraîchissement recommandée en campagnes mensuelles ou trimestrielles ?
 
-A. Concurrent last outliers
+A. Concurrent
 
-B. Current last outliers
+B. Partial-concurrent all outliers
 
 **C. Partial-concurrent last outliers**
 
-D. Partial-current last outliers
+D. Current
 :::
